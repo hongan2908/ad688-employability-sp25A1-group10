@@ -1,5 +1,8 @@
 ---
 title: "Salary & Compensation Trends"
+author: Group 10
+format: html
+editor: visual
 ---
 
 
