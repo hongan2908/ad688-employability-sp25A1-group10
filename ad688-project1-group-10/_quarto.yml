@@ -13,6 +13,8 @@ website:
         text: Career Strategy
       - href: about.qmd
         text: About
+      - href: citation.qmd
+        text: Citation
 format:
   html:
     theme: cosmo
