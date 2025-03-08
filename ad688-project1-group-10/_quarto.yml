@@ -13,8 +13,8 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: salary_disparities.qmd
-        text: Salary Disparities
+      - href: Leveraging AI and Data Analytics.qmd
+        text: Leveraging AI and Data Analytics
       - href: career_plan.qmd
         text: Career Strategy
       - href: about.qmd
