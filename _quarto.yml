@@ -7,7 +7,7 @@ website:
     left:
       - href: index.qmd
         text: "Home"
-      - href: research_introduction.qmd
+      - href: Leveraging AI and Data Analytics.qmd
         text: "Research"
       - href: data_analysis.qmd
         text: "Data Analysis"
