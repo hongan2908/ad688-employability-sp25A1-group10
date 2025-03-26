@@ -2,17 +2,18 @@
 title: "Salary & Compensation Trends"
 author: Group 10
 format: html
-editor: visual
 ---
 
-
 ## Why is this topic important?
+
 AI adoption is reshaping labor markets, influencing wage disparities across industries. While AI has increased automation in several sectors, it has also driven demand for specialized skills, leading to wage polarization. High-tech roles in AI, machine learning, and software engineering command premium salaries, while non-AI fields may see stagnation or wage compression. This study explores which professions benefit the most from AI-driven economic shifts and how salary structures evolve in 2024.
 
 ## What trends make this a crucial area of study in 2024?
+
 The integration of AI across industries raises critical concerns about economic disparity. Previous studies have shown that AI-driven roles tend to be concentrated in major tech hubs, contributing to regional salary gaps. Furthermore, wage growth in AI-dominant industries has outpaced traditional fields such as manufacturing and retail. Understanding these disparities is essential for job seekers aiming to maximize their earning potential and align their career strategies with evolving market demands.
 
 ## What do you expect to find in your analysis?
+
 How do salaries differ across AI vs. non-AI careers?
 
 What regions offer the highest-paying jobs in AI-related and traditional careers?
