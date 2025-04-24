@@ -1,0 +1,66 @@
+---
+title: "Data Analysis"
+subtitle: "Comprehensive Data Cleaning & Exploratory Analysis of Job Market Trends"
+author:
+  - name: Advait Pillai
+    affiliations:
+      - id: bu
+        name: Boston University
+        city: Boston
+        state: MA
+bibliography: references.bib
+csl: csl/econometrica.csl
+format: 
+  html:
+    toc: true
+    number-sections: true
+    df-print: paged
+---
+
+# Introduction
+
+This document presents a comprehensive analysis of job market trends using the Lightcast job postings dataset. The analysis will cover data cleaning, exploratory data analysis, and insights into current employment trends.
+
+# Data Overview
+
+The dataset used for this analysis is the Lightcast job postings dataset, which contains detailed information about job listings across various industries and locations.
+
+## Dataset Description
+
+- **Source**: Lightcast (formerly Burning Glass)
+- **Size**: 717MB
+- **Time Period**: Recent job postings
+- **Key Variables**: Job titles, company information, location data, salary ranges, required skills, education levels, and more
+
+# Data Cleaning
+
+```{python}
+#| label: data-cleaning
+#| echo: true
+#| warning: false
+#| message: false
+
+# Import necessary libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Set display options
+pd.set_option('display.max_columns', None)
+pd.set_option('display.max_rows', 100)
+```
+
+# Exploratory Data Analysis
+
+## Geographic Distribution
+
+## Industry Analysis
+
+## Skills Analysis
+
+## Salary Trends
+
+# Conclusion
+
+# References 
