@@ -2,7 +2,7 @@
 title: "Data Analysis"
 subtitle: "Comprehensive Data Cleaning & Exploratory Analysis of Job Market Trends"
 author:
-  - name: Advait Pillai
+  - name: Advait Pillai, Ritusri Mohan
     affiliations:
       - id: bu
         name: Boston University
@@ -146,48 +146,6 @@ print(industry_counts.head())
 print("\nRemote Work Distribution:")
 print(remote_counts)
 ```
-import plotly.express as px
-
-# Top 10 states by number of job postings
-state_counts = df['STATE_NAME'].value_counts().nlargest(10)
-
-fig = px.bar(
-    x=state_counts.values,
-    y=state_counts.index,
-    orientation='h',
-    labels={'x': 'Number of Postings', 'y': 'State'},
-    title='Top 10 States by Number of Job Postings'
-)
-fig.update_layout(yaxis=dict(autorange="reversed"))
-fig.show()
-
-
-fig = px.box(
-    df,
-    x='NAICS_2022_2_NAME',
-    y='Salary',
-    title='Salary Distribution by Industry',
-    labels={'Salary': 'Estimated Salary ($)', 'NAICS_2022_2_NAME': 'Industry'}
-)
-fig.update_layout(xaxis_tickangle=-45)
-fig.show()
-
-
-corr = df.corr()
-
-plt.figure(figsize=(10, 8))
-sns.heatmap(corr, cmap='coolwarm', annot=True, fmt=".2f")
-plt.title('Correlation Heatmap of Numerical Variables')
-plt.show()
-
-
-fig = px.pie(
-    df,
-    names="REMOTE_TYPE_NAME",
-    title="Remote vs Hybrid vs On-Site Jobs",
-    hole=0.4  # donut chart
-)
-fig.show()
 
 
 
@@ -250,3 +208,91 @@ The exploratory data analysis revealed several key trends in the job market. The
 These findings have important implications for both job seekers and employers. Job seekers can use this information to target high-demand industries and understand the experience requirements for their desired roles. Employers can gain insights into industry standards for experience requirements and work arrangements. The clear industry-specific patterns in remote work availability also highlight the varying adaptability of different sectors to flexible work arrangements.
 
 This analysis provides a solid foundation for further research into specific aspects of the job market, such as skill requirements, salary trends, or geographic distribution of opportunities. 
+
+```{python}
+#| label: enhanced-eda
+#| echo: true
+#| warning: false
+#| message: false
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.express as px
+from wordcloud import WordCloud
+
+# Set larger figure size
+plt.rcParams["figure.figsize"] = (12, 6)
+
+# --- Enhanced EDA ---
+
+# 1. Top 10 Cities by Number of Job Postings
+top_cities = df['CITY_NAME'].value_counts().nlargest(10)
+fig = px.bar(
+    x=top_cities.values,
+    y=top_cities.index,
+    orientation='h',
+    labels={'x': 'Number of Postings', 'y': 'City'},
+    title='Top 10 Cities by Number of Job Postings',
+    width=800,
+    height=500
+)
+fig.update_layout(yaxis=dict(autorange="reversed"))
+fig.show()
+
+
+# 2. Top 10 States by Number of Postings
+top_states = df['STATE_NAME'].value_counts().nlargest(10)
+fig = px.bar(
+    x=top_states.index,
+    y=top_states.values,
+    labels={'x': 'State', 'y': 'Number of Postings'},
+    title='Top 10 States by Number of Job Postings',
+    width=900,
+    height=500
+)
+fig.show()
+
+# 3. Job Titles Word Cloud (if needed)
+from wordcloud import WordCloud
+
+text = ' '.join(df['TITLE_NAME'].dropna())
+wordcloud = WordCloud(width=800, height=500, background_color='white').generate(text)
+
+plt.figure(figsize=(10,5))
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis('off')
+plt.title('Most Frequent Job Titles')
+plt.show()
+```
+## Enhanced EDA: Analysis of Key Visualizations
+
+### Top 10 Cities by Number of Job Postings
+**Why this visualization?**  
+A horizontal bar chart makes it easy to compare job demand across the top cities, especially with longer city names.
+
+**Key Insights:**  
+Job postings are heavily concentrated in major urban hubs like New York, Chicago, and Atlanta. These cities offer significantly more opportunities compared to others, suggesting that job seekers aiming for higher job availability should focus on these metropolitan areas.
+
+---
+
+### Top 10 States by Number of Job Postings
+**Why this visualization?**  
+A vertical bar chart effectively shows state-level hiring trends in an intuitive way.
+
+**Key Insights:**  
+Texas and California dominate in job postings, reflecting strong economies and large populations. Other states like Florida, Virginia, and Illinois also show high demand. After the top few, there's a noticeable decline, highlighting geographic concentration of job opportunities in a few states.
+
+---
+
+### Word Cloud of Most Frequent Job Titles
+**Why this visualization?**  
+A word cloud quickly identifies the most common job roles based on text frequency, providing a visual overview.
+
+**Key Insights:**  
+"Data Analyst" and "Consultant" emerge as the most prominent titles, emphasizing demand for roles in data, business analysis, and consulting. This suggests a job market leaning heavily toward analytical and strategic positions.
+
+---
+
+## Conclusion
+
+The enhanced EDA highlights that job opportunities are geographically concentrated in certain states and cities, and technical and analytical roles dominate the job market. Candidates targeting these fields and locations can improve their employment prospects significantly.
