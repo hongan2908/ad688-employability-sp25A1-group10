@@ -1,1 +1,91 @@
-/* css styles */
+/* Custom vibrant theme for Quarto site */
+
+/* Global background and text */
+body {
+    font-family: 'Poppins', 'Roboto', sans-serif;
+    background-color: #f9f9ff; /* Soft violet-tinted background */
+    color: #333333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
+    color: #4B0082; /* Deep purple headings */
+    margin-top: 1.5rem;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: #4B0082; /* Indigo navbar */
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .navbar a {
+    color: #ffffff !important; /* White links in navbar */
+    font-weight: bold;
+  }
+  
+  .navbar a:hover {
+    color: #FFD700 !important; /* Gold hover on navbar links */
+  }
+  
+  /* Links */
+  a {
+    color: #4B0082; /* Deep purple for regular links */
+  }
+  
+  a:hover {
+    color: #FF69B4; /* Hot pink hover for links */
+  }
+  
+  /* Code blocks */
+  pre {
+    background-color: #eee8ff;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+  
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background-color: #ffffff;
+  }
+  
+  th {
+    background-color: #4B0082;
+    color: white;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Figures and images */
+  figcaption {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #4B0082;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  

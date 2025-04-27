@@ -1,0 +1,15 @@
+```{python}
+import plotly.express as px
+
+# Top 10 Skills
+top_skills = df['SKILLS'].str.split(',').explode().value_counts().head(10)
+
+fig = px.bar(
+    x=top_skills.values,
+    y=top_skills.index,
+    orientation='h',
+    labels={'x': 'Count', 'y': 'Skill'},
+    title='Top 10 Most In-Demand Skills'
+)
+fig.update_layout(yaxis=dict(autorange="reversed"))
+fig.show()
