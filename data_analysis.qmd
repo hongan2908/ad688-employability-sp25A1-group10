@@ -146,6 +146,71 @@ print(industry_counts.head())
 print("\nRemote Work Distribution:")
 print(remote_counts)
 ```
+import plotly.express as px
+
+# Top 10 states by number of job postings
+state_counts = df['STATE_NAME'].value_counts().nlargest(10)
+
+fig = px.bar(
+    x=state_counts.values,
+    y=state_counts.index,
+    orientation='h',
+    labels={'x': 'Number of Postings', 'y': 'State'},
+    title='Top 10 States by Number of Job Postings'
+)
+fig.update_layout(yaxis=dict(autorange="reversed"))
+fig.show()
+
+
+fig = px.box(
+    df,
+    x='NAICS_2022_2_NAME',
+    y='Salary',
+    title='Salary Distribution by Industry',
+    labels={'Salary': 'Estimated Salary ($)', 'NAICS_2022_2_NAME': 'Industry'}
+)
+fig.update_layout(xaxis_tickangle=-45)
+fig.show()
+
+
+corr = df.corr()
+
+plt.figure(figsize=(10, 8))
+sns.heatmap(corr, cmap='coolwarm', annot=True, fmt=".2f")
+plt.title('Correlation Heatmap of Numerical Variables')
+plt.show()
+
+
+fig = px.pie(
+    df,
+    names="REMOTE_TYPE_NAME",
+    title="Remote vs Hybrid vs On-Site Jobs",
+    hole=0.4  # donut chart
+)
+fig.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Analysis of Key Visualizations
 
