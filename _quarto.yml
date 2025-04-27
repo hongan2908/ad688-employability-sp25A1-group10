@@ -19,12 +19,10 @@ website:
         text: "ML Methods"
       - href: nlp_methods.qmd
         text: "NLP Methods"
+
 format:
   html:
     theme: cosmo
     toc: true
-execute:
-  echo: true
-  eval: true
-  code-fold: true
-    
+    code-fold: true
+    css: styles.css   # <--- Add this here inside html section
