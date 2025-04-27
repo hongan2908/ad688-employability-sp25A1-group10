@@ -48,6 +48,26 @@ import seaborn as sns
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', 100)
 
+# Auto-download CSV if missing
+csv_path = 'region_analysis/lightcast_job_postings.csv'
+if not os.path.exists(csv_path):
+    print(f"{csv_path} not found! Attempting to download...")
+
+    os.makedirs('region_analysis', exist_ok=True)
+
+    try:
+        import gdown
+    except ImportError:
+        !pip install gdown
+        import gdown
+
+    file_id = '1V2GCHGt2dkFGqVBeoUFckU4IhUgk4ocQ'  # <--- your actual file ID
+    url = f'https://drive.google.com/uc?id={file_id}'
+    gdown.download(url, csv_path, quiet=False)
+    print("Download complete!")
+else:
+    print(f"{csv_path} found. Proceeding...")
+
 # Load the dataset
 df = pd.read_csv('region_analysis/lightcast_job_postings.csv')
 
