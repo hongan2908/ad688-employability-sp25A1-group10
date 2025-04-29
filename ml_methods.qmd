@@ -72,57 +72,8 @@ else:
 
 # Load the dataset
 df = pd.read_csv('region_analysis/lightcast_job_postings.csv')
-
-# 1. Dropping unnecessary columns
-columns_to_drop = [
-    "ID", "URL", "ACTIVE_URLS", "DUPLICATES", "LAST_UPDATED_TIMESTAMP",
-    "NAICS2", "NAICS3", "NAICS4", "NAICS5", "NAICS6",
-    "SOC_2", "SOC_3", "SOC_5"
-]
-df.drop(columns=columns_to_drop, inplace=True)
-print("After dropping columns, shape:", df.shape)
-
-# 2. Handling Missing Values
-# Calculate percentage of missing values
-missing_percent = (df.isnull().sum() / len(df)) * 100
-missing_percent = missing_percent[missing_percent > 0].sort_values(ascending=False)
-
-# Visualize missing data
-plt.figure(figsize=(12, 8))
-sns.barplot(x=missing_percent.index, y=missing_percent.values)
-plt.xticks(rotation=90)
-plt.title("Percentage of Missing Values by Column")
-plt.ylabel("Percentage Missing")
-plt.show()
-
-# Drop columns with >90% missing values
-df.dropna(thresh=len(df) * 0.9, axis=1, inplace=True)
-print("\nAfter dropping columns with >50% missing values, shape:", df.shape)
-
-# Fill missing values
-# For numerical columns
-numeric_columns = df.select_dtypes(include=[np.number]).columns
-for col in numeric_columns:
-    df[col].fillna(df[col].median(), inplace=True)
-
-# For categorical columns
-categorical_columns = df.select_dtypes(include=['object']).columns
-for col in categorical_columns:
-    df[col].fillna("Unknown", inplace=True)
-
-print("\nMissing values after cleaning:")
-print(df.isnull().sum().sum())
-
-# 3. Removing duplicates
-df = df.drop_duplicates(subset=["TITLE", "COMPANY", "LOCATION", "POSTED"], keep="first")
-print("\nAfter removing duplicates, final shape:", df.shape)
-
-# Display cleaned dataset information
-print("\nCleaned dataset information:")
-print("\nColumns in cleaned dataset:")
-print(df.columns.tolist())
-print("\nFirst few rows of cleaned dataset:")
 df.head()
+df.tail()
 ```
 ```{python}
 #| label: ml_methods
@@ -134,7 +85,7 @@ from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 
 # Prepare data
-cluster_df = df[['MIN_EDULEVELS', 'EMPLOYMENT_TYPE']].dropna()
+cluster_df = df[['SALARY', 'MIN_YEARS_EXPERIENCE']].dropna()
 
 # Calculate inertia for different k
 inertia = []
