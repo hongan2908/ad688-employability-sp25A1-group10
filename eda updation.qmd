@@ -130,7 +130,7 @@ plt.ylabel('Industry')
 plt.show()
 # Education levels distribution
 plt.figure(figsize=(10, 6))
-sns.countplot(y='EDUCATION_LEVELS_NAME', data=df, order=df['EDUCATION_LEVELS_NAME'].value_counts().index)
+sns.countplot(y='EDUCATION_LEVELS_NAME', data=df, order=df['EDUCATION_LEVELS_NAME'].value_counts().head(5).index)
 plt.title('Distribution of Education Levels Required')
 plt.xlabel('Count')
 plt.ylabel('Education Level')
