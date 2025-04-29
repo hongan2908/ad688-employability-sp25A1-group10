@@ -1,15 +1,51 @@
-```{python}
-import plotly.express as px
+---
+title: "Data Analysis"
+subtitle: "Comprehensive Data Cleaning & Exploratory Analysis of Job Market Trends"
+author:
+  - name: Advait Pillai, Ritusri Mohan
+    affiliations:
+      - id: bu
+        name: Boston University
+        city: Boston
+        state: MA
+format: 
+  html:
+    toc: true
+    number-sections: true
+    df-print: paged
+---
 
-# Top 10 Skills
-top_skills = df['SKILLS'].str.split(',').explode().value_counts().head(10)
+The chart below highlights the top 10 most frequently requested job skills from the Lightcast dataset. These reflect emerging industry demands across both AI and non-AI sectors.
+
+![Top 10 In-Demand Skills](DATA/top_10_skills_labeled.png)
+
+
+```{python}
+import pandas as pd
+import plotly.express as px
+import os
+
+df = pd.read_csv('lightcast_job_postings.csv', low_memory=False)
+
+df['SKILLS_NAME'] = df['SKILLS_NAME'].fillna('')
+top_skills = df['SKILLS_NAME'].str.split(',').explode().str.strip().value_counts().head(10)
+top_skills = top_skills[::-1]  
 
 fig = px.bar(
     x=top_skills.values,
     y=top_skills.index,
     orientation='h',
-    labels={'x': 'Count', 'y': 'Skill'},
+    labels={'x': 'Count', 'y': 'Skills'},
     title='Top 10 Most In-Demand Skills'
 )
 fig.update_layout(yaxis=dict(autorange="reversed"))
-fig.show()
+
+os.makedirs("DATA", exist_ok=True)
+output_path = os.path.join("DATA", "top_10_skills_labeled.png")
+fig.write_image(output_path, width=800, height=500, scale=2)
+```
+
+
+
+ 
+
