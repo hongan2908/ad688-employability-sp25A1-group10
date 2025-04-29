@@ -9,6 +9,8 @@ website:
         text: "Home"
       - href: introduction.qmd
         text: "Introduction"
+      - href: salaries-differ-across-ai-vs-non-ai-careers.qmd
+        text: "Salaries Differ Across AI vs. Non-AI Careers"
       - href: data_analysis.qmd
         text: "Data Cleaning & Exploration"
       - href: eda updation.qmd
@@ -25,4 +27,4 @@ format:
     theme: cosmo
     toc: true
     code-fold: true
-    css: styles.css   # <--- Add this here inside html section
+    css: styles.css   
