@@ -12,7 +12,21 @@ format:
     number-sections: true
 
 ---
-
+title: "Skill Gap Analysis"
+subtitle: "Comprehensive Data Cleaning & Exploratory Analysis of Job Market Trends"
+author:
+  - name: "Ritusri Mohan"
+    affiliations:
+      - id: bu
+        name: Boston University
+        city: Boston
+        state: MA
+format: 
+  html:
+    toc: true
+    number-sections: true
+    df-print: paged
+---
 
 
 # Skill Gap Analysis
