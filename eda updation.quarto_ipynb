@@ -28,7 +28,7 @@
         "\n",
         "![Top 10 In-Demand Skills](DATA/top_10_skills_labeled.png)\n"
       ],
-      "id": "08ea98dd"
+      "id": "651fe9ec"
     },
     {
       "cell_type": "code",
@@ -57,7 +57,7 @@
         "output_path = os.path.join(\"DATA\", \"top_10_skills_labeled.png\")\n",
         "fig.write_image(output_path, width=800, height=500, scale=2)"
       ],
-      "id": "5913a3a7",
+      "id": "99023764",
       "execution_count": null,
       "outputs": []
     }
