@@ -24,12 +24,11 @@
         "\n",
         "\n",
         "\n",
-        "\n",
         "The chart below highlights the top 10 most frequently requested job skills from the Lightcast dataset. These reflect emerging industry demands across both AI and non-AI sectors.\n",
         "\n",
         "![Top 10 In-Demand Skills](DATA/top_10_skills_labeled.png)\n"
       ],
-      "id": "e21417fb"
+      "id": "08ea98dd"
     },
     {
       "cell_type": "code",
@@ -58,7 +57,7 @@
         "output_path = os.path.join(\"DATA\", \"top_10_skills_labeled.png\")\n",
         "fig.write_image(output_path, width=800, height=500, scale=2)"
       ],
-      "id": "745307ce",
+      "id": "5913a3a7",
       "execution_count": null,
       "outputs": []
     }
