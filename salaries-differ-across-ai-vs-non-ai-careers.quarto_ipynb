@@ -38,7 +38,7 @@
         "\n",
         "A custom rule-based function was used to assign each job into one of the two groups. We then filtered the dataset to include only postings with valid salary entries.\n"
       ],
-      "id": "9644bdd8"
+      "id": "b3822b01"
     },
     {
       "cell_type": "code",
@@ -61,7 +61,7 @@
         "plt.savefig(\"DATA/job_distribution_bar_chart.png\", dpi=300, bbox_inches='tight')\n",
         "plt.show()"
       ],
-      "id": "ea13fa7f",
+      "id": "822d0a1e",
       "execution_count": null,
       "outputs": []
     },
@@ -75,7 +75,7 @@
         "\n",
         "Key metrics shown include mean, median, minimum, maximum, standard deviation, and the number of valid salary postings for each group. These statistics allow for a detailed comparison between the two career categories.\n"
       ],
-      "id": "74ca85a8"
+      "id": "777f6363"
     },
     {
       "cell_type": "code",
@@ -144,7 +144,7 @@
         "                               'Standard Deviation ($)']]\n",
         "summary_stats"
       ],
-      "id": "143bde13",
+      "id": "2bfa214e",
       "execution_count": null,
       "outputs": []
     },
@@ -158,7 +158,7 @@
         "\n",
         "The following boxplot visualizes the salary distributions for AI versus non-AI career categories. It graphically represents the median, interquartile ranges, and outliers for each group.\n"
       ],
-      "id": "e386477f"
+      "id": "0166f9cc"
     },
     {
       "cell_type": "code",
@@ -210,7 +210,7 @@
         "plt.savefig(plot_path, dpi=300, bbox_inches='tight')\n",
         "plt.show()"
       ],
-      "id": "bba1759f",
+      "id": "63f251c1",
       "execution_count": null,
       "outputs": []
     },
@@ -223,7 +223,7 @@
         "## Forecasting AI Career Trends \n",
         "To explore future patterns, we used a simple linear regression model to forecast average AI salaries and job posting volumes over the next six months.\n"
       ],
-      "id": "cc89b69d"
+      "id": "96b038d3"
     },
     {
       "cell_type": "code",
@@ -298,7 +298,7 @@
         "plt.savefig(salary_forecast_path, dpi=300)\n",
         "plt.show()"
       ],
-      "id": "ab8b1a65",
+      "id": "4069a6f5",
       "execution_count": null,
       "outputs": []
     },
@@ -332,7 +332,7 @@
         "\n",
         "These findings emphasize the value of developing AI-focused skill sets such as machine learning, NLP, and data engineering. For students, job seekers, and educators alike, aligning educational and career strategies with the AI sector’s continued evolution will be key to unlocking long-term financial and professional success."
       ],
-      "id": "4bda24ae"
+      "id": "02bdb287"
     }
   ],
   "metadata": {
