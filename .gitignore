@@ -3,3 +3,4 @@ _site
 .venv/
 
 lightcast_job_postings.csv 
+lightcast_cleaned.csv

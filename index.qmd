@@ -1,6 +1,6 @@
 ---
 title: "Salary & Compensation Trends"
-author: Group 10
+author: An Ly
 format: html
 ---
 
