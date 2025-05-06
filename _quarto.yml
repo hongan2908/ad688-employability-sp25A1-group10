@@ -13,7 +13,7 @@ website:
         text: "Salaries Differ Across AI vs. Non-AI Careers"
       - href: data_analysis.qmd
         text: "Data Cleaning & Exploration"
-      - href: eda updation.qmd
+      - href: eda_updation.qmd
         text: "Exploratory Data Analysis"
       - href: skill_gap_analysis.qmd
         text: "Skill Gap Analysis"
