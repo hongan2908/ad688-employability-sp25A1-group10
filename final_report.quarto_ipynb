@@ -23,7 +23,7 @@
         "\n",
         "---"
       ],
-      "id": "8280a4a8"
+      "id": "cd928ae5"
     },
     {
       "cell_type": "markdown",
@@ -67,7 +67,7 @@
         "\n",
         "What industries saw the biggest wage growth in 2024?\n"
       ],
-      "id": "84f511e6"
+      "id": "cb9c04b7"
     },
     {
       "cell_type": "raw",
@@ -129,7 +129,7 @@
         "\n",
         "---"
       ],
-      "id": "27bed47f"
+      "id": "c9cee5a7"
     },
     {
       "cell_type": "markdown",
@@ -172,7 +172,7 @@
         "\n",
         "# Data Cleaning\n"
       ],
-      "id": "0857ff72"
+      "id": "de9e4107"
     },
     {
       "cell_type": "code",
@@ -279,7 +279,7 @@
       "source": [
         "# Exploratory Data Analysis\n"
       ],
-      "id": "72c48e69"
+      "id": "5faeba3c"
     },
     {
       "cell_type": "code",
@@ -403,7 +403,7 @@
         "\n",
         "This analysis provides a solid foundation for further research into specific aspects of the job market, such as skill requirements, salary trends, or geographic distribution of opportunities. \n"
       ],
-      "id": "372f7bf1"
+      "id": "a23cf49c"
     },
     {
       "cell_type": "code",
@@ -505,7 +505,7 @@
         "\n",
         "The enhanced EDA highlights that job opportunities are geographically concentrated in certain states and cities, and technical and analytical roles dominate the job market. Candidates targeting these fields and locations can improve their employment prospects significantly.\n"
       ],
-      "id": "973ed6ab"
+      "id": "31b637b1"
     },
     {
       "cell_type": "markdown",
@@ -516,7 +516,7 @@
         "jupyter: python3\n",
         "---"
       ],
-      "id": "c715787c"
+      "id": "8dd34204"
     },
     {
       "cell_type": "code",
@@ -562,7 +562,7 @@
         "# Optional: save to CSV\n",
         "# state_salary.to_csv('statewise_ai_vs_nonai_salary.csv', index=False)"
       ],
-      "id": "57126b77",
+      "id": "2eb994ea",
       "execution_count": null,
       "outputs": []
     },
@@ -598,7 +598,7 @@
         "plt.savefig(\"top_nonai_states.png\")\n",
         "plt.show()"
       ],
-      "id": "b456129a",
+      "id": "69f1a2dc",
       "execution_count": null,
       "outputs": []
     },
@@ -613,7 +613,7 @@
         "# Show top 10 AI states by average salary + count\n",
         "print(state_counts[state_counts['Career_Type'] == 'AI Career'].head(10))"
       ],
-      "id": "64ee072d",
+      "id": "626b6ad8",
       "execution_count": null,
       "outputs": []
     },
@@ -624,7 +624,7 @@
         "all_ai_states = state_counts[state_counts['Career_Type'] == 'AI Career']\n",
         "print(all_ai_states['STATE_NAME'].unique())"
       ],
-      "id": "b5106cab",
+      "id": "81ce8c86",
       "execution_count": null,
       "outputs": []
     },
@@ -639,7 +639,7 @@
         "\n",
         "print(reliable_ai_states.head(10))"
       ],
-      "id": "15554e80",
+      "id": "04396e6c",
       "execution_count": null,
       "outputs": []
     },
@@ -658,7 +658,7 @@
         "\n",
         "print(ai_counts_big_states)"
       ],
-      "id": "cc4a2172",
+      "id": "2580886c",
       "execution_count": null,
       "outputs": []
     },
@@ -681,7 +681,7 @@
         "\n",
         "print(ai_summary.head(10))"
       ],
-      "id": "d0f833d0",
+      "id": "ed0c53ce",
       "execution_count": null,
       "outputs": []
     },
@@ -702,7 +702,7 @@
         "plt.savefig(\"top_ai_states_median.png\")\n",
         "plt.show()"
       ],
-      "id": "2cf37609",
+      "id": "c270fd4d",
       "execution_count": null,
       "outputs": []
     },
@@ -716,7 +716,7 @@
         "\n",
         "![](figures/urban_vs_rural_ai_salaries.png)\n"
       ],
-      "id": "1c2c3c60"
+      "id": "7a0fc7f5"
     },
     {
       "cell_type": "code",
@@ -733,7 +733,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "795c12a7",
+      "id": "14faf37c",
       "execution_count": null,
       "outputs": []
     },
@@ -763,7 +763,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "6578716b",
+      "id": "e1dec969",
       "execution_count": null,
       "outputs": []
     },
@@ -798,7 +798,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "c242fb29",
+      "id": "e34ff1a2",
       "execution_count": null,
       "outputs": []
     },
@@ -808,7 +808,7 @@
       "source": [
         "### AI Salaries by State Heatmap\n"
       ],
-      "id": "00718895"
+      "id": "f46373de"
     },
     {
       "cell_type": "code",
@@ -846,7 +846,7 @@
         "fig.update_layout(title_text='Median AI Salary by State', geo=dict(showlakes=True))\n",
         "fig.show()"
       ],
-      "id": "5740a590",
+      "id": "dd3e271b",
       "execution_count": null,
       "outputs": []
     },
@@ -892,7 +892,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "6eb24c4d",
+      "id": "67fce8d2",
       "execution_count": null,
       "outputs": []
     },
@@ -902,7 +902,7 @@
       "source": [
         "#### Non AI Careers\n"
       ],
-      "id": "99313b4a"
+      "id": "2f59fd90"
     },
     {
       "cell_type": "code",
@@ -911,7 +911,7 @@
         "nonai_state_medians = df[df['Career_Type'] == 'Non-AI Career'].groupby('STATE_NAME')['SALARY'].median().reset_index()\n",
         "nonai_state_medians['STATE_ABBR'] = nonai_state_medians['STATE_NAME'].map(state_abbrev)"
       ],
-      "id": "6e0b4168",
+      "id": "fe95b58e",
       "execution_count": null,
       "outputs": []
     },
@@ -926,7 +926,7 @@
         "comparison['Diff'] = comparison['AI_Median'] - comparison['NonAI_Median']\n",
         "comparison.sort_values(by='Diff', ascending=False).head(10)"
       ],
-      "id": "5bf14f4c",
+      "id": "9e5f942e",
       "execution_count": null,
       "outputs": []
     },
@@ -970,7 +970,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "9b09efc8",
+      "id": "4ccd83e1",
       "execution_count": null,
       "outputs": []
     },
@@ -995,7 +995,7 @@
         "\n",
         "---"
       ],
-      "id": "ba4dfbf0"
+      "id": "81ef9dc1"
     },
     {
       "cell_type": "markdown",
@@ -1033,7 +1033,7 @@
         "\n",
         "A custom rule-based function was used to assign each job into one of the two groups. We then filtered the dataset to include only postings with valid salary entries.\n"
       ],
-      "id": "e2728ff6"
+      "id": "1832a199"
     },
     {
       "cell_type": "code",
@@ -1056,7 +1056,7 @@
         "plt.savefig(\"DATA/job_distribution_bar_chart.png\", dpi=300, bbox_inches='tight')\n",
         "plt.show()"
       ],
-      "id": "972e580d",
+      "id": "676c906e",
       "execution_count": null,
       "outputs": []
     },
@@ -1070,7 +1070,7 @@
         "\n",
         "Key metrics shown include mean, median, minimum, maximum, standard deviation, and the number of valid salary postings for each group. These statistics allow for a detailed comparison between the two career categories.\n"
       ],
-      "id": "22420e58"
+      "id": "db63680e"
     },
     {
       "cell_type": "code",
@@ -1139,7 +1139,7 @@
         "                               'Standard Deviation ($)']]\n",
         "summary_stats"
       ],
-      "id": "ff7929bb",
+      "id": "63ad11b1",
       "execution_count": null,
       "outputs": []
     },
@@ -1153,7 +1153,7 @@
         "\n",
         "The following boxplot visualizes the salary distributions for AI versus non-AI career categories. It graphically represents the median, interquartile ranges, and outliers for each group.\n"
       ],
-      "id": "605c7092"
+      "id": "844ca3b2"
     },
     {
       "cell_type": "code",
@@ -1205,7 +1205,7 @@
         "plt.savefig(plot_path, dpi=300, bbox_inches='tight')\n",
         "plt.show()"
       ],
-      "id": "d4d98d10",
+      "id": "00eee8a8",
       "execution_count": null,
       "outputs": []
     },
@@ -1218,7 +1218,7 @@
         "## Forecasting AI Career Trends \n",
         "To explore future patterns, we used a simple linear regression model to forecast average AI salaries and job posting volumes over the next six months.\n"
       ],
-      "id": "d4579734"
+      "id": "3bc412d6"
     },
     {
       "cell_type": "code",
@@ -1293,7 +1293,7 @@
         "plt.savefig(salary_forecast_path, dpi=300)\n",
         "plt.show()"
       ],
-      "id": "d1d067fa",
+      "id": "35e3f64d",
       "execution_count": null,
       "outputs": []
     },
@@ -1327,7 +1327,7 @@
         "\n",
         "These findings emphasize the value of developing AI-focused skill sets such as machine learning, NLP, and data engineering. For students, job seekers, and educators alike, aligning educational and career strategies with the AI sector’s continued evolution will be key to unlocking long-term financial and professional success.\n"
       ],
-      "id": "fe899c50"
+      "id": "0eddd082"
     },
     {
       "cell_type": "markdown",
@@ -1358,7 +1358,7 @@
         "\n",
         "# Dataset Overview\n"
       ],
-      "id": "7f4d360e"
+      "id": "bb37b2ec"
     },
     {
       "cell_type": "code",
@@ -1370,7 +1370,7 @@
         "df.info()\n",
         "df.head()"
       ],
-      "id": "c17b62b1",
+      "id": "3456cbc2",
       "execution_count": null,
       "outputs": []
     },
@@ -1380,7 +1380,7 @@
       "source": [
         "# Handling Missing Data\n"
       ],
-      "id": "8e7a4cb6"
+      "id": "cb994886"
     },
     {
       "cell_type": "code",
@@ -1388,7 +1388,7 @@
       "source": [
         "df.isnull().mean().sort_values(ascending=False).head(10)"
       ],
-      "id": "c3f8fe70",
+      "id": "e8e9a0f5",
       "execution_count": null,
       "outputs": []
     },
@@ -1398,7 +1398,7 @@
       "source": [
         "# Salary Distribution\n"
       ],
-      "id": "bab80740"
+      "id": "6fa69e97"
     },
     {
       "cell_type": "code",
@@ -1418,7 +1418,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "a642a3f0",
+      "id": "429e5fc1",
       "execution_count": null,
       "outputs": []
     },
@@ -1428,7 +1428,7 @@
       "source": [
         "# Top 10 Job Titles\n"
       ],
-      "id": "7413ac36"
+      "id": "9d936ebf"
     },
     {
       "cell_type": "code",
@@ -1436,7 +1436,7 @@
       "source": [
         "df['TITLE_NAME'].value_counts().head(10)"
       ],
-      "id": "33a7de71",
+      "id": "f1f95f0d",
       "execution_count": null,
       "outputs": []
     },
@@ -1446,7 +1446,7 @@
       "source": [
         "# Top 10 Industries\n"
       ],
-      "id": "79c67329"
+      "id": "2f0e4d03"
     },
     {
       "cell_type": "code",
@@ -1454,7 +1454,7 @@
       "source": [
         "df['NAICS_2022_2_NAME'].value_counts().head(10)"
       ],
-      "id": "6d785577",
+      "id": "1b326273",
       "execution_count": null,
       "outputs": []
     },
@@ -1464,7 +1464,7 @@
       "source": [
         "# Job Postings by State\n"
       ],
-      "id": "c139a1a9"
+      "id": "d8eafcbf"
     },
     {
       "cell_type": "code",
@@ -1479,7 +1479,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "34ad042e",
+      "id": "e8a165aa",
       "execution_count": null,
       "outputs": []
     },
@@ -1489,7 +1489,7 @@
       "source": [
         "# Posting Trends Over Time\n"
       ],
-      "id": "20fa7668"
+      "id": "14741a57"
     },
     {
       "cell_type": "code",
@@ -1504,7 +1504,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "3d8e3856",
+      "id": "908b21b8",
       "execution_count": null,
       "outputs": []
     },
@@ -1514,7 +1514,7 @@
       "source": [
         "print(df.columns.tolist())"
       ],
-      "id": "c5944c7b",
+      "id": "e9283544",
       "execution_count": null,
       "outputs": []
     },
@@ -1524,7 +1524,7 @@
       "source": [
         "---"
       ],
-      "id": "54d058df"
+      "id": "db7abb09"
     },
     {
       "cell_type": "markdown",
@@ -1558,7 +1558,7 @@
         "\n",
         "## Team Skill Level Data\n"
       ],
-      "id": "0b1b8913"
+      "id": "1c8877ec"
     },
     {
       "cell_type": "code",
@@ -1611,7 +1611,7 @@
       "source": [
         "## Top 5 and Top 8 Software Skills from Job Postings\n"
       ],
-      "id": "8ea090d6"
+      "id": "22008bfc"
     },
     {
       "cell_type": "code",
@@ -1825,7 +1825,7 @@
         "\n",
         "---\n"
       ],
-      "id": "c19d20ba"
+      "id": "6fb7cf51"
     },
     {
       "cell_type": "markdown",
@@ -1861,7 +1861,7 @@
         "\n",
         "Here the Python code I used for data preprocessing:\n"
       ],
-      "id": "6ec05c35"
+      "id": "d83e7503"
     },
     {
       "cell_type": "code",
@@ -1880,6 +1880,8 @@
         "import seaborn as sns\n",
         "import os\n",
         "import ast\n",
+        "from sklearn.impute import SimpleImputer\n",
+        "from sklearn.model_selection import train_test_split\n",
         "\n",
         "# Set display options\n",
         "pd.set_option('display.max_columns', None)\n",
@@ -1889,26 +1891,32 @@
         "csv_path = 'region_analysis/lightcast_job_postings.csv'\n",
         "if not os.path.exists(csv_path):\n",
         "    print(f\"{csv_path} not found! Attempting to download...\")\n",
-        "\n",
         "    os.makedirs('region_analysis', exist_ok=True)\n",
-        "\n",
         "    try:\n",
         "        import gdown\n",
         "    except ImportError:\n",
+        "        print(\"Installing gdown...\")\n",
         "        !pip install gdown\n",
         "        import gdown\n",
-        "\n",
-        "    file_id = '1V2GCHGt2dkFGqVBeoUFckU4IhUgk4ocQ'  # <--- your actual file ID\n",
+        "    file_id = '1V2GCHGt2dkFGqVBeoUFckU4IhUgk4ocQ'  # Replace with actual file ID\n",
         "    url = f'https://drive.google.com/uc?id={file_id}'\n",
-        "    gdown.download(url, csv_path, quiet=False)\n",
-        "    print(\"Download complete!\")\n",
+        "    try:\n",
+        "        gdown.download(url, csv_path, quiet=False)\n",
+        "        print(\"Download complete!\")\n",
+        "    except Exception as e:\n",
+        "        print(f\"Download failed: {e}\")\n",
+        "        raise\n",
         "else:\n",
         "    print(f\"{csv_path} found. Proceeding...\")\n",
         "\n",
         "# Load the dataset\n",
-        "df = pd.read_csv('region_analysis/lightcast_job_postings.csv')\n",
-        "df.head()\n",
-        "df.tail()"
+        "try:\n",
+        "    df = pd.read_csv(csv_path)\n",
+        "    print(f\"Initial dataset size: {df.shape}\")\n",
+        "    print(f\"Missing values:\\n{df[['DURATION', 'MIN_YEARS_EXPERIENCE', 'EMPLOYMENT_TYPE', 'REMOTE_TYPE', 'MIN_EDULEVELS']].isnull().sum()}\")\n",
+        "except Exception as e:\n",
+        "    print(f\"Error loading CSV: {e}\")\n",
+        "    raise"
       ],
       "id": "ml-data-cleaning",
       "execution_count": null,
@@ -1920,63 +1928,73 @@
       "source": [
         "## Sample of preprocessed EDUCATION_LEVELS\n"
       ],
-      "id": "8e57ce2e"
+      "id": "79dbd81a"
     },
     {
       "cell_type": "code",
       "metadata": {},
       "source": [
-        "import pandas as pd\n",
-        "import numpy as np\n",
-        "import ast\n",
-        "from sklearn.model_selection import train_test_split\n",
-        "\n",
-        "# Load the dataset (using the provided sample data)\n",
-        "data = {\n",
-        "    'DURATION': [6.0, np.nan, 35.0, 48.0],\n",
-        "    'MIN_YEARS_EXPERIENCE': [2.0, 3.0, 5.0, 3.0],\n",
-        "    'EMPLOYMENT_TYPE': [1.0, 1.0, 1.0, 1.0],\n",
-        "    'REMOTE_TYPE': [0.0, 1.0, 0.0, 0.0],\n",
-        "    'IS_INTERNSHIP': [False, False, False, False],\n",
-        "    'EDUCATION_LEVELS': ['[\\n 2\\n]', '[\\n 99\\n]', '[\\n 2\\n]', '[\\n 99\\n]']\n",
-        "}\n",
-        "df = pd.DataFrame(data)\n",
-        "\n",
-        "# Function to parse EDUCATION_LEVELS strings and handle different types\n",
+        "# Define function to parse MIN_EDULEVELS strings\n",
         "def parse_education_levels(edu):\n",
-        "    # If the value is already a float, use it directly (or convert to nan if invalid)\n",
-        "    if isinstance(edu, float):\n",
-        "        return edu if not np.isnan(edu) else np.nan\n",
-        "    # If the value is a string, parse it\n",
+        "    if isinstance(edu, (int, float)) and not np.isnan(edu):\n",
+        "        return int(edu)  # Return integer if already numerical\n",
         "    if isinstance(edu, str):\n",
         "        try:\n",
-        "            # Parse the string into a list using ast.literal_eval\n",
         "            edu_list = ast.literal_eval(edu.replace('\\n', ''))\n",
-        "            # Return the first numerical value (as an integer)\n",
-        "            return int(edu_list[0])\n",
-        "        except (ValueError, SyntaxError, IndexError):\n",
-        "            return np.nan  # Return NaN if parsing fails\n",
-        "    # If the value is neither a string nor a float, return NaN\n",
+        "            return int(edu_list[0]) if isinstance(edu_list[0], (int, float)) else np.nan\n",
+        "        except (ValueError, SyntaxError, IndexError) as e:\n",
+        "            print(f\"Parsing failed for: {edu}, Error: {e}\")\n",
+        "            return np.nan\n",
         "    return np.nan\n",
         "\n",
-        "# Apply the parsing function to EDUCATION_LEVELS\n",
-        "df['EDUCATION_LEVELS'] = df['EDUCATION_LEVELS'].apply(parse_education_levels)\n",
+        "# Select features and target\n",
+        "features = ['MIN_YEARS_EXPERIENCE', 'EMPLOYMENT_TYPE', 'REMOTE_TYPE', 'IS_INTERNSHIP', 'MIN_EDULEVELS']\n",
+        "target = 'DURATION'\n",
         "\n",
-        "# Drop rows with missing values in DURATION or EDUCATION_LEVELS\n",
-        "df = df.dropna(subset=['DURATION', 'EDUCATION_LEVELS'])\n",
+        "# Check if all features and target exist\n",
+        "missing_cols = [col for col in features + [target] if col not in df.columns]\n",
+        "if missing_cols:\n",
+        "    print(f\"Missing columns: {missing_cols}\")\n",
+        "    # If IS_INTERNSHIP is missing, remove it from features\n",
+        "    if 'IS_INTERNSHIP' in missing_cols:\n",
+        "        features.remove('IS_INTERNSHIP')\n",
+        "    else:\n",
+        "        raise ValueError(\"Required columns not found in dataset\")\n",
+        "\n",
+        "# Create a copy of the dataset with selected columns\n",
+        "df_subset = df[features + [target]].copy()\n",
+        "\n",
+        "# Parse MIN_EDULEVELS\n",
+        "df_subset['MIN_EDULEVELS'] = df_subset['MIN_EDULEVELS'].apply(parse_education_levels)\n",
+        "\n",
+        "# Handle missing values with imputation for all numerical columns\n",
+        "num_cols = [col for col in features if col in df_subset.columns]\n",
+        "num_imputer = SimpleImputer(strategy='median')\n",
+        "df_subset[num_cols] = num_imputer.fit_transform(df_subset[num_cols])\n",
+        "\n",
+        "# Impute DURATION with mean\n",
+        "df_subset['DURATION'] = df_subset['DURATION'].fillna(df_subset['DURATION'].mean())\n",
+        "\n",
+        "# Ensure IS_INTERNSHIP is integer if present\n",
+        "if 'IS_INTERNSHIP' in df_subset.columns:\n",
+        "    df_subset['IS_INTERNSHIP'] = df_subset['IS_INTERNSHIP'].astype(int)\n",
+        "\n",
+        "# Verify no missing values\n",
+        "print(f\"Missing values after imputation:\\n{df_subset.isnull().sum()}\")\n",
+        "print(f\"Preprocessed dataset size: {df_subset.shape}\")\n",
         "\n",
         "# Features and target\n",
-        "X = df[['MIN_YEARS_EXPERIENCE', 'EMPLOYMENT_TYPE', 'REMOTE_TYPE', 'IS_INTERNSHIP', 'EDUCATION_LEVELS']]\n",
-        "y = df['DURATION']\n",
+        "X = df_subset[num_cols]\n",
+        "y = df_subset['DURATION']\n",
         "\n",
         "# Split the data into training and testing sets\n",
         "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n",
         "\n",
         "print(\"Training set size:\", X_train.shape)\n",
         "print(\"Testing set size:\", X_test.shape)\n",
-        "print(\"Sample of preprocessed EDUCATION_LEVELS:\", df['EDUCATION_LEVELS'].head().tolist())"
+        "print(\"Sample of preprocessed MIN_EDULEVELS:\", df_subset['MIN_EDULEVELS'].head().tolist())"
       ],
-      "id": "778fb47a",
+      "id": "9de29727",
       "execution_count": null,
       "outputs": []
     },
@@ -1990,7 +2008,7 @@
         "\n",
         "Here is the code for training the Random Forest Regressor:\n"
       ],
-      "id": "51b99fa0"
+      "id": "9443d965"
     },
     {
       "cell_type": "code",
@@ -2004,7 +2022,7 @@
         "\n",
         "print(\"Model training completed.\")"
       ],
-      "id": "6f3753c0",
+      "id": "ac38fb82",
       "execution_count": null,
       "outputs": []
     },
@@ -2019,34 +2037,52 @@
         "\n",
         "Here is the code for evaluation and visualization:\n"
       ],
-      "id": "0e376af9"
+      "id": "8c5c7290"
     },
     {
       "cell_type": "code",
       "metadata": {},
       "source": [
         "from sklearn.metrics import mean_squared_error\n",
-        "import matplotlib.pyplot as plt\n",
+        "from sklearn.model_selection import cross_val_score\n",
         "\n",
-        "# Make predictions on the test set\n",
+        "# Cross-validation\n",
+        "cv_scores = cross_val_score(rf, X, y, cv=5, scoring='neg_mean_squared_error')\n",
+        "cv_mse = -cv_scores.mean()\n",
+        "cv_rmse = np.sqrt(cv_mse)\n",
+        "print(f\"Cross-validated MSE: {cv_mse:.2f} ± {cv_scores.std():.2f}\")\n",
+        "print(f\"Cross-validated RMSE: {cv_rmse:.2f} days\")\n",
+        "\n",
+        "# Predict on test set\n",
         "y_pred = rf.predict(X_test)\n",
         "\n",
-        "# Calculate Mean Squared Error\n",
+        "# Calculate MSE and RMSE on test set\n",
         "mse = mean_squared_error(y_test, y_pred)\n",
-        "print(f\"Mean Squared Error: {mse:.2f}\")\n",
+        "rmse = np.sqrt(mse)\n",
+        "print(f\"Test set MSE: {mse:.2f}\")\n",
+        "print(f\"Test set RMSE: {rmse:.2f} days\")\n",
+        "\n",
+        "# Feature importance\n",
+        "feature_importance = pd.DataFrame({\n",
+        "    'Feature': num_cols,\n",
+        "    'Importance': rf.feature_importances_\n",
+        "}).sort_values('Importance', ascending=False)\n",
+        "print(\"\\nFeature Importance:\")\n",
+        "print(feature_importance)\n",
         "\n",
         "# Plot actual vs predicted values\n",
         "plt.figure(figsize=(8, 6))\n",
-        "plt.scatter(y_test, y_pred, color='blue', label='Predicted vs Actual')\n",
+        "plt.scatter(y_test, y_pred, color='blue', alpha=0.5, label='Predicted vs Actual')\n",
         "plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', label='Perfect Prediction')\n",
         "plt.xlabel('Actual Duration (Days)')\n",
         "plt.ylabel('Predicted Duration (Days)')\n",
         "plt.title('Random Forest Regressor: Actual vs Predicted Job Posting Duration')\n",
         "plt.legend()\n",
         "plt.grid(True)\n",
-        "plt.savefig('actual_vs_predicted_duration.png')"
+        "plt.savefig('actual_vs_predicted_duration.png')\n",
+        "plt.show()"
       ],
-      "id": "24b8c9ef",
+      "id": "700561f7",
       "execution_count": null,
       "outputs": []
     },
@@ -2067,7 +2103,7 @@
         "\n",
         "---"
       ],
-      "id": "8c3edb76"
+      "id": "7c749dbf"
     },
     {
       "cell_type": "markdown",
@@ -2109,7 +2145,7 @@
         "\n",
         "Here’s the Python code we used for data preprocessing and skill extraction:\n"
       ],
-      "id": "3ae0ad9c"
+      "id": "7a22297c"
     },
     {
       "cell_type": "code",
@@ -2215,7 +2251,7 @@
         "\n",
         "Here’s the code we used for analyzing and visualizing the skills:\n"
       ],
-      "id": "d52d3a7d"
+      "id": "013626f6"
     },
     {
       "cell_type": "raw",
@@ -2323,7 +2359,7 @@
         "\n",
         "---"
       ],
-      "id": "893c77f0"
+      "id": "1fd26817"
     },
     {
       "cell_type": "markdown",
@@ -2358,7 +2394,7 @@
         "## AI and Job Market: Analysing the Potential Impact of AI on Employment, Skills, and Job Displacement\n",
         "Faluyi, S. E. (2025). AI and job market: Analysing the potential impact of AI on employment, skills, and job displacement. African Journal of Marketing Management, 17(1), 1–8.\n"
       ],
-      "id": "97f30d92"
+      "id": "8f2d286b"
     }
   ],
   "metadata": {
