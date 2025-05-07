@@ -89,7 +89,7 @@ def parse_education_levels(edu):
             edu_list = ast.literal_eval(edu.replace('\n', ''))
             return int(edu_list[0]) if isinstance(edu_list[0], (int, float)) else np.nan
         except (ValueError, SyntaxError, IndexError) as e:
-            print(f"Parsing failed for: {edu}, Error: {e}")
+            print(f"Parsing failed for : {edu}, Error: {e}")
             return np.nan
     return np.nan
 
