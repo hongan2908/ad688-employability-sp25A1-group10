@@ -6,7 +6,7 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: "Home"
+        text: "Research Rationale"
       - href: introduction.qmd
         text: "Introduction"
       - href: salaries-differ-across-ai-vs-non-ai-careers.qmd
@@ -21,9 +21,10 @@ website:
         text: "ML Methods"
       - href: nlp_methods.qmd
         text: "NLP Methods"
+      - href: career_plan.qmd
+        text: "Career Plan"
       - href: citation.qmd
         text: "Citations"
-
 
 format:
   html:

@@ -13,6 +13,8 @@ format:
     toc: true
     number-sections: true
     df-print: paged
+bibliography: references.bib
+csl: csl/econometrica.csl
 ---
 
 # Introduction
@@ -167,6 +169,12 @@ print(industry_counts.head())
 print("\nRemote Work Distribution:")
 print(remote_counts)
 ```
+## references   
+
+The growing trend of remote and hybrid roles, especially in technology and consulting sectors, reflects post-pandemic work transformation highlighted in recent studies @tomar2024future.
+
+Our approach combining data preprocessing and EDA is supported by prior research advocating for data-driven career forecasting models in job market analytics @jiang2024supplychain.
+
 
 
 
