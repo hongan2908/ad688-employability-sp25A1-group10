@@ -169,35 +169,6 @@ print(industry_counts.head())
 print("\nRemote Work Distribution:")
 print(remote_counts)
 ```
-## references   
-
-The growing trend of remote and hybrid roles, especially in technology and consulting sectors, reflects post-pandemic work transformation highlighted in recent studies @tomar2024future.
-
-Our approach combining data preprocessing and EDA is supported by prior research advocating for data-driven career forecasting models in job market analytics @jiang2024supplychain.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Analysis of Key Visualizations
 
@@ -205,6 +176,16 @@ Our approach combining data preprocessing and EDA is supported by prior research
 **Why this visualization?**
 A horizontal bar chart was chosen to display the top 10 industries by number of job postings, making it easy to compare the relative demand across different sectors.
 
+```{python}
+plt.figure(figsize=(12, 6))
+industry_counts = df['NAICS_2022_2_NAME'].value_counts()
+plt.barh(industry_counts.index[:10], industry_counts.values[:10])
+plt.title("Top 10 Industries by Job Postings")
+plt.xlabel("Number of Postings")
+plt.ylabel("Industry")
+plt.tight_layout()
+plt.show()
+```
 **Key Insights:**
 The job market shows a clear hierarchy in industry demand, with Professional, Scientific, and Technical Services leading at 25% of all postings. This dominance reflects the growing need for specialized knowledge workers and consultants in today's economy. Healthcare and Social Assistance follows closely with 18% of postings, indicating sustained demand in the healthcare sector. Together with Manufacturing (12%), these top three industries account for over 50% of all job postings, showing significant concentration in specific sectors.
 
@@ -213,7 +194,16 @@ At the other end of the spectrum, Retail Trade shows the lowest activity at just
 ### Years of Experience by Industry
 **Why this visualization?**
 A box plot was selected to show the distribution of required years of experience across industries, revealing both the median requirements and any outliers.
-
+```{python}
+plt.figure(figsize=(12, 6))
+sns.boxplot(x='NAICS_2022_2_NAME', y='MIN_YEARS_EXPERIENCE', data=df)
+plt.title("Years of Experience Required by Industry")
+plt.xticks(rotation=45, ha='right')
+plt.xlabel("Industry")
+plt.ylabel("Minimum Years of Experience")
+plt.tight_layout()
+plt.show()
+```
 **Key Insights:**
 The analysis of experience requirements reveals significant variation across industries. Professional Services shows the widest range of requirements (0-15 years), indicating a diverse array of roles from entry-level to senior positions. Healthcare consistently requires higher minimum experience levels, with a median of 5 years, reflecting the specialized nature of the field. In contrast, Retail Trade has the lowest experience requirements, with a median of just 1 year.
 
@@ -222,6 +212,22 @@ Information Technology shows an interesting bimodal distribution in experience r
 ### Remote vs. On-Site Jobs
 **Why this visualization?**
 A pie chart effectively shows the proportion of different work location types, giving a clear picture of remote work opportunities.
+
+```{python}
+plt.figure(figsize=(8, 8))
+remote_counts = df['REMOTE_TYPE_NAME'].value_counts()
+plt.pie(remote_counts.values, labels=remote_counts.index, autopct='%1.1f%%')
+plt.title("Distribution of Remote vs. On-Site Jobs")
+plt.tight_layout()
+plt.show()
+
+# Print some summary statistics
+print("\nTop 5 Industries by Job Postings:")
+print(industry_counts.head())
+
+print("\nRemote Work Distribution:")
+print(remote_counts)
+```
 
 **Key Insights:**
 The distribution of work arrangements shows a significant shift in workplace norms, with 35% of all job postings offering fully remote positions. Hybrid work arrangements account for 25% of postings, indicating a growing preference for flexible work models. However, traditional on-site positions still dominate at 40%, particularly in industries like Healthcare and Manufacturing.
@@ -238,12 +244,15 @@ These findings have important implications for both job seekers and employers. J
 
 This analysis provides a solid foundation for further research into specific aspects of the job market, such as skill requirements, salary trends, or geographic distribution of opportunities. 
 
-```{python}
-#| label: enhanced-eda
-#| echo: true
-#| warning: false
-#| message: false
 
+
+## Enhanced EDA: Analysis of Key Visualizations
+
+### Top 10 Cities by Number of Job Postings
+**Why this visualization?**  
+A horizontal bar chart makes it easy to compare job demand across the top cities, especially with longer city names.
+
+```{python}
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
@@ -252,9 +261,6 @@ from wordcloud import WordCloud
 # Set larger figure size
 plt.rcParams["figure.figsize"] = (12, 6)
 
-# --- Enhanced EDA ---
-
-# 1. Top 10 Cities by Number of Job Postings
 top_cities = df['CITY_NAME'].value_counts().nlargest(10)
 fig = px.bar(
     x=top_cities.values,
@@ -267,9 +273,19 @@ fig = px.bar(
 )
 fig.update_layout(yaxis=dict(autorange="reversed"))
 fig.show()
+```
 
+**Key Insights:**  
+Job postings are heavily concentrated in major urban hubs like New York, Chicago, and Atlanta. These cities offer significantly more opportunities compared to others, suggesting that job seekers aiming for higher job availability should focus on these metropolitan areas.
 
-# 2. Top 10 States by Number of Postings
+---
+
+### Top 10 States by Number of Job Postings
+**Why this visualization?**  
+A vertical bar chart effectively shows state-level hiring trends in an intuitive way.
+
+```{python}
+
 top_states = df['STATE_NAME'].value_counts().nlargest(10)
 fig = px.bar(
     x=top_states.index,
@@ -281,6 +297,17 @@ fig = px.bar(
 )
 fig.show()
 
+```
+**Key Insights:**  
+Texas and California dominate in job postings, reflecting strong economies and large populations. Other states like Florida, Virginia, and Illinois also show high demand. After the top few, there's a noticeable decline, highlighting geographic concentration of job opportunities in a few states.
+
+---
+
+### Word Cloud of Most Frequent Job Titles
+**Why this visualization?**  
+A word cloud quickly identifies the most common job roles based on text frequency, providing a visual overview.
+
+```{python}
 # 3. Job Titles Word Cloud (if needed)
 from wordcloud import WordCloud
 
@@ -292,30 +319,8 @@ plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis('off')
 plt.title('Most Frequent Job Titles')
 plt.show()
+
 ```
-## Enhanced EDA: Analysis of Key Visualizations
-
-### Top 10 Cities by Number of Job Postings
-**Why this visualization?**  
-A horizontal bar chart makes it easy to compare job demand across the top cities, especially with longer city names.
-
-**Key Insights:**  
-Job postings are heavily concentrated in major urban hubs like New York, Chicago, and Atlanta. These cities offer significantly more opportunities compared to others, suggesting that job seekers aiming for higher job availability should focus on these metropolitan areas.
-
----
-
-### Top 10 States by Number of Job Postings
-**Why this visualization?**  
-A vertical bar chart effectively shows state-level hiring trends in an intuitive way.
-
-**Key Insights:**  
-Texas and California dominate in job postings, reflecting strong economies and large populations. Other states like Florida, Virginia, and Illinois also show high demand. After the top few, there's a noticeable decline, highlighting geographic concentration of job opportunities in a few states.
-
----
-
-### Word Cloud of Most Frequent Job Titles
-**Why this visualization?**  
-A word cloud quickly identifies the most common job roles based on text frequency, providing a visual overview.
 
 **Key Insights:**  
 "Data Analyst" and "Consultant" emerge as the most prominent titles, emphasizing demand for roles in data, business analysis, and consulting. This suggests a job market leaning heavily toward analytical and strategic positions.
@@ -325,3 +330,9 @@ A word cloud quickly identifies the most common job roles based on text frequenc
 ## Conclusion
 
 The enhanced EDA highlights that job opportunities are geographically concentrated in certain states and cities, and technical and analytical roles dominate the job market. Candidates targeting these fields and locations can improve their employment prospects significantly.
+
+## references   
+
+The growing trend of remote and hybrid roles, especially in technology and consulting sectors, reflects post-pandemic work transformation highlighted in recent studies @tomar2024future.
+
+Our approach combining data preprocessing and EDA is supported by prior research advocating for data-driven career forecasting models in job market analytics @jiang2024supplychain.
