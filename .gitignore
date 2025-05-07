@@ -1,2 +1,6 @@
 _site/
+
 region_analysis/lightcast_job_postings.csv
+
+lightcast_cleaned.csv
+lightcast_job_postings.csv
