@@ -1,7 +1,2 @@
-/.quarto/
-_site 
-.venv/
-
-lightcast_job_postings.csv 
-lightcast_cleaned.csv
-ai_vs_tradsalary_analysis.ipynb 
+_site/
+region_analysis/lightcast_job_postings.csv
