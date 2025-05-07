@@ -22,5 +22,11 @@
   },
   "ml_methods.qmd": {
     "ml_methods.html": "0b48c744"
+  },
+  "nlp_method.qmd": {
+    "nlp_method.html": "1bfd93ff"
+  },
+  "final_report.qmd": {
+    "final_report.html": "eba1966a"
   }
 }
