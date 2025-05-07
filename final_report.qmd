@@ -22,13 +22,7 @@ format:
 {{< include salaries-differ-across-ai-vs-non-ai-careers.qmd >}}
 {{< include eda_updation.qmd >}}
 {{< include skill_gap_analysis.qmd >}}
-<<<<<<< HEAD
-{{< include ml_method.qmd >}}
+{{< include ml_methods.qmd >}}
 {{< include nlp_method.qmd >}}
 {{< include career_plan.qmd >}}
 {{< include citation.qmd >}}
-=======
-{{< include ml_methods.qmd >}}
-{{< include nlp_methods.qmd >}}
-{{< include citation.qmd >}}
->>>>>>> 13c113a14c6bf6a86c8e935b61d70500aaf18dcf
