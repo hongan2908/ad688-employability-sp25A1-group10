@@ -123,3 +123,18 @@ else:
 After extracting skills from the job descriptions, we analyzed their frequency to identify the most common skills mentioned. We visualized the results using a bar plot, showing the count of each skill across all job postings. This helps highlight the skills that are most in demand based on the dataset.
 
 Here’s the code we used for analyzing and visualizing the skills:
+```{python}
+# Plot the most common skills
+plt.figure(figsize=(10, 6))
+skills, counts = zip(*skill_counts.items()) if skill_counts else ([], [])
+if counts:  # Ensure there are skills to plot
+    plt.bar(skills, counts, color='skyblue')
+    plt.xlabel('Skills')
+    plt.ylabel('Frequency')
+    plt.title('Most Common Skills in Job Postings')
+    plt.xticks(rotation=45, ha='right')
+    plt.tight_layout()
+    plt.savefig('skills_frequency.png')
+else:
+    print("No skills were found in the job descriptions.")
+```
