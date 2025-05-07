@@ -1,0 +1,94 @@
+---
+title: "Career Strategy"
+subtitle: "Personal Career Roadmap Based on 2024 Job Market Trends"
+author:
+  - name: "An Ly, Advait Pillai, Ritusri Mohan, Shreya Mani "
+    affiliations:
+      - id: bu
+        name: Boston University
+        city: Boston
+        state: MA
+format: 
+  html:
+    toc: true
+    number-sections: true
+    df-print: paged
+bibliography: references.bib
+csl: csl/econometrica.csl
+---
+
+# 1. An Ly – Business Analyst in Finance or Tech
+
+## Career Goal
+
+My goal is to secure a Business Analyst role in either the financial services or technology industry. I'm particularly interested in companies that use analytics to drive strategic decision-making, especially in hybrid or remote-friendly environments.
+
+## Key Trends Supporting My Career Plan
+
+Our EDA revealed that roles in professional, scientific, and technical services dominate job postings in 2024. Remote roles are especially prevalent in tech, aligning well with my flexibility needs and skills in Python, Tableau, and SQL.
+
+## Action Plan
+
+1. Strengthen Python and Power BI visualization skills.
+2. Network with Boston alumni working in fintech.
+3. Apply to hybrid analyst roles in NY, MA, and CA.
+
+---
+
+# 2. Advait Pillai – Data Engineer in Cloud & Big Data
+
+## Career Goal
+
+I aim to become a data engineer focused on big data pipelines and cloud infrastructure, particularly with AWS and Spark.
+
+## Key Trends Supporting My Career Plan
+
+The job title analysis showed strong demand for technical roles like Data Engineer, especially in major tech hubs like California and Texas. Our project also highlighted the increasing importance of cloud-based roles with remote options.
+
+## Action Plan
+
+1. Earn AWS Cloud Practitioner and Spark certifications.
+2. Complete hands-on projects in ETL and data pipeline development.
+3. Target roles at cloud-first companies like Snowflake, Amazon, and startups.
+
+---
+
+# 3. Ritusri Mohan – Business Intelligence Analyst in Healthcare
+
+## Career Goal
+
+I want to pursue a career as a Business Intelligence Analyst within the healthcare industry. I’m passionate about combining analytics and patient-centric systems to improve operations.
+
+## Key Trends Supporting My Career Plan
+
+Healthcare & Social Assistance was the second-largest industry by job postings in our dataset. However, most roles remain on-site, which aligns with my comfort level working in physical healthcare environments.
+
+## Action Plan
+
+1. Complete Tableau + SQL + Healthcare Analytics specialization on Coursera.
+2. Attend HIMSS career webinars and healthcare data meetups.
+3. Apply for entry-level BI roles in hospitals or health tech firms.
+
+---
+
+# 4. Shreya Mani – Data Scientist in Retail or Consulting
+
+## Career Goal
+
+My goal is to become a Data Scientist specializing in customer behavior, forecasting, or supply chain analytics in the retail or consulting sectors.
+
+## Key Trends Supporting My Career Plan
+
+Our analysis of job titles and word clouds indicated demand for data and consulting roles. While retail showed fewer postings, consulting and analytics-driven firms remain strong in hiring for hybrid data roles.
+
+## Action Plan
+
+1. Build end-to-end forecasting models using time-series libraries.
+2. Apply to rotational data science programs at firms like Deloitte and Target.
+3. Practice Kaggle competitions and publish findings to GitHub/LinkedIn.
+
+---
+
+## Conclusion
+
+Each of us is aligning our personal goals with the trends we uncovered through our analysis of 2024 job market data. Whether targeting technical infrastructure, healthcare analytics, or strategic consulting, we aim to use our data-driven insights to inform smart, personalized job search strategies.

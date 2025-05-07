@@ -2,12 +2,14 @@
 title: "Introduction"
 subtitle: "Salary & Compensation Trends - Job Market Analysis 2024"
 author:
-  - name: Group 10
+  - name: "Ritusri Mohan , An Ly"
     affiliations:
       - id: bu
         name: Boston University
         city: Boston
         state: MA
+bibliography: references.bib
+csl: csl/econometrica.csl
 format: 
   html:
     toc: true
@@ -17,17 +19,17 @@ format:
 
 # Introduction
 
-In recent years, the job market has been significantly reshaped by technological innovation, the rise of remote work, and shifting industry priorities. As organizations adapt to new ways of working, salary and compensation patterns have evolved across industries, locations, and job types. Understanding these patterns is crucial not only for recruiters but also for job seekers navigating a rapidly changing employment landscape.
+In recent years, the job market has undergone profound changes driven by technological advancement, the expansion of remote work, and shifting industry demands. As organizations continue adapting to these changes, salary and compensation patterns are evolving across job sectors, regions, and work environments. Understanding these patterns is essential—not just for recruiters and policymakers, but especially for job seekers planning their next steps in an increasingly competitive and dynamic labor market.
 
-This project focuses on analyzing **Salary and Compensation Trends** in 2024, with an emphasis on the impact of AI adoption, geographic differences, and remote work opportunities. Our goal is to identify which career paths are offering the most competitive salaries, where the highest-paying opportunities are located, and how compensation differs between traditional and emerging industries.
+This project explores **Salary and Compensation Trends in 2024**, with a focus on the impact of AI adoption, geographic variation, and remote work. Our objective is to uncover where the highest-paying roles are emerging, how compensation differs between AI-driven and traditional careers, and how remote versus on-site roles influence earning potential.
 
-We leverage a dataset from Lightcast, combined with external labor market research, to explore:
+Using Lightcast labor market data, supported by recent academic research, we investigate:
 
-- Regional salary variations across the United States
-- Differences in compensation between AI-driven and traditional roles
-- Trends in remote job salaries versus on-site roles
+- Regional salary variations across the United States  
+- Differences in compensation between AI and non-AI job roles  
+- Salary trends in remote jobs compared to on-site positions  
 
-Through data cleaning, exploratory analysis, skill gap assessment, and modeling, we aim to provide actionable insights for students and early-career professionals planning their next career moves.
+Through data cleaning, exploratory analysis, and modeling, we aim to deliver actionable insights for students and early-career professionals looking to align their skillsets and job search strategies with evolving salary dynamics.
 
 ## Research Rationale
 

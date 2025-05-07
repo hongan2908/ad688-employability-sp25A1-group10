@@ -6,11 +6,13 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: "Home"
+        text: "Research Rationale"
       - href: introduction.qmd
         text: "Introduction"
       - href: salaries-differ-across-ai-vs-non-ai-careers.qmd
         text: "Salaries Differ Across AI vs. Non-AI Careers"
+      - href: career_plan.qmd
+        text: "Career Plan"
       - href: data_analysis.qmd
         text: "Data Cleaning & Exploration"
       - href: eda_updation.qmd
