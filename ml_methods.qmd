@@ -26,7 +26,6 @@ A challenge arose with the EDUCATION_LEVELS column, which contained string repre
 
 Here the Python code I used for data preprocessing:
 ```{python}
-
 #| label: ml data cleaning
 #| echo: true
 #| warning: false
@@ -39,6 +38,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 import ast
+from sklearn.impute import SimpleImputer
+from sklearn.model_selection import train_test_split
 
 # Set display options
 pd.set_option('display.max_columns', None)
@@ -48,83 +49,96 @@ pd.set_option('display.max_rows', 100)
 csv_path = 'region_analysis/lightcast_job_postings.csv'
 if not os.path.exists(csv_path):
     print(f"{csv_path} not found! Attempting to download...")
-
     os.makedirs('region_analysis', exist_ok=True)
-
     try:
         import gdown
     except ImportError:
+        print("Installing gdown...")
         !pip install gdown
         import gdown
-
-    file_id = '1V2GCHGt2dkFGqVBeoUFckU4IhUgk4ocQ'  # <--- your actual file ID
+    file_id = '1V2GCHGt2dkFGqVBeoUFckU4IhUgk4ocQ'  # Replace with actual file ID
     url = f'https://drive.google.com/uc?id={file_id}'
-    gdown.download(url, csv_path, quiet=False)
-    print("Download complete!")
+    try:
+        gdown.download(url, csv_path, quiet=False)
+        print("Download complete!")
+    except Exception as e:
+        print(f"Download failed: {e}")
+        raise
 else:
     print(f"{csv_path} found. Proceeding...")
 
 # Load the dataset
-df = pd.read_csv('region_analysis/lightcast_job_postings.csv')
-df.head()
-df.tail()
-
+try:
+    df = pd.read_csv(csv_path)
+    print(f"Initial dataset size: {df.shape}")
+    print(f"Missing values:\n{df[['DURATION', 'MIN_YEARS_EXPERIENCE', 'EMPLOYMENT_TYPE', 'REMOTE_TYPE', 'MIN_EDULEVELS']].isnull().sum()}")
+except Exception as e:
+    print(f"Error loading CSV: {e}")
+    raise
 ```
 
 
 ## Sample of preprocessed EDUCATION_LEVELS
 ```{python}
-
-import pandas as pd
-import numpy as np
-import ast
-from sklearn.model_selection import train_test_split
-
-# Load the dataset (using the provided sample data)
-data = {
-    'DURATION': [6.0, np.nan, 35.0, 48.0],
-    'MIN_YEARS_EXPERIENCE': [2.0, 3.0, 5.0, 3.0],
-    'EMPLOYMENT_TYPE': [1.0, 1.0, 1.0, 1.0],
-    'REMOTE_TYPE': [0.0, 1.0, 0.0, 0.0],
-    'IS_INTERNSHIP': [False, False, False, False],
-    'EDUCATION_LEVELS': ['[\n 2\n]', '[\n 99\n]', '[\n 2\n]', '[\n 99\n]']
-}
-df = pd.DataFrame(data)
-
-# Function to parse EDUCATION_LEVELS strings and handle different types
+# Define function to parse MIN_EDULEVELS strings
 def parse_education_levels(edu):
-    # If the value is already a float, use it directly (or convert to nan if invalid)
-    if isinstance(edu, float):
-        return edu if not np.isnan(edu) else np.nan
-    # If the value is a string, parse it
+    if isinstance(edu, (int, float)) and not np.isnan(edu):
+        return int(edu)  # Return integer if already numerical
     if isinstance(edu, str):
         try:
-            # Parse the string into a list using ast.literal_eval
             edu_list = ast.literal_eval(edu.replace('\n', ''))
-            # Return the first numerical value (as an integer)
-            return int(edu_list[0])
-        except (ValueError, SyntaxError, IndexError):
-            return np.nan  # Return NaN if parsing fails
-    # If the value is neither a string nor a float, return NaN
+            return int(edu_list[0]) if isinstance(edu_list[0], (int, float)) else np.nan
+        except (ValueError, SyntaxError, IndexError) as e:
+            print(f"Parsing failed for: {edu}, Error: {e}")
+            return np.nan
     return np.nan
 
-# Apply the parsing function to EDUCATION_LEVELS
-df['EDUCATION_LEVELS'] = df['EDUCATION_LEVELS'].apply(parse_education_levels)
+# Select features and target
+features = ['MIN_YEARS_EXPERIENCE', 'EMPLOYMENT_TYPE', 'REMOTE_TYPE', 'IS_INTERNSHIP', 'MIN_EDULEVELS']
+target = 'DURATION'
 
-# Drop rows with missing values in DURATION or EDUCATION_LEVELS
-df = df.dropna(subset=['DURATION', 'EDUCATION_LEVELS'])
+# Check if all features and target exist
+missing_cols = [col for col in features + [target] if col not in df.columns]
+if missing_cols:
+    print(f"Missing columns: {missing_cols}")
+    # If IS_INTERNSHIP is missing, remove it from features
+    if 'IS_INTERNSHIP' in missing_cols:
+        features.remove('IS_INTERNSHIP')
+    else:
+        raise ValueError("Required columns not found in dataset")
+
+# Create a copy of the dataset with selected columns
+df_subset = df[features + [target]].copy()
+
+# Parse MIN_EDULEVELS
+df_subset['MIN_EDULEVELS'] = df_subset['MIN_EDULEVELS'].apply(parse_education_levels)
+
+# Handle missing values with imputation for all numerical columns
+num_cols = [col for col in features if col in df_subset.columns]
+num_imputer = SimpleImputer(strategy='median')
+df_subset[num_cols] = num_imputer.fit_transform(df_subset[num_cols])
+
+# Impute DURATION with mean
+df_subset['DURATION'] = df_subset['DURATION'].fillna(df_subset['DURATION'].mean())
+
+# Ensure IS_INTERNSHIP is integer if present
+if 'IS_INTERNSHIP' in df_subset.columns:
+    df_subset['IS_INTERNSHIP'] = df_subset['IS_INTERNSHIP'].astype(int)
+
+# Verify no missing values
+print(f"Missing values after imputation:\n{df_subset.isnull().sum()}")
+print(f"Preprocessed dataset size: {df_subset.shape}")
 
 # Features and target
-X = df[['MIN_YEARS_EXPERIENCE', 'EMPLOYMENT_TYPE', 'REMOTE_TYPE', 'IS_INTERNSHIP', 'EDUCATION_LEVELS']]
-y = df['DURATION']
+X = df_subset[num_cols]
+y = df_subset['DURATION']
 
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 print("Training set size:", X_train.shape)
 print("Testing set size:", X_test.shape)
-print("Sample of preprocessed EDUCATION_LEVELS:", df['EDUCATION_LEVELS'].head().tolist())
-
+print("Sample of preprocessed MIN_EDULEVELS:", df_subset['MIN_EDULEVELS'].head().tolist())
 ```
 
 # Model Training
@@ -133,7 +147,6 @@ With the data preprocessed, I trained a Random Forest Regressor, a robust model 
 
 Here is the code for training the Random Forest Regressor:
 ```{python}
-
 from sklearn.ensemble import RandomForestRegressor
 
 # Initialize and train the Random Forest Regressor
@@ -141,7 +154,6 @@ rf = RandomForestRegressor(n_estimators=100, random_state=42)
 rf.fit(X_train, y_train)
 
 print("Model training completed.")
-
 ```
 
 # Model Evaluation and Visualization
@@ -152,20 +164,36 @@ I also created a scatter plot to visualize the model performance, comparing the 
 Here is the code for evaluation and visualization:
 
 ```{python}
-
 from sklearn.metrics import mean_squared_error
-import matplotlib.pyplot as plt
+from sklearn.model_selection import cross_val_score
 
-# Make predictions on the test set
+# Cross-validation
+cv_scores = cross_val_score(rf, X, y, cv=5, scoring='neg_mean_squared_error')
+cv_mse = -cv_scores.mean()
+cv_rmse = np.sqrt(cv_mse)
+print(f"Cross-validated MSE: {cv_mse:.2f} ± {cv_scores.std():.2f}")
+print(f"Cross-validated RMSE: {cv_rmse:.2f} days")
+
+# Predict on test set
 y_pred = rf.predict(X_test)
 
-# Calculate Mean Squared Error
+# Calculate MSE and RMSE on test set
 mse = mean_squared_error(y_test, y_pred)
-print(f"Mean Squared Error: {mse:.2f}")
+rmse = np.sqrt(mse)
+print(f"Test set MSE: {mse:.2f}")
+print(f"Test set RMSE: {rmse:.2f} days")
+
+# Feature importance
+feature_importance = pd.DataFrame({
+    'Feature': num_cols,
+    'Importance': rf.feature_importances_
+}).sort_values('Importance', ascending=False)
+print("\nFeature Importance:")
+print(feature_importance)
 
 # Plot actual vs predicted values
 plt.figure(figsize=(8, 6))
-plt.scatter(y_test, y_pred, color='blue', label='Predicted vs Actual')
+plt.scatter(y_test, y_pred, color='blue', alpha=0.5, label='Predicted vs Actual')
 plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', label='Perfect Prediction')
 plt.xlabel('Actual Duration (Days)')
 plt.ylabel('Predicted Duration (Days)')
@@ -173,7 +201,7 @@ plt.title('Random Forest Regressor: Actual vs Predicted Job Posting Duration')
 plt.legend()
 plt.grid(True)
 plt.savefig('actual_vs_predicted_duration.png')
-
+plt.show()
 ```
 
 # Results
