@@ -19,6 +19,7 @@ format:
 {{< include introduction.qmd >}}
 {{< include data_analysis.qmd >}}
 {{< include eda_updation.qmd >}}
+{{< include skill_gap_analysis.qmd >}}
 {{< include ml_methods.qmd >}}
 {{< include nlp_methods.qmd >}}
 {{< include citation.qmd >}}
