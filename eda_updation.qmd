@@ -1,15 +1,91 @@
+---
+title: "Exploratory Data Analysis"
+subtitle: "Uncovering Patterns in the Job Market Dataset"
+author:
+  - name: Group 10
+    affiliations:
+      - id: bu
+        name: Boston University
+        city: Boston
+        state: MA
+format: 
+  html:
+    toc: true
+    number-sections: true
+    df-print: paged
+---
+
+# Introduction
+
+This EDA explores key characteristics of the job postings dataset, including salary distribution, industry representation, geographic trends, and temporal patterns. The analysis provides insights that guide downstream tasks such as skill gap analysis, clustering, and prediction.
+
+# Dataset Overview
+
 ```{python}
-import plotly.express as px
+import pandas as pd
 
-# Top 10 Skills
-top_skills = df['SKILLS'].str.split(',').explode().value_counts().head(10)
+df = pd.read_csv('region_analysis/lightcast_job_postings.csv')
+df.info()
+df.head()
+``` 
 
-fig = px.bar(
-    x=top_skills.values,
-    y=top_skills.index,
-    orientation='h',
-    labels={'x': 'Count', 'y': 'Skill'},
-    title='Top 10 Most In-Demand Skills'
-)
-fig.update_layout(yaxis=dict(autorange="reversed"))
-fig.show()
+# Handling Missing Data
+```{python}
+df.isnull().mean().sort_values(ascending=False).head(10)
+```
+
+# Salary Distribution
+```{python}
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df['SALARY'] = pd.to_numeric(df['SALARY'], errors='coerce')
+plt.figure(figsize=(10,6))
+sns.histplot(df['SALARY'], bins=50, kde=True)
+plt.title("Salary Distribution")
+plt.xlabel("Salary ($)")
+plt.ylabel("Frequency")
+plt.xlim(0, 300000)
+plt.grid(True, alpha=0.3)
+plt.tight_layout()
+plt.show()
+```
+
+# Top 10 Job Titles
+```{python}
+df['TITLE_NAME'].value_counts().head(10)
+```
+
+# Top 10 Industries
+```{python}
+df['NAICS_2022_2_NAME'].value_counts().head(10)
+```
+# Job Postings by State
+```{python}
+state_counts = df['STATE_NAME'].value_counts().head(15)
+state_counts.plot(kind='barh', figsize=(10,6), color='steelblue')
+plt.title("Top 15 States by Job Postings")
+plt.xlabel("Number of Postings")
+plt.gca().invert_yaxis()
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.tight_layout()
+plt.show()
+``` 
+
+# Posting Trends Over Time
+```{python}
+df['POSTED'] = pd.to_datetime(df['POSTED'], errors='coerce')
+df['POSTED'].dt.to_period('M').value_counts().sort_index().plot(kind='line', figsize=(12,6))
+plt.title("Job Postings Over Time")
+plt.ylabel("Number of Postings")
+plt.xlabel("Month")
+plt.grid(True, alpha=0.5)
+plt.tight_layout()
+plt.show()
+```
+
+```{python}
+print(df.columns.tolist())
+```
+
+

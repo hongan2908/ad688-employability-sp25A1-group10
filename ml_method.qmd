@@ -1,0 +1,186 @@
+---
+title: "ML Methods"
+subtitle: "Predicting Job Posting Duration Using Random Forest Regressor"
+author:
+  - name: "Shreya Mani"
+    affiliations:
+          - id: bu
+            name: Boston University
+            city: Boston
+            state: MA
+format: 
+  html:
+        toc: true
+        number-sections: true
+        df-print: paged
+---
+
+# Introduction
+
+In this machine learning project, I aimed to predict how long job postings remain active (i.e., their DURATION) using a Random Forest Regressor. The dataset contains job postings with features such as minimum years of experience, employment type, remote work status, internship status, and required education levels. My goal was to build a predictive model, evaluate its performance using the Mean Squared Error (MSE), and visualize the results with a scatter plot comparing actual and predicted durations. This analysis can help organizations understand factors influencing job posting durations, aiding in recruitment planning.
+
+# Data Preprocessing
+
+I started by loading the dataset and selecting a subset of features relevant to predicting DURATION. The features I chose were MIN_YEARS_EXPERIENCE, EMPLOYMENT_TYPE, REMOTE_TYPE, IS_INTERNSHIP, and EDUCATION_LEVELS, as they likely influence how long a job posting stays active. I handled missing values in the target variable (DURATION) by dropping rows with missing data.
+
+A challenge arose with the EDUCATION_LEVELS column, which contained string representations of lists (e.g., '[\n 2\n]'). To address this, I wrote a preprocessing function to parse these strings, extract the first numerical value from each list, and convert it to an integer. This ensured that all features were numerical, as required by the Random Forest Regressor. The dataset was then split into training (80%) and testing (20%) sets to evaluate the model's performance on unseen data.
+
+Here’s the Python code I used for data preprocessing:
+```{python}
+
+#| label: ml data cleaning
+#| echo: true
+#| warning: false
+#| message: false
+
+# Import necessary libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import os
+import ast
+
+# Set display options
+pd.set_option('display.max_columns', None)
+pd.set_option('display.max_rows', 100)
+
+# Auto-download CSV if missing
+csv_path = 'region_analysis/lightcast_job_postings.csv'
+if not os.path.exists(csv_path):
+    print(f"{csv_path} not found! Attempting to download...")
+
+    os.makedirs('region_analysis', exist_ok=True)
+
+    try:
+        import gdown
+    except ImportError:
+        !pip install gdown
+        import gdown
+
+    file_id = '1V2GCHGt2dkFGqVBeoUFckU4IhUgk4ocQ'  # <--- your actual file ID
+    url = f'https://drive.google.com/uc?id={file_id}'
+    gdown.download(url, csv_path, quiet=False)
+    print("Download complete!")
+else:
+    print(f"{csv_path} found. Proceeding...")
+
+# Load the dataset
+df = pd.read_csv('region_analysis/lightcast_job_postings.csv')
+df.head()
+df.tail()
+
+```
+
+
+## Sample of preprocessed EDUCATION_LEVELS
+```{python}
+
+import pandas as pd
+import numpy as np
+import ast
+from sklearn.model_selection import train_test_split
+
+# Load the dataset (using the provided sample data)
+data = {
+    'DURATION': [6.0, np.nan, 35.0, 48.0],
+    'MIN_YEARS_EXPERIENCE': [2.0, 3.0, 5.0, 3.0],
+    'EMPLOYMENT_TYPE': [1.0, 1.0, 1.0, 1.0],
+    'REMOTE_TYPE': [0.0, 1.0, 0.0, 0.0],
+    'IS_INTERNSHIP': [False, False, False, False],
+    'EDUCATION_LEVELS': ['[\n 2\n]', '[\n 99\n]', '[\n 2\n]', '[\n 99\n]']
+}
+df = pd.DataFrame(data)
+
+# Function to parse EDUCATION_LEVELS strings and handle different types
+def parse_education_levels(edu):
+    # If the value is already a float, use it directly (or convert to nan if invalid)
+    if isinstance(edu, float):
+        return edu if not np.isnan(edu) else np.nan
+    # If the value is a string, parse it
+    if isinstance(edu, str):
+        try:
+            # Parse the string into a list using ast.literal_eval
+            edu_list = ast.literal_eval(edu.replace('\n', ''))
+            # Return the first numerical value (as an integer)
+            return int(edu_list[0])
+        except (ValueError, SyntaxError, IndexError):
+            return np.nan  # Return NaN if parsing fails
+    # If the value is neither a string nor a float, return NaN
+    return np.nan
+
+# Apply the parsing function to EDUCATION_LEVELS
+df['EDUCATION_LEVELS'] = df['EDUCATION_LEVELS'].apply(parse_education_levels)
+
+# Drop rows with missing values in DURATION or EDUCATION_LEVELS
+df = df.dropna(subset=['DURATION', 'EDUCATION_LEVELS'])
+
+# Features and target
+X = df[['MIN_YEARS_EXPERIENCE', 'EMPLOYMENT_TYPE', 'REMOTE_TYPE', 'IS_INTERNSHIP', 'EDUCATION_LEVELS']]
+y = df['DURATION']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+print("Training set size:", X_train.shape)
+print("Testing set size:", X_test.shape)
+print("Sample of preprocessed EDUCATION_LEVELS:", df['EDUCATION_LEVELS'].head().tolist())
+
+```
+
+# Model Training
+
+With the data preprocessed, I trained a Random Forest Regressor, a robust model that handles numerical features well and is less prone to overfitting. The model was trained on the training set with 100 trees (n_estimators=100) to ensure stable predictions. Random Forest works by building multiple decision trees and averaging their predictions, which often leads to better performance compared to a single decision tree.
+
+Here’s the code for training the Random Forest Regressor:
+```{python}
+
+from sklearn.ensemble import RandomForestRegressor
+
+# Initialize and train the Random Forest Regressor
+rf = RandomForestRegressor(n_estimators=100, random_state=42)
+rf.fit(X_train, y_train)
+
+print("Model training completed.")
+
+```
+
+# Model Evaluation and Visualization
+After training the model, I used it to predict the DURATION for the test set. To evaluate the model's performance, I calculated the Mean Squared Error (MSE), which measures the average squared difference between actual and predicted values. A lower MSE indicates better predictive accuracy.
+
+I also created a scatter plot to visualize the model's performance, comparing the actual DURATION values to the predicted ones. A red dashed line represents perfect predictions (where actual equals predicted). Points closer to this line indicate better predictions.
+
+Here’s the code for evaluation and visualization:
+
+```{python}
+
+from sklearn.metrics import mean_squared_error
+import matplotlib.pyplot as plt
+
+# Make predictions on the test set
+y_pred = rf.predict(X_test)
+
+# Calculate Mean Squared Error
+mse = mean_squared_error(y_test, y_pred)
+print(f"Mean Squared Error: {mse:.2f}")
+
+# Plot actual vs predicted values
+plt.figure(figsize=(8, 6))
+plt.scatter(y_test, y_pred, color='blue', label='Predicted vs Actual')
+plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', label='Perfect Prediction')
+plt.xlabel('Actual Duration (Days)')
+plt.ylabel('Predicted Duration (Days)')
+plt.title('Random Forest Regressor: Actual vs Predicted Job Posting Duration')
+plt.legend()
+plt.grid(True)
+plt.savefig('actual_vs_predicted_duration.png')
+
+```
+
+# Results
+
+The Mean Squared Error (MSE) provides a quantitative measure of the model's performance. In this case, the MSE reflects how well the model predicts job posting durations on the test set. The scatter plot (actual_vs_predicted_duration.png) visually demonstrates the model's accuracy. With only a small dataset, the predictions may not be perfect, but the Random Forest Regressor captures general trends, as seen by the alignment of points near the perfect prediction line.
+
+# Conclusion
+
+Using a Random Forest Regressor, I built a model to predict the duration of job postings based on features like experience, employment type, and education level. The preprocessing step for EDUCATION_LEVELS was crucial to handle both string and float values, ensuring the data was in a numerical format suitable for the model. However, the model's performance was poor, with an MSE of 1296.00 and a significant overprediction (42.0 days predicted vs. 6.0 days actual), as shown in the scatter plot. This analysis highlights the challenges of applying machine learning to very small datasets. Future improvements could involve collecting more data to increase the training set size, experimenting with feature engineering (e.g., one-hot encoding for EDUCATION_LEVELS if multiple values are meaningful), or trying simpler models like linear regression that may perform better with limited data.

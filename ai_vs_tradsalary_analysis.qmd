@@ -13,9 +13,6 @@ df = pd.read_csv('region_analysis/lightcast_job_postings.csv')
 df['SALARY'] = pd.to_numeric(df['SALARY'], errors='coerce')
 df = df.dropna(subset=['SALARY'])
 
-geo_stats = df.groupby(['STATE_NAME', 'Career_Type'])['SALARY'].median().reset_index()
-geo_stats.rename(columns={'SALARY': 'Median_Salary'}, inplace=True)
-
 # Tag AI vs Non-AI jobs
 def tag_ai(row):
     title = str(row['TITLE_NAME']).lower()
@@ -147,27 +144,11 @@ plt.show()
 ```
 
 
+## Urban vs Rural States – Median AI Salary Comparison
 
-```{python}
+This chart compares the median salaries of AI careers in selected **urban** (California, New York, Massachusetts) and **rural** (Arkansas, Montana, Nebraska) states. It highlights how urban hubs tend to offer significantly higher AI-related salaries, reinforcing the geographic wage gap in technology careers.
 
-
-urban_states = ['California', 'New York', 'Massachusetts']
-rural_states = ['Arkansas', 'Montana', 'Nebraska']
-
-urban_vs_rural = ai_summary[
-    ai_summary['State'].isin(urban_states + rural_states)
-].sort_values(by='Median Salary ($)', ascending=False)
-
-plt.figure(figsize=(10, 6))
-plt.bar(urban_vs_rural['State'], urban_vs_rural['Median Salary ($)'], color='darkorange')
-plt.xlabel("State")
-plt.ylabel("Median Salary ($)")
-plt.title("Median AI Salary: Urban vs Rural States")
-plt.tight_layout()
-plt.savefig("urban_vs_rural_ai_salaries.png")
-plt.show()
-
-```
+![](figures/urban_vs_rural_ai_salaries.png)
 
 ```{python}
 # Heatmap

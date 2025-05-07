@@ -15,7 +15,6 @@ format:
     df-print: paged
 ---
 
-
 # Skill Gap Analysis
 
 
@@ -248,7 +247,7 @@ The skill gap analysis clearly highlights the team’s current strengths and opp
 
 By following the improvement plan and encouraging structured learning, the team will not only close existing gaps but also align with modern IT and data industry expectations. This proactive approach will make the team more versatile, industry-relevant, and ready for advanced career opportunities.
 
-
+---
 
 
 
