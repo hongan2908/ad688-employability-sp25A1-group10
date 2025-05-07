@@ -9,6 +9,8 @@ website:
         text: "Research Rationale"
       - href: introduction.qmd
         text: "Introduction"
+      - href: ai_vs_tradsalary_analysis.qmd
+        text: "AI vs. Traditional Salary Analysis"
       - href: salaries-differ-across-ai-vs-non-ai-careers.qmd
         text: "Salaries Differ Across AI vs. Non-AI Careers"
       - href: data_analysis.qmd

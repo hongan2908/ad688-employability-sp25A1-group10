@@ -1,7 +1,21 @@
+<!--
 ---
-title: Urban vs Rural States
-jupyter: python3
+title: "AI vs Traditional Salary Analysis"
+subtitle: "Salary & Compensation Trends - Job Market Analysis 2024"
+author:
+  - name: Group 10
+    affiliations:
+      - id: bu
+        name: Boston University
+        city: Boston
+        state: MA
+format: 
+  html:
+    toc: true
+    number-sections: true
+    df-print: paged
 ---
+-->
 
 ```{python}
 import pandas as pd
@@ -148,7 +162,7 @@ plt.show()
 
 This chart compares the median salaries of AI careers in selected **urban** (California, New York, Massachusetts) and **rural** (Arkansas, Montana, Nebraska) states. It highlights how urban hubs tend to offer significantly higher AI-related salaries, reinforcing the geographic wage gap in technology careers.
 
-![](figures/urban_vs_rural_ai_salaries.png)
+![](Data/urban_vs_rural_ai_salaries.png)
 
 ```{python}
 # Heatmap

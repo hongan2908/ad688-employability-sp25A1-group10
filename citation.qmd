@@ -1,6 +1,22 @@
+<!--
 ---
 title: "References"
+subtitle: "Salary & Compensation Trends - Job Market Analysis 2024"
+author:
+  - name: Group 10
+    affiliations:
+      - id: bu
+        name: Boston University
+        city: Boston
+        state: MA
+format: 
+  html:
+    toc: true
+    number-sections: true
+    df-print: paged
 ---
+-->
+
 
 ## Predictive Salary Modelling: Leveraging Data Science Skills and Machine Learning for Accurate Forecasting
 Haseeb, M. A., Viswanathan, R., Iyer, K., Hota, A. R., & Prathaban, B. P. (2024). Predictive salary modelling: Leveraging data science skills and machine learning for accurate forecasting. 2024 9th International Conference on Communication and Electronics Systems (ICCES), 1011–1019. https://ieeexplore.ieee.org/document/10859447

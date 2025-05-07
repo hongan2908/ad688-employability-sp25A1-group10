@@ -1,3 +1,4 @@
+<!--
 ---
 title: "Introduction"
 subtitle: "Salary & Compensation Trends - Job Market Analysis 2024"
@@ -16,6 +17,7 @@ format:
     number-sections: true
     df-print: paged
 ---
+-->
 
 # Introduction
 
