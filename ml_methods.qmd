@@ -14,7 +14,6 @@ format:
         number-sections: true
         df-print: paged
 ---
-
 # Introduction
 
 In this machine learning project, I aimed to predict how long job postings remain active (i.e., their DURATION) using a Random Forest Regressor. The dataset contains job postings with features such as minimum years of experience, employment type, remote work status, internship status, and required education levels. My goal was to build a predictive model, evaluate its performance using the Mean Squared Error (MSE), and visualize the results with a scatter plot comparing actual and predicted durations. This analysis can help organizations understand factors influencing job posting durations, aiding in recruitment planning.
