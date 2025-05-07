@@ -22,9 +22,9 @@ In this machine learning project, I aimed to predict how long job postings remai
 
 I started by loading the dataset and selecting a subset of features relevant to predicting DURATION. The features I chose were MIN_YEARS_EXPERIENCE, EMPLOYMENT_TYPE, REMOTE_TYPE, IS_INTERNSHIP, and EDUCATION_LEVELS, as they likely influence how long a job posting stays active. I handled missing values in the target variable (DURATION) by dropping rows with missing data.
 
-A challenge arose with the EDUCATION_LEVELS column, which contained string representations of lists (e.g., '[\n 2\n]'). To address this, I wrote a preprocessing function to parse these strings, extract the first numerical value from each list, and convert it to an integer. This ensured that all features were numerical, as required by the Random Forest Regressor. The dataset was then split into training (80%) and testing (20%) sets to evaluate the model's performance on unseen data.
+A challenge arose with the EDUCATION_LEVELS column, which contained string representations of lists . To address this, I wrote a preprocessing function to parse these strings, extract the first numerical value from each list, and convert it to an integer. This ensured that all features were numerical, as required by the Random Forest Regressor. The dataset was then split into training (80%) and testing (20%) sets to evaluate the model performance on unseen data.
 
-Here’s the Python code I used for data preprocessing:
+Here the Python code I used for data preprocessing:
 ```{python}
 
 #| label: ml data cleaning
@@ -131,7 +131,7 @@ print("Sample of preprocessed EDUCATION_LEVELS:", df['EDUCATION_LEVELS'].head().
 
 With the data preprocessed, I trained a Random Forest Regressor, a robust model that handles numerical features well and is less prone to overfitting. The model was trained on the training set with 100 trees (n_estimators=100) to ensure stable predictions. Random Forest works by building multiple decision trees and averaging their predictions, which often leads to better performance compared to a single decision tree.
 
-Here’s the code for training the Random Forest Regressor:
+Here is the code for training the Random Forest Regressor:
 ```{python}
 
 from sklearn.ensemble import RandomForestRegressor
@@ -145,11 +145,11 @@ print("Model training completed.")
 ```
 
 # Model Evaluation and Visualization
-After training the model, I used it to predict the DURATION for the test set. To evaluate the model's performance, I calculated the Mean Squared Error (MSE), which measures the average squared difference between actual and predicted values. A lower MSE indicates better predictive accuracy.
+After training the model, I used it to predict the DURATION for the test set. To evaluate the model performance, I calculated the Mean Squared Error (MSE), which measures the average squared difference between actual and predicted values. A lower MSE indicates better predictive accuracy.
 
-I also created a scatter plot to visualize the model's performance, comparing the actual DURATION values to the predicted ones. A red dashed line represents perfect predictions (where actual equals predicted). Points closer to this line indicate better predictions.
+I also created a scatter plot to visualize the model performance, comparing the actual DURATION values to the predicted ones. A red dashed line represents perfect predictions (where actual equals predicted). Points closer to this line indicate better predictions.
 
-Here’s the code for evaluation and visualization:
+Here is the code for evaluation and visualization:
 
 ```{python}
 
@@ -178,8 +178,8 @@ plt.savefig('actual_vs_predicted_duration.png')
 
 # Results
 
-The Mean Squared Error (MSE) provides a quantitative measure of the model's performance. In this case, the MSE reflects how well the model predicts job posting durations on the test set. The scatter plot (actual_vs_predicted_duration.png) visually demonstrates the model's accuracy. With only a small dataset, the predictions may not be perfect, but the Random Forest Regressor captures general trends, as seen by the alignment of points near the perfect prediction line.
+The Mean Squared Error (MSE) provides a quantitative measure of the model performance. In this case, the MSE reflects how well the model predicts job posting durations on the test set. The scatter plot (actual_vs_predicted_duration.png) visually demonstrates the model accuracy. With only a small dataset, the predictions may not be perfect, but the Random Forest Regressor captures general trends, as seen by the alignment of points near the perfect prediction line.
 
 # Conclusion
 
-Using a Random Forest Regressor, I built a model to predict the duration of job postings based on features like experience, employment type, and education level. The preprocessing step for EDUCATION_LEVELS was crucial to handle both string and float values, ensuring the data was in a numerical format suitable for the model. However, the model's performance was poor, with an MSE of 1296.00 and a significant overprediction (42.0 days predicted vs. 6.0 days actual), as shown in the scatter plot. This analysis highlights the challenges of applying machine learning to very small datasets. Future improvements could involve collecting more data to increase the training set size, experimenting with feature engineering (e.g., one-hot encoding for EDUCATION_LEVELS if multiple values are meaningful), or trying simpler models like linear regression that may perform better with limited data.
+Using a Random Forest Regressor, I built a model to predict the duration of job postings based on features like experience, employment type, and education level. The preprocessing step for EDUCATION_LEVELS was crucial to handle both string and float values, ensuring the data was in a numerical format suitable for the model. However, the model performance was poor, with an MSE of 1296.00 and a significant overprediction (42.0 days predicted vs. 6.0 days actual), as shown in the scatter plot. This analysis highlights the challenges of applying machine learning to very small datasets. Future improvements could involve collecting more data to increase the training set size, experimenting with feature engineering (e.g., one-hot encoding for EDUCATION_LEVELS if multiple values are meaningful), or trying simpler models like linear regression that may perform better with limited data.
