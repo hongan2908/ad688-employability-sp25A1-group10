@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shreya Mani">
+
+<title>ML Methods – Job Market Analysis 2024</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ddd961a2510921635943dfbbd19534c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Job Market Analysis 2024</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Research Rationale</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./introduction.html"> 
+<span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./salaries-differ-across-ai-vs-non-ai-careers.html"> 
+<span class="menu-text">Salaries Differ Across AI vs.&nbsp;Non-AI Careers</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./data_analysis.html"> 
+<span class="menu-text">Data Cleaning &amp; Exploration</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./eda_updation.html"> 
+<span class="menu-text">Exploratory Data Analysis</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./skill_gap_analysis.html"> 
+<span class="menu-text">Skill Gap Analysis</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ml_method.qmd"> 
+<span class="menu-text">ML Methods</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./nlp_method.html"> 
+<span class="menu-text">NLP Methods</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./career_plan.html"> 
+<span class="menu-text">Career Plan</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./citation.html"> 
+<span class="menu-text">Citations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./final_report.html"> 
+<span class="menu-text">Final Report</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#data-preprocessing" id="toc-data-preprocessing" class="nav-link" data-scroll-target="#data-preprocessing"><span class="header-section-number">2</span> Data Preprocessing</a>
+  <ul class="collapse">
+  <li><a href="#sample-of-preprocessed-education_levels" id="toc-sample-of-preprocessed-education_levels" class="nav-link" data-scroll-target="#sample-of-preprocessed-education_levels"><span class="header-section-number">2.1</span> Sample of preprocessed EDUCATION_LEVELS</a></li>
+  </ul></li>
+  <li><a href="#model-training" id="toc-model-training" class="nav-link" data-scroll-target="#model-training"><span class="header-section-number">3</span> Model Training</a></li>
+  <li><a href="#model-evaluation-and-visualization" id="toc-model-evaluation-and-visualization" class="nav-link" data-scroll-target="#model-evaluation-and-visualization"><span class="header-section-number">4</span> Model Evaluation and Visualization</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">5</span> Results</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">6</span> Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">ML Methods</h1>
+<p class="subtitle lead">Predicting Job Posting Duration Using Random Forest Regressor</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Shreya Mani </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Boston University
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>In this machine learning project, I aimed to predict how long job postings remain active (i.e., their DURATION) using a Random Forest Regressor. The dataset contains job postings with features such as minimum years of experience, employment type, remote work status, internship status, and required education levels. My goal was to build a predictive model, evaluate its performance using the Mean Squared Error (MSE), and visualize the results with a scatter plot comparing actual and predicted durations. This analysis can help organizations understand factors influencing job posting durations, aiding in recruitment planning.</p>
+</section>
+<section id="data-preprocessing" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Data Preprocessing</h1>
+<p>I started by loading the dataset and selecting a subset of features relevant to predicting DURATION. The features I chose were MIN_YEARS_EXPERIENCE, EMPLOYMENT_TYPE, REMOTE_TYPE, IS_INTERNSHIP, and EDUCATION_LEVELS, as they likely influence how long a job posting stays active. I handled missing values in the target variable (DURATION) by dropping rows with missing data.</p>
+<p>A challenge arose with the EDUCATION_LEVELS column, which contained string representations of lists (e.g., ‘[]’). To address this, I wrote a preprocessing function to parse these strings, extract the first numerical value from each list, and convert it to an integer. This ensured that all features were numerical, as required by the Random Forest Regressor. The dataset was then split into training (80%) and testing (20%) sets to evaluate the model’s performance on unseen data.</p>
+<p>Here’s the Python code I used for data preprocessing:</p>
+<p>::: {#cell-ml data cleaning .cell message=‘false’ execution_count=1}</p>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import necessary libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ast</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Set display options</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_columns'</span>, <span class="va">None</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_rows'</span>, <span class="dv">100</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Auto-download CSV if missing</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>csv_path <span class="op">=</span> <span class="st">'region_analysis/lightcast_job_postings.csv'</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> os.path.exists(csv_path):</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>csv_path<span class="sc">}</span><span class="ss"> not found! Attempting to download..."</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    os.makedirs(<span class="st">'region_analysis'</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="im">import</span> gdown</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ImportError</span>:</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="op">!</span>pip install gdown</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="im">import</span> gdown</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    file_id <span class="op">=</span> <span class="st">'1V2GCHGt2dkFGqVBeoUFckU4IhUgk4ocQ'</span>  <span class="co"># &lt;--- your actual file ID</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    url <span class="op">=</span> <span class="ss">f'https://drive.google.com/uc?id=</span><span class="sc">{</span>file_id<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    gdown.download(url, csv_path, quiet<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Download complete!"</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>csv_path<span class="sc">}</span><span class="ss"> found. Proceeding..."</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'region_analysis/lightcast_job_postings.csv'</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>df.head()</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>df.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>region_analysis/lightcast_job_postings.csv found. Proceeding...</code></pre>
+</div>
+<div id="ml-data-cleaning" class="cell-output cell-output-display" data-execution_count="1">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ID</th>
+<th data-quarto-table-cell-role="th">LAST_UPDATED_DATE</th>
+<th data-quarto-table-cell-role="th">LAST_UPDATED_TIMESTAMP</th>
+<th data-quarto-table-cell-role="th">DUPLICATES</th>
+<th data-quarto-table-cell-role="th">POSTED</th>
+<th data-quarto-table-cell-role="th">EXPIRED</th>
+<th data-quarto-table-cell-role="th">DURATION</th>
+<th data-quarto-table-cell-role="th">SOURCE_TYPES</th>
+<th data-quarto-table-cell-role="th">SOURCES</th>
+<th data-quarto-table-cell-role="th">URL</th>
+<th data-quarto-table-cell-role="th">ACTIVE_URLS</th>
+<th data-quarto-table-cell-role="th">ACTIVE_SOURCES_INFO</th>
+<th data-quarto-table-cell-role="th">TITLE_RAW</th>
+<th data-quarto-table-cell-role="th">BODY</th>
+<th data-quarto-table-cell-role="th">MODELED_EXPIRED</th>
+<th data-quarto-table-cell-role="th">MODELED_DURATION</th>
+<th data-quarto-table-cell-role="th">COMPANY</th>
+<th data-quarto-table-cell-role="th">COMPANY_NAME</th>
+<th data-quarto-table-cell-role="th">COMPANY_RAW</th>
+<th data-quarto-table-cell-role="th">COMPANY_IS_STAFFING</th>
+<th data-quarto-table-cell-role="th">EDUCATION_LEVELS</th>
+<th data-quarto-table-cell-role="th">EDUCATION_LEVELS_NAME</th>
+<th data-quarto-table-cell-role="th">MIN_EDULEVELS</th>
+<th data-quarto-table-cell-role="th">MIN_EDULEVELS_NAME</th>
+<th data-quarto-table-cell-role="th">MAX_EDULEVELS</th>
+<th data-quarto-table-cell-role="th">MAX_EDULEVELS_NAME</th>
+<th data-quarto-table-cell-role="th">EMPLOYMENT_TYPE</th>
+<th data-quarto-table-cell-role="th">EMPLOYMENT_TYPE_NAME</th>
+<th data-quarto-table-cell-role="th">MIN_YEARS_EXPERIENCE</th>
+<th data-quarto-table-cell-role="th">MAX_YEARS_EXPERIENCE</th>
+<th data-quarto-table-cell-role="th">IS_INTERNSHIP</th>
+<th data-quarto-table-cell-role="th">SALARY</th>
+<th data-quarto-table-cell-role="th">REMOTE_TYPE</th>
+<th data-quarto-table-cell-role="th">REMOTE_TYPE_NAME</th>
+<th data-quarto-table-cell-role="th">ORIGINAL_PAY_PERIOD</th>
+<th data-quarto-table-cell-role="th">SALARY_TO</th>
+<th data-quarto-table-cell-role="th">SALARY_FROM</th>
+<th data-quarto-table-cell-role="th">LOCATION</th>
+<th data-quarto-table-cell-role="th">CITY</th>
+<th data-quarto-table-cell-role="th">CITY_NAME</th>
+<th data-quarto-table-cell-role="th">COUNTY</th>
+<th data-quarto-table-cell-role="th">COUNTY_NAME</th>
+<th data-quarto-table-cell-role="th">MSA</th>
+<th data-quarto-table-cell-role="th">MSA_NAME</th>
+<th data-quarto-table-cell-role="th">STATE</th>
+<th data-quarto-table-cell-role="th">STATE_NAME</th>
+<th data-quarto-table-cell-role="th">COUNTY_OUTGOING</th>
+<th data-quarto-table-cell-role="th">COUNTY_NAME_OUTGOING</th>
+<th data-quarto-table-cell-role="th">COUNTY_INCOMING</th>
+<th data-quarto-table-cell-role="th">COUNTY_NAME_INCOMING</th>
+<th data-quarto-table-cell-role="th">MSA_OUTGOING</th>
+<th data-quarto-table-cell-role="th">MSA_NAME_OUTGOING</th>
+<th data-quarto-table-cell-role="th">MSA_INCOMING</th>
+<th data-quarto-table-cell-role="th">MSA_NAME_INCOMING</th>
+<th data-quarto-table-cell-role="th">NAICS2</th>
+<th data-quarto-table-cell-role="th">NAICS2_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS3</th>
+<th data-quarto-table-cell-role="th">NAICS3_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS4</th>
+<th data-quarto-table-cell-role="th">NAICS4_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS5</th>
+<th data-quarto-table-cell-role="th">NAICS5_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS6</th>
+<th data-quarto-table-cell-role="th">NAICS6_NAME</th>
+<th data-quarto-table-cell-role="th">TITLE</th>
+<th data-quarto-table-cell-role="th">TITLE_NAME</th>
+<th data-quarto-table-cell-role="th">TITLE_CLEAN</th>
+<th data-quarto-table-cell-role="th">SKILLS</th>
+<th data-quarto-table-cell-role="th">SKILLS_NAME</th>
+<th data-quarto-table-cell-role="th">SPECIALIZED_SKILLS</th>
+<th data-quarto-table-cell-role="th">SPECIALIZED_SKILLS_NAME</th>
+<th data-quarto-table-cell-role="th">CERTIFICATIONS</th>
+<th data-quarto-table-cell-role="th">CERTIFICATIONS_NAME</th>
+<th data-quarto-table-cell-role="th">COMMON_SKILLS</th>
+<th data-quarto-table-cell-role="th">COMMON_SKILLS_NAME</th>
+<th data-quarto-table-cell-role="th">SOFTWARE_SKILLS</th>
+<th data-quarto-table-cell-role="th">SOFTWARE_SKILLS_NAME</th>
+<th data-quarto-table-cell-role="th">ONET</th>
+<th data-quarto-table-cell-role="th">ONET_NAME</th>
+<th data-quarto-table-cell-role="th">ONET_2019</th>
+<th data-quarto-table-cell-role="th">ONET_2019_NAME</th>
+<th data-quarto-table-cell-role="th">CIP6</th>
+<th data-quarto-table-cell-role="th">CIP6_NAME</th>
+<th data-quarto-table-cell-role="th">CIP4</th>
+<th data-quarto-table-cell-role="th">CIP4_NAME</th>
+<th data-quarto-table-cell-role="th">CIP2</th>
+<th data-quarto-table-cell-role="th">CIP2_NAME</th>
+<th data-quarto-table-cell-role="th">SOC_2021_2</th>
+<th data-quarto-table-cell-role="th">SOC_2021_2_NAME</th>
+<th data-quarto-table-cell-role="th">SOC_2021_3</th>
+<th data-quarto-table-cell-role="th">SOC_2021_3_NAME</th>
+<th data-quarto-table-cell-role="th">SOC_2021_4</th>
+<th data-quarto-table-cell-role="th">SOC_2021_4_NAME</th>
+<th data-quarto-table-cell-role="th">SOC_2021_5</th>
+<th data-quarto-table-cell-role="th">SOC_2021_5_NAME</th>
+<th data-quarto-table-cell-role="th">LOT_CAREER_AREA</th>
+<th data-quarto-table-cell-role="th">LOT_CAREER_AREA_NAME</th>
+<th data-quarto-table-cell-role="th">LOT_OCCUPATION</th>
+<th data-quarto-table-cell-role="th">LOT_OCCUPATION_NAME</th>
+<th data-quarto-table-cell-role="th">LOT_SPECIALIZED_OCCUPATION</th>
+<th data-quarto-table-cell-role="th">LOT_SPECIALIZED_OCCUPATION_NAME</th>
+<th data-quarto-table-cell-role="th">LOT_OCCUPATION_GROUP</th>
+<th data-quarto-table-cell-role="th">LOT_OCCUPATION_GROUP_NAME</th>
+<th data-quarto-table-cell-role="th">LOT_V6_SPECIALIZED_OCCUPATION</th>
+<th data-quarto-table-cell-role="th">LOT_V6_SPECIALIZED_OCCUPATION_NAME</th>
+<th data-quarto-table-cell-role="th">LOT_V6_OCCUPATION</th>
+<th data-quarto-table-cell-role="th">LOT_V6_OCCUPATION_NAME</th>
+<th data-quarto-table-cell-role="th">LOT_V6_OCCUPATION_GROUP</th>
+<th data-quarto-table-cell-role="th">LOT_V6_OCCUPATION_GROUP_NAME</th>
+<th data-quarto-table-cell-role="th">LOT_V6_CAREER_AREA</th>
+<th data-quarto-table-cell-role="th">LOT_V6_CAREER_AREA_NAME</th>
+<th data-quarto-table-cell-role="th">SOC_2</th>
+<th data-quarto-table-cell-role="th">SOC_2_NAME</th>
+<th data-quarto-table-cell-role="th">SOC_3</th>
+<th data-quarto-table-cell-role="th">SOC_3_NAME</th>
+<th data-quarto-table-cell-role="th">SOC_4</th>
+<th data-quarto-table-cell-role="th">SOC_4_NAME</th>
+<th data-quarto-table-cell-role="th">SOC_5</th>
+<th data-quarto-table-cell-role="th">SOC_5_NAME</th>
+<th data-quarto-table-cell-role="th">LIGHTCAST_SECTORS</th>
+<th data-quarto-table-cell-role="th">LIGHTCAST_SECTORS_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_2</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_2_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_3</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_3_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_4</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_4_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_5</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_5_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_6</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_6_NAME</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">72493</td>
+<td>4c25b449c876d8e22d3e356f368cde5ab525cd03</td>
+<td>9/6/2024</td>
+<td>2024-09-06 20:32:57.352 Z</td>
+<td>0.0</td>
+<td>8/16/2024</td>
+<td>8/31/2024</td>
+<td>15.0</td>
+<td>[\n "Job Board"\n]</td>
+<td>[\n "dejobs.org"\n]</td>
+<td>[\n "https://dejobs.org/richmond-va/data-anal...</td>
+<td>[]</td>
+<td>NaN</td>
+<td>Data Analyst</td>
+<td>TEKsystems\n\n \n \n \n\n \n\n \nData Analyst\...</td>
+<td>8/31/2024</td>
+<td>15.0</td>
+<td>37110815.0</td>
+<td>TEKsystems</td>
+<td>TEKsystems</td>
+<td>False</td>
+<td>[\n 99\n]</td>
+<td>[\n "No Education Listed"\n]</td>
+<td>99.0</td>
+<td>No Education Listed</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1.0</td>
+<td>Full-time (&gt; 32 hours)</td>
+<td>3.0</td>
+<td>NaN</td>
+<td>False</td>
+<td>NaN</td>
+<td>0.0</td>
+<td>[None]</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>{\n "lat": 37.5407246,\n "lon": -77.4360481\n}</td>
+<td>UmljaG1vbmQsIFZB</td>
+<td>Richmond, VA</td>
+<td>51041.0</td>
+<td>Chesterfield, VA</td>
+<td>40060.0</td>
+<td>Richmond, VA</td>
+<td>51.0</td>
+<td>Virginia</td>
+<td>51041.0</td>
+<td>Chesterfield, VA</td>
+<td>51760.0</td>
+<td>Richmond City, VA</td>
+<td>40060.0</td>
+<td>Richmond, VA</td>
+<td>40060.0</td>
+<td>Richmond, VA</td>
+<td>54.0</td>
+<td>Professional, Scientific, and Technical Services</td>
+<td>541.0</td>
+<td>Professional, Scientific, and Technical Services</td>
+<td>5415.0</td>
+<td>Computer Systems Design and Related Services</td>
+<td>54151.0</td>
+<td>Computer Systems Design and Related Services</td>
+<td>541511.0</td>
+<td>Custom Computer Programming Services</td>
+<td>ET3037E0C947A02404</td>
+<td>Data Analysts</td>
+<td>data analyst</td>
+<td>[\n "KS1282N6NQMZ95M1HJ7L",\n "KS13USA80NE38...</td>
+<td>[\n "Scrum (Software Development)",\n "Power...</td>
+<td>[\n "KS1282N6NQMZ95M1HJ7L",\n "KS13USA80NE38...</td>
+<td>[\n "Scrum (Software Development)",\n "Power...</td>
+<td>[]</td>
+<td>[]</td>
+<td>[\n "KS1259D6L30YYG3XR3VL",\n "KS122556LMQ82...</td>
+<td>[\n "Interpersonal Communications",\n "Commu...</td>
+<td>[\n "KS13USA80NE38XJHA2TL",\n "KS125LS6N7WP4...</td>
+<td>[\n "Power BI",\n "Python (Programming Langu...</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>[\n "52.0101"\n]</td>
+<td>[\n "Business/Commerce, General"\n]</td>
+<td>[\n "52.01"\n]</td>
+<td>[\n "Business/Commerce, General"\n]</td>
+<td>[\n "52"\n]</td>
+<td>[\n "Business, Management, Marketing, and Rel...</td>
+<td>15-0000</td>
+<td>Computer and Mathematical Occupations</td>
+<td>15-2000</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>15-2051</td>
+<td>Data Scientists</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>231113.0</td>
+<td>Data / Data Mining Analyst</td>
+<td>23111310.0</td>
+<td>Data Analyst</td>
+<td>2311.0</td>
+<td>Data Analysis and Mathematics</td>
+<td>23111310.0</td>
+<td>Data Analyst</td>
+<td>231113.0</td>
+<td>Data / Data Mining Analyst</td>
+<td>2311.0</td>
+<td>Data Analysis and Mathematics</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>15-0000</td>
+<td>Computer and Mathematical Occupations</td>
+<td>15-2000</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>15-2051</td>
+<td>Data Scientists</td>
+<td>[\n 7\n]</td>
+<td>[\n "Artificial Intelligence"\n]</td>
+<td>54.0</td>
+<td>Professional, Scientific, and Technical Services</td>
+<td>541.0</td>
+<td>Professional, Scientific, and Technical Services</td>
+<td>5415.0</td>
+<td>Computer Systems Design and Related Services</td>
+<td>54151.0</td>
+<td>Computer Systems Design and Related Services</td>
+<td>541511.0</td>
+<td>Custom Computer Programming Services</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">72494</td>
+<td>241d30b5478c0b1715618e0cfac65d40f781c0d8</td>
+<td>10/21/2024</td>
+<td>2024-10-21 13:59:53.998 Z</td>
+<td>6.0</td>
+<td>8/16/2024</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>[\n "Company",\n "Job Board"\n]</td>
+<td>[\n "myworkdayjobs.com",\n "mass-veterans.jo...</td>
+<td>[\n "https://wk.wd3.myworkdayjobs.com/en-us/e...</td>
+<td>[\n "https://wk.wd3.myworkdayjobs.com/en-US/E...</td>
+<td>[\n {\n "source": "jobserve.com",\n "ty...</td>
+<td>Lead Enterprise Architect - SalesForce</td>
+<td>Lead Enterprise Architect - SalesForce \nLead ...</td>
+<td>9/13/2024</td>
+<td>28.0</td>
+<td>59335641.0</td>
+<td>Wolters Kluwer</td>
+<td>Wolters Kluwer N.V.</td>
+<td>False</td>
+<td>[\n 2\n]</td>
+<td>[\n "Bachelor's degree"\n]</td>
+<td>2.0</td>
+<td>Bachelor's degree</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1.0</td>
+<td>Full-time (&gt; 32 hours)</td>
+<td>10.0</td>
+<td>NaN</td>
+<td>False</td>
+<td>169275.0</td>
+<td>0.0</td>
+<td>[None]</td>
+<td>year</td>
+<td>197550.0</td>
+<td>141000.0</td>
+<td>{\n "lat": 42.3764852,\n "lon": -71.2356113\n}</td>
+<td>V2FsdGhhbSwgTUE=</td>
+<td>Waltham, MA</td>
+<td>25017.0</td>
+<td>Middlesex, MA</td>
+<td>14460.0</td>
+<td>Boston-Cambridge-Newton, MA-NH</td>
+<td>25.0</td>
+<td>Massachusetts</td>
+<td>25017.0</td>
+<td>Middlesex, MA</td>
+<td>25017.0</td>
+<td>Middlesex, MA</td>
+<td>14460.0</td>
+<td>Boston-Cambridge-Newton, MA-NH</td>
+<td>14460.0</td>
+<td>Boston-Cambridge-Newton, MA-NH</td>
+<td>51.0</td>
+<td>Information</td>
+<td>513.0</td>
+<td>Publishing Industries</td>
+<td>5131.0</td>
+<td>Newspaper, Periodical, Book, and Directory Pub...</td>
+<td>51313.0</td>
+<td>Book Publishers</td>
+<td>513130.0</td>
+<td>Book Publishers</td>
+<td>ETA6C910340E81639B</td>
+<td>Lead Enterprise Architects</td>
+<td>lead enterprise architect salesforce</td>
+<td>[\n "KS4407N6CMTCYT0NYSVM",\n "ESF6784E14B18...</td>
+<td>[\n "Salesforce",\n "Programming Languages",...</td>
+<td>[\n "KS4407N6CMTCYT0NYSVM",\n "ESF6784E14B18...</td>
+<td>[\n "Salesforce",\n "Programming Languages",...</td>
+<td>[]</td>
+<td>[]</td>
+<td>[\n "KS441VC75P5WHX8QL5SN",\n "ES20CECA4FF83...</td>
+<td>[\n "Visionary",\n "Influencing Skills",\n ...</td>
+<td>[\n "KS4407N6CMTCYT0NYSVM",\n "ESE9117F9A17C...</td>
+<td>[\n "Salesforce",\n "Salesforce Object Searc...</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>[\n "52.0201",\n "11.0701"\n]</td>
+<td>[\n "Business Administration and Management, ...</td>
+<td>[\n "52.02",\n "11.07"\n]</td>
+<td>[\n "Business Administration, Management and ...</td>
+<td>[\n "52",\n "11"\n]</td>
+<td>[\n "Business, Management, Marketing, and Rel...</td>
+<td>15-0000</td>
+<td>Computer and Mathematical Occupations</td>
+<td>15-2000</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>15-2051</td>
+<td>Data Scientists</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>231510.0</td>
+<td>Computer Systems Engineer / Architect</td>
+<td>23151012.0</td>
+<td>Enterprise Architect</td>
+<td>2315.0</td>
+<td>Network and Systems Engineering</td>
+<td>23151012.0</td>
+<td>Enterprise Architect</td>
+<td>231510.0</td>
+<td>Computer Systems Engineer / Architect</td>
+<td>2315.0</td>
+<td>Network and Systems Engineering</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>15-0000</td>
+<td>Computer and Mathematical Occupations</td>
+<td>15-2000</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>15-2051</td>
+<td>Data Scientists</td>
+<td>[\n 5\n]</td>
+<td>[\n "Cybersecurity"\n]</td>
+<td>51.0</td>
+<td>Information</td>
+<td>513.0</td>
+<td>Publishing Industries</td>
+<td>5131.0</td>
+<td>Newspaper, Periodical, Book, and Directory Pub...</td>
+<td>51313.0</td>
+<td>Book Publishers</td>
+<td>513130.0</td>
+<td>Book Publishers</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">72495</td>
+<td>3a0bc8e830dfb4ea44f721fb3139f41f398bb66d</td>
+<td>10/16/2024</td>
+<td>2024-10-16 13:45:59.907 Z</td>
+<td>4.0</td>
+<td>8/16/2024</td>
+<td>9/22/2024</td>
+<td>37.0</td>
+<td>[\n "Job Board",\n "Company"\n]</td>
+<td>[\n "disabledperson.com",\n "dejobs.org"\n]</td>
+<td>[\n "https://disabilities.dejobs.org/lansing-...</td>
+<td>[]</td>
+<td>NaN</td>
+<td>Data Analyst</td>
+<td>Volt\n\n \n \n \n\n \n\n \nData Analyst\n in\n...</td>
+<td>8/31/2024</td>
+<td>15.0</td>
+<td>36997534.0</td>
+<td>Volt</td>
+<td>Volt</td>
+<td>True</td>
+<td>[\n 2\n]</td>
+<td>[\n "Bachelor's degree"\n]</td>
+<td>2.0</td>
+<td>Bachelor's degree</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1.0</td>
+<td>Full-time (&gt; 32 hours)</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>False</td>
+<td>72800.0</td>
+<td>3.0</td>
+<td>Hybrid Remote</td>
+<td>hour</td>
+<td>83200.0</td>
+<td>62400.0</td>
+<td>{\n "lat": 42.732535,\n "lon": -84.5555347\n}</td>
+<td>TGFuc2luZywgTUk=</td>
+<td>Lansing, MI</td>
+<td>26065.0</td>
+<td>Ingham, MI</td>
+<td>29620.0</td>
+<td>Lansing-East Lansing, MI</td>
+<td>26.0</td>
+<td>Michigan</td>
+<td>26065.0</td>
+<td>Ingham, MI</td>
+<td>26065.0</td>
+<td>Ingham, MI</td>
+<td>29620.0</td>
+<td>Lansing-East Lansing, MI</td>
+<td>29620.0</td>
+<td>Lansing-East Lansing, MI</td>
+<td>56.0</td>
+<td>Administrative and Support and Waste Managemen...</td>
+<td>561.0</td>
+<td>Administrative and Support Services</td>
+<td>5613.0</td>
+<td>Employment Services</td>
+<td>56131.0</td>
+<td>Employment Placement Agencies and Executive Se...</td>
+<td>561311.0</td>
+<td>Employment Placement Agencies</td>
+<td>ET3037E0C947A02404</td>
+<td>Data Analysts</td>
+<td>data analyst</td>
+<td>[\n "KSQPGV2XZO8UMNCC49LK",\n "ES899BA440FA3...</td>
+<td>[\n "Detail Oriented",\n "Workflow Managemen...</td>
+<td>[\n "ES899BA440FA3441F22A",\n "KS1203K6FQ749...</td>
+<td>[\n "Workflow Management",\n "Acceptance Tes...</td>
+<td>[]</td>
+<td>[]</td>
+<td>[\n "KSQPGV2XZO8UMNCC49LK",\n "KS1200H6XYN1C...</td>
+<td>[\n "Detail Oriented",\n "Microsoft Excel",\...</td>
+<td>[\n "KS1200H6XYN1CR0G5NZ0",\n "KS1218L60PDVZ...</td>
+<td>[\n "Microsoft Excel",\n "Dashboard",\n "Ta...</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>[\n "30.7101",\n "27.0501",\n "11.0701"\n]</td>
+<td>[\n "Data Analytics, General",\n "Statistics...</td>
+<td>[\n "30.71",\n "27.05",\n "11.07"\n]</td>
+<td>[\n "Data Analytics",\n "Statistics",\n "Co...</td>
+<td>[\n "30",\n "27",\n "11"\n]</td>
+<td>[\n "Multi/Interdisciplinary Studies",\n "Ma...</td>
+<td>15-0000</td>
+<td>Computer and Mathematical Occupations</td>
+<td>15-2000</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>15-2051</td>
+<td>Data Scientists</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>231113.0</td>
+<td>Data / Data Mining Analyst</td>
+<td>23111310.0</td>
+<td>Data Analyst</td>
+<td>2311.0</td>
+<td>Data Analysis and Mathematics</td>
+<td>23111310.0</td>
+<td>Data Analyst</td>
+<td>231113.0</td>
+<td>Data / Data Mining Analyst</td>
+<td>2311.0</td>
+<td>Data Analysis and Mathematics</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>15-0000</td>
+<td>Computer and Mathematical Occupations</td>
+<td>15-2000</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>15-2051</td>
+<td>Data Scientists</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>56.0</td>
+<td>Administrative and Support and Waste Managemen...</td>
+<td>561.0</td>
+<td>Administrative and Support Services</td>
+<td>5613.0</td>
+<td>Employment Services</td>
+<td>56131.0</td>
+<td>Employment Placement Agencies and Executive Se...</td>
+<td>561311.0</td>
+<td>Employment Placement Agencies</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">72496</td>
+<td>2e842ecdc031bdb4b8f8c2f724b5c51cdc7814eb</td>
+<td>10/16/2024</td>
+<td>2024-10-16 13:45:59.907 Z</td>
+<td>0.0</td>
+<td>8/16/2024</td>
+<td>10/15/2024</td>
+<td>NaN</td>
+<td>[\n "Job Board"\n]</td>
+<td>[\n "maine.gov"\n]</td>
+<td>[\n "https://joblink.maine.gov/jobs/1114773"\n]</td>
+<td>[]</td>
+<td>NaN</td>
+<td>Data Analyst</td>
+<td>Data Analyst\n\nat Consolidated Communications...</td>
+<td>9/8/2024</td>
+<td>23.0</td>
+<td>98412363.0</td>
+<td>Consolidated Communications Enterprise Service...</td>
+<td>Consolidated Communications Enterprise Service...</td>
+<td>False</td>
+<td>[\n 2\n]</td>
+<td>[\n "Bachelor's degree"\n]</td>
+<td>2.0</td>
+<td>Bachelor's degree</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1.0</td>
+<td>Full-time (&gt; 32 hours)</td>
+<td>7.0</td>
+<td>NaN</td>
+<td>False</td>
+<td>NaN</td>
+<td>0.0</td>
+<td>[None]</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>{\n "lat": 44.8016128,\n "lon": -68.7712257\n}</td>
+<td>QmFuZ29yLCBNRQ==</td>
+<td>Bangor, ME</td>
+<td>23019.0</td>
+<td>Penobscot, ME</td>
+<td>12620.0</td>
+<td>Bangor, ME</td>
+<td>23.0</td>
+<td>Maine</td>
+<td>23019.0</td>
+<td>Penobscot, ME</td>
+<td>23019.0</td>
+<td>Penobscot, ME</td>
+<td>12620.0</td>
+<td>Bangor, ME</td>
+<td>12620.0</td>
+<td>Bangor, ME</td>
+<td>51.0</td>
+<td>Information</td>
+<td>517.0</td>
+<td>Telecommunications</td>
+<td>5178.0</td>
+<td>All Other Telecommunications</td>
+<td>51781.0</td>
+<td>All Other Telecommunications</td>
+<td>517810.0</td>
+<td>All Other Telecommunications</td>
+<td>ET3037E0C947A02404</td>
+<td>Data Analysts</td>
+<td>data analyst</td>
+<td>[\n "KS13USA80NE38XJHA2TL",\n "KS1219774ZFQ6...</td>
+<td>[\n "Power BI",\n "Business Reporting",\n "...</td>
+<td>[\n "KS13USA80NE38XJHA2TL",\n "KS1219774ZFQ6...</td>
+<td>[\n "Power BI",\n "Business Reporting",\n "...</td>
+<td>[]</td>
+<td>[]</td>
+<td>[\n "KS1203C6N9B52QGB4H67",\n "KS7G747655VG2...</td>
+<td>[\n "Research",\n "Prioritization",\n "Writ...</td>
+<td>[\n "KS13USA80NE38XJHA2TL",\n "KS125LS6N7WP4...</td>
+<td>[\n "Power BI",\n "Python (Programming Langu...</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>[\n "52.0101",\n "52.0201",\n "11.0103",\n ...</td>
+<td>[\n "Business/Commerce, General",\n "Busines...</td>
+<td>[\n "52.01",\n "52.02",\n "11.01",\n "11.0...</td>
+<td>[\n "Business/Commerce, General",\n "Busines...</td>
+<td>[\n "52",\n "52",\n "11",\n "11"\n]</td>
+<td>[\n "Business, Management, Marketing, and Rel...</td>
+<td>15-0000</td>
+<td>Computer and Mathematical Occupations</td>
+<td>15-2000</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>15-2051</td>
+<td>Data Scientists</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>231113.0</td>
+<td>Data / Data Mining Analyst</td>
+<td>23111310.0</td>
+<td>Data Analyst</td>
+<td>2311.0</td>
+<td>Data Analysis and Mathematics</td>
+<td>23111310.0</td>
+<td>Data Analyst</td>
+<td>231113.0</td>
+<td>Data / Data Mining Analyst</td>
+<td>2311.0</td>
+<td>Data Analysis and Mathematics</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>15-0000</td>
+<td>Computer and Mathematical Occupations</td>
+<td>15-2000</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>15-2051</td>
+<td>Data Scientists</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>51.0</td>
+<td>Information</td>
+<td>517.0</td>
+<td>Telecommunications</td>
+<td>5178.0</td>
+<td>All Other Telecommunications</td>
+<td>51781.0</td>
+<td>All Other Telecommunications</td>
+<td>517810.0</td>
+<td>All Other Telecommunications</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">72497</td>
+<td>733c12969489de888093ef22d09204dc0945148a</td>
+<td>10/9/2024</td>
+<td>2024-10-09 18:07:44.758 Z</td>
+<td>0.0</td>
+<td>8/16/2024</td>
+<td>8/22/2024</td>
+<td>6.0</td>
+<td>[\n "Job Board"\n]</td>
+<td>[\n "dice.com"\n]</td>
+<td>[\n "https://www.dice.com/job-detail/8f1208f4...</td>
+<td>[]</td>
+<td>NaN</td>
+<td>Oracle Fusion Analytics Warehouse (FAW) HCM Lead</td>
+<td>Oracle Fusion Analytics Warehouse (FAW) HCM Le...</td>
+<td>8/22/2024</td>
+<td>6.0</td>
+<td>39411763.0</td>
+<td>Lorven Technologies</td>
+<td>Lorven Technologies, Inc.</td>
+<td>True</td>
+<td>[\n 2\n]</td>
+<td>[\n "Bachelor's degree"\n]</td>
+<td>2.0</td>
+<td>Bachelor's degree</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1.0</td>
+<td>Full-time (&gt; 32 hours)</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>False</td>
+<td>NaN</td>
+<td>1.0</td>
+<td>Remote</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>{\n "lat": 32.7766642,\n "lon": -96.7969879\n}</td>
+<td>RGFsbGFzLCBUWA==</td>
+<td>Dallas, TX</td>
+<td>48113.0</td>
+<td>Dallas, TX</td>
+<td>19100.0</td>
+<td>Dallas-Fort Worth-Arlington, TX</td>
+<td>48.0</td>
+<td>Texas</td>
+<td>48113.0</td>
+<td>Dallas, TX</td>
+<td>48113.0</td>
+<td>Dallas, TX</td>
+<td>19100.0</td>
+<td>Dallas-Fort Worth-Arlington, TX</td>
+<td>19100.0</td>
+<td>Dallas-Fort Worth-Arlington, TX</td>
+<td>54.0</td>
+<td>Professional, Scientific, and Technical Services</td>
+<td>541.0</td>
+<td>Professional, Scientific, and Technical Services</td>
+<td>5415.0</td>
+<td>Computer Systems Design and Related Services</td>
+<td>54151.0</td>
+<td>Computer Systems Design and Related Services</td>
+<td>541512.0</td>
+<td>Computer Systems Design Services</td>
+<td>ET36323C71A36AB5BD</td>
+<td>Oracle HCM Consultants</td>
+<td>oracle fusion analytics warehouse faw hcm lead</td>
+<td>[\n "KS122PM76DCYL9WC89Y7",\n "KS124DX6G31F5...</td>
+<td>[\n "Data Modeling",\n "Warehousing",\n "Co...</td>
+<td>[\n "KS122PM76DCYL9WC89Y7",\n "KS124DX6G31F5...</td>
+<td>[\n "Data Modeling",\n "Warehousing",\n "Da...</td>
+<td>[]</td>
+<td>[]</td>
+<td>[\n "KS122556LMQ829GZCCRV",\n "KS1259D6L30YY...</td>
+<td>[\n "Communication",\n "Interpersonal Commun...</td>
+<td>[\n "KS1218L60PDVZX16NZT1",\n "ES4A15D4D2BD2...</td>
+<td>[\n "Dashboard",\n "Oracle Human Capital Man...</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>[\n "11.0701"\n]</td>
+<td>[\n "Computer Science"\n]</td>
+<td>[\n "11.07"\n]</td>
+<td>[\n "Computer Science"\n]</td>
+<td>[\n "11"\n]</td>
+<td>[\n "Computer and Information Sciences and Su...</td>
+<td>15-0000</td>
+<td>Computer and Mathematical Occupations</td>
+<td>15-2000</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>15-2051</td>
+<td>Data Scientists</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>231010.0</td>
+<td>Business Intelligence Analyst</td>
+<td>23101012.0</td>
+<td>Oracle Consultant / Analyst</td>
+<td>2310.0</td>
+<td>Business Intelligence</td>
+<td>23101012.0</td>
+<td>Oracle Consultant / Analyst</td>
+<td>231010.0</td>
+<td>Business Intelligence Analyst</td>
+<td>2310.0</td>
+<td>Business Intelligence</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>15-0000</td>
+<td>Computer and Mathematical Occupations</td>
+<td>15-2000</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>15-2051</td>
+<td>Data Scientists</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>54.0</td>
+<td>Professional, Scientific, and Technical Services</td>
+<td>541.0</td>
+<td>Professional, Scientific, and Technical Services</td>
+<td>5415.0</td>
+<td>Computer Systems Design and Related Services</td>
+<td>54151.0</td>
+<td>Computer Systems Design and Related Services</td>
+<td>541512.0</td>
+<td>Computer Systems Design Services</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<p>:::</p>
+<section id="sample-of-preprocessed-education_levels" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sample-of-preprocessed-education_levels"><span class="header-section-number">2.1</span> Sample of preprocessed EDUCATION_LEVELS</h2>
+<div id="4ca9f050" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ast</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset (using the provided sample data)</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'DURATION'</span>: [<span class="fl">6.0</span>, np.nan, <span class="fl">35.0</span>, <span class="fl">48.0</span>],</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'MIN_YEARS_EXPERIENCE'</span>: [<span class="fl">2.0</span>, <span class="fl">3.0</span>, <span class="fl">5.0</span>, <span class="fl">3.0</span>],</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'EMPLOYMENT_TYPE'</span>: [<span class="fl">1.0</span>, <span class="fl">1.0</span>, <span class="fl">1.0</span>, <span class="fl">1.0</span>],</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'REMOTE_TYPE'</span>: [<span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>],</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'IS_INTERNSHIP'</span>: [<span class="va">False</span>, <span class="va">False</span>, <span class="va">False</span>, <span class="va">False</span>],</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'EDUCATION_LEVELS'</span>: [<span class="st">'[</span><span class="ch">\n</span><span class="st"> 2</span><span class="ch">\n</span><span class="st">]'</span>, <span class="st">'[</span><span class="ch">\n</span><span class="st"> 99</span><span class="ch">\n</span><span class="st">]'</span>, <span class="st">'[</span><span class="ch">\n</span><span class="st"> 2</span><span class="ch">\n</span><span class="st">]'</span>, <span class="st">'[</span><span class="ch">\n</span><span class="st"> 99</span><span class="ch">\n</span><span class="st">]'</span>]</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to parse EDUCATION_LEVELS strings and handle different types</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse_education_levels(edu):</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the value is already a float, use it directly (or convert to nan if invalid)</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">isinstance</span>(edu, <span class="bu">float</span>):</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> edu <span class="cf">if</span> <span class="kw">not</span> np.isnan(edu) <span class="cf">else</span> np.nan</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the value is a string, parse it</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">isinstance</span>(edu, <span class="bu">str</span>):</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Parse the string into a list using ast.literal_eval</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>            edu_list <span class="op">=</span> ast.literal_eval(edu.replace(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>, <span class="st">''</span>))</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Return the first numerical value (as an integer)</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="bu">int</span>(edu_list[<span class="dv">0</span>])</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> (<span class="pp">ValueError</span>, <span class="pp">SyntaxError</span>, <span class="pp">IndexError</span>):</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> np.nan  <span class="co"># Return NaN if parsing fails</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the value is neither a string nor a float, return NaN</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.nan</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the parsing function to EDUCATION_LEVELS</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'EDUCATION_LEVELS'</span>] <span class="op">=</span> df[<span class="st">'EDUCATION_LEVELS'</span>].<span class="bu">apply</span>(parse_education_levels)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop rows with missing values in DURATION or EDUCATION_LEVELS</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.dropna(subset<span class="op">=</span>[<span class="st">'DURATION'</span>, <span class="st">'EDUCATION_LEVELS'</span>])</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Features and target</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df[[<span class="st">'MIN_YEARS_EXPERIENCE'</span>, <span class="st">'EMPLOYMENT_TYPE'</span>, <span class="st">'REMOTE_TYPE'</span>, <span class="st">'IS_INTERNSHIP'</span>, <span class="st">'EDUCATION_LEVELS'</span>]]</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">'DURATION'</span>]</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the data into training and testing sets</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Training set size:"</span>, X_train.shape)</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Testing set size:"</span>, X_test.shape)</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sample of preprocessed EDUCATION_LEVELS:"</span>, df[<span class="st">'EDUCATION_LEVELS'</span>].head().tolist())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Training set size: (2, 5)
+Testing set size: (1, 5)
+Sample of preprocessed EDUCATION_LEVELS: [2, 2, 99]</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="model-training" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Model Training</h1>
+<p>With the data preprocessed, I trained a Random Forest Regressor, a robust model that handles numerical features well and is less prone to overfitting. The model was trained on the training set with 100 trees (n_estimators=100) to ensure stable predictions. Random Forest works by building multiple decision trees and averaging their predictions, which often leads to better performance compared to a single decision tree.</p>
+<p>Here’s the code for training the Random Forest Regressor:</p>
+<div id="6c5d5b1e" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize and train the Random Forest Regressor</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>rf <span class="op">=</span> RandomForestRegressor(n_estimators<span class="op">=</span><span class="dv">100</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>rf.fit(X_train, y_train)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Model training completed."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model training completed.</code></pre>
+</div>
+</div>
+</section>
+<section id="model-evaluation-and-visualization" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Model Evaluation and Visualization</h1>
+<p>After training the model, I used it to predict the DURATION for the test set. To evaluate the model’s performance, I calculated the Mean Squared Error (MSE), which measures the average squared difference between actual and predicted values. A lower MSE indicates better predictive accuracy.</p>
+<p>I also created a scatter plot to visualize the model’s performance, comparing the actual DURATION values to the predicted ones. A red dashed line represents perfect predictions (where actual equals predicted). Points closer to this line indicate better predictions.</p>
+<p>Here’s the code for evaluation and visualization:</p>
+<div id="f664de87" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Make predictions on the test set</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> rf.predict(X_test)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Mean Squared Error</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>mse <span class="op">=</span> mean_squared_error(y_test, y_pred)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mean Squared Error: </span><span class="sc">{</span>mse<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot actual vs predicted values</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>plt.scatter(y_test, y_pred, color<span class="op">=</span><span class="st">'blue'</span>, label<span class="op">=</span><span class="st">'Predicted vs Actual'</span>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>plt.plot([y_test.<span class="bu">min</span>(), y_test.<span class="bu">max</span>()], [y_test.<span class="bu">min</span>(), y_test.<span class="bu">max</span>()], <span class="st">'r--'</span>, label<span class="op">=</span><span class="st">'Perfect Prediction'</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Actual Duration (Days)'</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Predicted Duration (Days)'</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Random Forest Regressor: Actual vs Predicted Job Posting Duration'</span>)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'actual_vs_predicted_duration.png'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mean Squared Error: 1297.44</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ml_methods_files/figure-html/cell-5-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="results" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Results</h1>
+<p>The Mean Squared Error (MSE) provides a quantitative measure of the model’s performance. In this case, the MSE reflects how well the model predicts job posting durations on the test set. The scatter plot (actual_vs_predicted_duration.png) visually demonstrates the model’s accuracy. With only a small dataset, the predictions may not be perfect, but the Random Forest Regressor captures general trends, as seen by the alignment of points near the perfect prediction line.</p>
+</section>
+<section id="conclusion" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Conclusion</h1>
+<p>Using a Random Forest Regressor, I built a model to predict the duration of job postings based on features like experience, employment type, and education level. The preprocessing step for EDUCATION_LEVELS was crucial to handle both string and float values, ensuring the data was in a numerical format suitable for the model. However, the model’s performance was poor, with an MSE of 1296.00 and a significant overprediction (42.0 days predicted vs.&nbsp;6.0 days actual), as shown in the scatter plot. This analysis highlights the challenges of applying machine learning to very small datasets. Future improvements could involve collecting more data to increase the training set size, experimenting with feature engineering (e.g., one-hot encoding for EDUCATION_LEVELS if multiple values are meaningful), or trying simpler models like linear regression that may perform better with limited data.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/hongan2908\.github\.io\/ad688-project1-group-10\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

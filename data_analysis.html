@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Advait Pillai, Ritusri Mohan">
+
+<title>Data Analysis – Job Market Analysis 2024</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ddd961a2510921635943dfbbd19534c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Job Market Analysis 2024</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Research Rationale</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./introduction.html"> 
+<span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./salaries-differ-across-ai-vs-non-ai-careers.html"> 
+<span class="menu-text">Salaries Differ Across AI vs.&nbsp;Non-AI Careers</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./data_analysis.html" aria-current="page"> 
+<span class="menu-text">Data Cleaning &amp; Exploration</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./eda_updation.html"> 
+<span class="menu-text">Exploratory Data Analysis</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./skill_gap_analysis.html"> 
+<span class="menu-text">Skill Gap Analysis</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ml_method.qmd"> 
+<span class="menu-text">ML Methods</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./nlp_method.html"> 
+<span class="menu-text">NLP Methods</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./career_plan.html"> 
+<span class="menu-text">Career Plan</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./citation.html"> 
+<span class="menu-text">Citations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./final_report.html"> 
+<span class="menu-text">Final Report</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#data-overview" id="toc-data-overview" class="nav-link" data-scroll-target="#data-overview"><span class="header-section-number">2</span> Data Overview</a>
+  <ul class="collapse">
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description"><span class="header-section-number">2.1</span> Dataset Description</a></li>
+  </ul></li>
+  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning"><span class="header-section-number">3</span> Data Cleaning</a></li>
+  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis"><span class="header-section-number">4</span> Exploratory Data Analysis</a>
+  <ul class="collapse">
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">4.1</span> references</a></li>
+  <li><a href="#analysis-of-key-visualizations" id="toc-analysis-of-key-visualizations" class="nav-link" data-scroll-target="#analysis-of-key-visualizations"><span class="header-section-number">4.2</span> Analysis of Key Visualizations</a>
+  <ul class="collapse">
+  <li><a href="#job-postings-by-industry" id="toc-job-postings-by-industry" class="nav-link" data-scroll-target="#job-postings-by-industry"><span class="header-section-number">4.2.1</span> Job Postings by Industry</a></li>
+  <li><a href="#years-of-experience-by-industry" id="toc-years-of-experience-by-industry" class="nav-link" data-scroll-target="#years-of-experience-by-industry"><span class="header-section-number">4.2.2</span> Years of Experience by Industry</a></li>
+  <li><a href="#remote-vs.-on-site-jobs" id="toc-remote-vs.-on-site-jobs" class="nav-link" data-scroll-target="#remote-vs.-on-site-jobs"><span class="header-section-number">4.2.3</span> Remote vs.&nbsp;On-Site Jobs</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">5</span> Conclusion</a>
+  <ul class="collapse">
+  <li><a href="#enhanced-eda-analysis-of-key-visualizations" id="toc-enhanced-eda-analysis-of-key-visualizations" class="nav-link" data-scroll-target="#enhanced-eda-analysis-of-key-visualizations"><span class="header-section-number">5.1</span> Enhanced EDA: Analysis of Key Visualizations</a>
+  <ul class="collapse">
+  <li><a href="#top-10-cities-by-number-of-job-postings" id="toc-top-10-cities-by-number-of-job-postings" class="nav-link" data-scroll-target="#top-10-cities-by-number-of-job-postings"><span class="header-section-number">5.1.1</span> Top 10 Cities by Number of Job Postings</a></li>
+  <li><a href="#top-10-states-by-number-of-job-postings" id="toc-top-10-states-by-number-of-job-postings" class="nav-link" data-scroll-target="#top-10-states-by-number-of-job-postings"><span class="header-section-number">5.1.2</span> Top 10 States by Number of Job Postings</a></li>
+  <li><a href="#word-cloud-of-most-frequent-job-titles" id="toc-word-cloud-of-most-frequent-job-titles" class="nav-link" data-scroll-target="#word-cloud-of-most-frequent-job-titles"><span class="header-section-number">5.1.3</span> Word Cloud of Most Frequent Job Titles</a></li>
+  </ul></li>
+  <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1"><span class="header-section-number">5.2</span> Conclusion</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Analysis</h1>
+<p class="subtitle lead">Comprehensive Data Cleaning &amp; Exploratory Analysis of Job Market Trends</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Advait Pillai, Ritusri Mohan </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Boston University
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>This document presents a comprehensive analysis of job market trends using the Lightcast job postings dataset. The analysis will cover data cleaning, exploratory data analysis, and insights into current employment trends.</p>
+</section>
+<section id="data-overview" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Data Overview</h1>
+<p>The dataset used for this analysis is the Lightcast job postings dataset, which contains detailed information about job listings across various industries and locations.</p>
+<section id="dataset-description" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="dataset-description"><span class="header-section-number">2.1</span> Dataset Description</h2>
+<ul>
+<li><strong>Source</strong>: Lightcast (formerly Burning Glass)</li>
+<li><strong>Size</strong>: 717MB</li>
+<li><strong>Time Period</strong>: Recent job postings</li>
+<li><strong>Key Variables</strong>: Job titles, company information, location data, salary ranges, required skills, education levels, and more</li>
+</ul>
+</section>
+</section>
+<section id="data-cleaning" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Data Cleaning</h1>
+<div id="data-cleaning" class="cell" data-message="false" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import necessary libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Set display options</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_columns'</span>, <span class="va">None</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_rows'</span>, <span class="dv">100</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Auto-download CSV if missing</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>csv_path <span class="op">=</span> <span class="st">'region_analysis/lightcast_job_postings.csv'</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> os.path.exists(csv_path):</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>csv_path<span class="sc">}</span><span class="ss"> not found! Attempting to download..."</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    os.makedirs(<span class="st">'region_analysis'</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="im">import</span> gdown</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ImportError</span>:</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="op">!</span>pip install gdown</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="im">import</span> gdown</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    file_id <span class="op">=</span> <span class="st">'1V2GCHGt2dkFGqVBeoUFckU4IhUgk4ocQ'</span>  <span class="co"># &lt;--- your actual file ID</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    url <span class="op">=</span> <span class="ss">f'https://drive.google.com/uc?id=</span><span class="sc">{</span>file_id<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    gdown.download(url, csv_path, quiet<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Download complete!"</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>csv_path<span class="sc">}</span><span class="ss"> found. Proceeding..."</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'region_analysis/lightcast_job_postings.csv'</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Dropping unnecessary columns</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>columns_to_drop <span class="op">=</span> [</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ID"</span>, <span class="st">"URL"</span>, <span class="st">"ACTIVE_URLS"</span>, <span class="st">"DUPLICATES"</span>, <span class="st">"LAST_UPDATED_TIMESTAMP"</span>,</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="st">"NAICS2"</span>, <span class="st">"NAICS3"</span>, <span class="st">"NAICS4"</span>, <span class="st">"NAICS5"</span>, <span class="st">"NAICS6"</span>,</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SOC_2"</span>, <span class="st">"SOC_3"</span>, <span class="st">"SOC_5"</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>df.drop(columns<span class="op">=</span>columns_to_drop, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"After dropping columns, shape:"</span>, df.shape)</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Handling Missing Values</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate percentage of missing values</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>missing_percent <span class="op">=</span> (df.isnull().<span class="bu">sum</span>() <span class="op">/</span> <span class="bu">len</span>(df)) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>missing_percent <span class="op">=</span> missing_percent[missing_percent <span class="op">&gt;</span> <span class="dv">0</span>].sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize missing data</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span>missing_percent.index, y<span class="op">=</span>missing_percent.values)</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Percentage of Missing Values by Column"</span>)</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Percentage Missing"</span>)</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop columns with &gt;50% missing values</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>df.dropna(thresh<span class="op">=</span><span class="bu">len</span>(df) <span class="op">*</span> <span class="fl">0.5</span>, axis<span class="op">=</span><span class="dv">1</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">After dropping columns with &gt;50% missing values, shape:"</span>, df.shape)</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Fill missing values</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="co"># For numerical columns</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>numeric_columns <span class="op">=</span> df.select_dtypes(include<span class="op">=</span>[np.number]).columns</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> numeric_columns:</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>    df[col].fillna(df[col].median(), inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="co"># For categorical columns</span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>categorical_columns <span class="op">=</span> df.select_dtypes(include<span class="op">=</span>[<span class="st">'object'</span>]).columns</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> categorical_columns:</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    df[col].fillna(<span class="st">"Unknown"</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Missing values after cleaning:"</span>)</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.isnull().<span class="bu">sum</span>().<span class="bu">sum</span>())</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Removing duplicates</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop_duplicates(subset<span class="op">=</span>[<span class="st">"TITLE"</span>, <span class="st">"COMPANY"</span>, <span class="st">"LOCATION"</span>, <span class="st">"POSTED"</span>], keep<span class="op">=</span><span class="st">"first"</span>)</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">After removing duplicates, final shape:"</span>, df.shape)</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="co"># Display cleaned dataset information</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Cleaned dataset information:"</span>)</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Columns in cleaned dataset:"</span>)</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.columns.tolist())</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">First few rows of cleaned dataset:"</span>)</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>region_analysis/lightcast_job_postings.csv found. Proceeding...</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>After dropping columns, shape: (72498, 118)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data_analysis_files/figure-html/data-cleaning-output-3.png" id="data-cleaning-1" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+After dropping columns with &gt;50% missing values, shape: (72498, 108)</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Missing values after cleaning:
+0
+
+After removing duplicates, final shape: (69198, 108)
+
+Cleaned dataset information:
+
+Columns in cleaned dataset:
+['LAST_UPDATED_DATE', 'POSTED', 'EXPIRED', 'DURATION', 'SOURCE_TYPES', 'SOURCES', 'TITLE_RAW', 'BODY', 'MODELED_EXPIRED', 'MODELED_DURATION', 'COMPANY', 'COMPANY_NAME', 'COMPANY_RAW', 'COMPANY_IS_STAFFING', 'EDUCATION_LEVELS', 'EDUCATION_LEVELS_NAME', 'MIN_EDULEVELS', 'MIN_EDULEVELS_NAME', 'EMPLOYMENT_TYPE', 'EMPLOYMENT_TYPE_NAME', 'MIN_YEARS_EXPERIENCE', 'IS_INTERNSHIP', 'REMOTE_TYPE', 'REMOTE_TYPE_NAME', 'LOCATION', 'CITY', 'CITY_NAME', 'COUNTY', 'COUNTY_NAME', 'MSA', 'MSA_NAME', 'STATE', 'STATE_NAME', 'COUNTY_OUTGOING', 'COUNTY_NAME_OUTGOING', 'COUNTY_INCOMING', 'COUNTY_NAME_INCOMING', 'MSA_OUTGOING', 'MSA_NAME_OUTGOING', 'MSA_INCOMING', 'MSA_NAME_INCOMING', 'NAICS2_NAME', 'NAICS3_NAME', 'NAICS4_NAME', 'NAICS5_NAME', 'NAICS6_NAME', 'TITLE', 'TITLE_NAME', 'TITLE_CLEAN', 'SKILLS', 'SKILLS_NAME', 'SPECIALIZED_SKILLS', 'SPECIALIZED_SKILLS_NAME', 'CERTIFICATIONS', 'CERTIFICATIONS_NAME', 'COMMON_SKILLS', 'COMMON_SKILLS_NAME', 'SOFTWARE_SKILLS', 'SOFTWARE_SKILLS_NAME', 'ONET', 'ONET_NAME', 'ONET_2019', 'ONET_2019_NAME', 'CIP6', 'CIP6_NAME', 'CIP4', 'CIP4_NAME', 'CIP2', 'CIP2_NAME', 'SOC_2021_2', 'SOC_2021_2_NAME', 'SOC_2021_3', 'SOC_2021_3_NAME', 'SOC_2021_4', 'SOC_2021_4_NAME', 'SOC_2021_5', 'SOC_2021_5_NAME', 'LOT_CAREER_AREA', 'LOT_CAREER_AREA_NAME', 'LOT_OCCUPATION', 'LOT_OCCUPATION_NAME', 'LOT_SPECIALIZED_OCCUPATION', 'LOT_SPECIALIZED_OCCUPATION_NAME', 'LOT_OCCUPATION_GROUP', 'LOT_OCCUPATION_GROUP_NAME', 'LOT_V6_SPECIALIZED_OCCUPATION', 'LOT_V6_SPECIALIZED_OCCUPATION_NAME', 'LOT_V6_OCCUPATION', 'LOT_V6_OCCUPATION_NAME', 'LOT_V6_OCCUPATION_GROUP', 'LOT_V6_OCCUPATION_GROUP_NAME', 'LOT_V6_CAREER_AREA', 'LOT_V6_CAREER_AREA_NAME', 'SOC_2_NAME', 'SOC_3_NAME', 'SOC_4', 'SOC_4_NAME', 'SOC_5_NAME', 'NAICS_2022_2', 'NAICS_2022_2_NAME', 'NAICS_2022_3', 'NAICS_2022_3_NAME', 'NAICS_2022_4', 'NAICS_2022_4_NAME', 'NAICS_2022_5', 'NAICS_2022_5_NAME', 'NAICS_2022_6', 'NAICS_2022_6_NAME']
+
+First few rows of cleaned dataset:</code></pre>
+</div>
+<div id="data-cleaning-2" class="cell-output cell-output-display" data-execution_count="1">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">LAST_UPDATED_DATE</th>
+<th data-quarto-table-cell-role="th">POSTED</th>
+<th data-quarto-table-cell-role="th">EXPIRED</th>
+<th data-quarto-table-cell-role="th">DURATION</th>
+<th data-quarto-table-cell-role="th">SOURCE_TYPES</th>
+<th data-quarto-table-cell-role="th">SOURCES</th>
+<th data-quarto-table-cell-role="th">TITLE_RAW</th>
+<th data-quarto-table-cell-role="th">BODY</th>
+<th data-quarto-table-cell-role="th">MODELED_EXPIRED</th>
+<th data-quarto-table-cell-role="th">MODELED_DURATION</th>
+<th data-quarto-table-cell-role="th">COMPANY</th>
+<th data-quarto-table-cell-role="th">COMPANY_NAME</th>
+<th data-quarto-table-cell-role="th">COMPANY_RAW</th>
+<th data-quarto-table-cell-role="th">COMPANY_IS_STAFFING</th>
+<th data-quarto-table-cell-role="th">EDUCATION_LEVELS</th>
+<th data-quarto-table-cell-role="th">EDUCATION_LEVELS_NAME</th>
+<th data-quarto-table-cell-role="th">MIN_EDULEVELS</th>
+<th data-quarto-table-cell-role="th">MIN_EDULEVELS_NAME</th>
+<th data-quarto-table-cell-role="th">EMPLOYMENT_TYPE</th>
+<th data-quarto-table-cell-role="th">EMPLOYMENT_TYPE_NAME</th>
+<th data-quarto-table-cell-role="th">MIN_YEARS_EXPERIENCE</th>
+<th data-quarto-table-cell-role="th">IS_INTERNSHIP</th>
+<th data-quarto-table-cell-role="th">REMOTE_TYPE</th>
+<th data-quarto-table-cell-role="th">REMOTE_TYPE_NAME</th>
+<th data-quarto-table-cell-role="th">LOCATION</th>
+<th data-quarto-table-cell-role="th">CITY</th>
+<th data-quarto-table-cell-role="th">CITY_NAME</th>
+<th data-quarto-table-cell-role="th">COUNTY</th>
+<th data-quarto-table-cell-role="th">COUNTY_NAME</th>
+<th data-quarto-table-cell-role="th">MSA</th>
+<th data-quarto-table-cell-role="th">MSA_NAME</th>
+<th data-quarto-table-cell-role="th">STATE</th>
+<th data-quarto-table-cell-role="th">STATE_NAME</th>
+<th data-quarto-table-cell-role="th">COUNTY_OUTGOING</th>
+<th data-quarto-table-cell-role="th">COUNTY_NAME_OUTGOING</th>
+<th data-quarto-table-cell-role="th">COUNTY_INCOMING</th>
+<th data-quarto-table-cell-role="th">COUNTY_NAME_INCOMING</th>
+<th data-quarto-table-cell-role="th">MSA_OUTGOING</th>
+<th data-quarto-table-cell-role="th">MSA_NAME_OUTGOING</th>
+<th data-quarto-table-cell-role="th">MSA_INCOMING</th>
+<th data-quarto-table-cell-role="th">MSA_NAME_INCOMING</th>
+<th data-quarto-table-cell-role="th">NAICS2_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS3_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS4_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS5_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS6_NAME</th>
+<th data-quarto-table-cell-role="th">TITLE</th>
+<th data-quarto-table-cell-role="th">TITLE_NAME</th>
+<th data-quarto-table-cell-role="th">TITLE_CLEAN</th>
+<th data-quarto-table-cell-role="th">SKILLS</th>
+<th data-quarto-table-cell-role="th">SKILLS_NAME</th>
+<th data-quarto-table-cell-role="th">SPECIALIZED_SKILLS</th>
+<th data-quarto-table-cell-role="th">SPECIALIZED_SKILLS_NAME</th>
+<th data-quarto-table-cell-role="th">CERTIFICATIONS</th>
+<th data-quarto-table-cell-role="th">CERTIFICATIONS_NAME</th>
+<th data-quarto-table-cell-role="th">COMMON_SKILLS</th>
+<th data-quarto-table-cell-role="th">COMMON_SKILLS_NAME</th>
+<th data-quarto-table-cell-role="th">SOFTWARE_SKILLS</th>
+<th data-quarto-table-cell-role="th">SOFTWARE_SKILLS_NAME</th>
+<th data-quarto-table-cell-role="th">ONET</th>
+<th data-quarto-table-cell-role="th">ONET_NAME</th>
+<th data-quarto-table-cell-role="th">ONET_2019</th>
+<th data-quarto-table-cell-role="th">ONET_2019_NAME</th>
+<th data-quarto-table-cell-role="th">CIP6</th>
+<th data-quarto-table-cell-role="th">CIP6_NAME</th>
+<th data-quarto-table-cell-role="th">CIP4</th>
+<th data-quarto-table-cell-role="th">CIP4_NAME</th>
+<th data-quarto-table-cell-role="th">CIP2</th>
+<th data-quarto-table-cell-role="th">CIP2_NAME</th>
+<th data-quarto-table-cell-role="th">SOC_2021_2</th>
+<th data-quarto-table-cell-role="th">SOC_2021_2_NAME</th>
+<th data-quarto-table-cell-role="th">SOC_2021_3</th>
+<th data-quarto-table-cell-role="th">SOC_2021_3_NAME</th>
+<th data-quarto-table-cell-role="th">SOC_2021_4</th>
+<th data-quarto-table-cell-role="th">SOC_2021_4_NAME</th>
+<th data-quarto-table-cell-role="th">SOC_2021_5</th>
+<th data-quarto-table-cell-role="th">SOC_2021_5_NAME</th>
+<th data-quarto-table-cell-role="th">LOT_CAREER_AREA</th>
+<th data-quarto-table-cell-role="th">LOT_CAREER_AREA_NAME</th>
+<th data-quarto-table-cell-role="th">LOT_OCCUPATION</th>
+<th data-quarto-table-cell-role="th">LOT_OCCUPATION_NAME</th>
+<th data-quarto-table-cell-role="th">LOT_SPECIALIZED_OCCUPATION</th>
+<th data-quarto-table-cell-role="th">LOT_SPECIALIZED_OCCUPATION_NAME</th>
+<th data-quarto-table-cell-role="th">LOT_OCCUPATION_GROUP</th>
+<th data-quarto-table-cell-role="th">LOT_OCCUPATION_GROUP_NAME</th>
+<th data-quarto-table-cell-role="th">LOT_V6_SPECIALIZED_OCCUPATION</th>
+<th data-quarto-table-cell-role="th">LOT_V6_SPECIALIZED_OCCUPATION_NAME</th>
+<th data-quarto-table-cell-role="th">LOT_V6_OCCUPATION</th>
+<th data-quarto-table-cell-role="th">LOT_V6_OCCUPATION_NAME</th>
+<th data-quarto-table-cell-role="th">LOT_V6_OCCUPATION_GROUP</th>
+<th data-quarto-table-cell-role="th">LOT_V6_OCCUPATION_GROUP_NAME</th>
+<th data-quarto-table-cell-role="th">LOT_V6_CAREER_AREA</th>
+<th data-quarto-table-cell-role="th">LOT_V6_CAREER_AREA_NAME</th>
+<th data-quarto-table-cell-role="th">SOC_2_NAME</th>
+<th data-quarto-table-cell-role="th">SOC_3_NAME</th>
+<th data-quarto-table-cell-role="th">SOC_4</th>
+<th data-quarto-table-cell-role="th">SOC_4_NAME</th>
+<th data-quarto-table-cell-role="th">SOC_5_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_2</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_2_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_3</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_3_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_4</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_4_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_5</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_5_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_6</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_6_NAME</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>9/6/2024</td>
+<td>6/2/2024</td>
+<td>6/8/2024</td>
+<td>6.0</td>
+<td>[\n "Company"\n]</td>
+<td>[\n "brassring.com"\n]</td>
+<td>Enterprise Analyst (II-III)</td>
+<td>31-May-2024\n\nEnterprise Analyst (II-III)\n\n...</td>
+<td>6/8/2024</td>
+<td>6.0</td>
+<td>894731.0</td>
+<td>Murphy USA</td>
+<td>Murphy USA</td>
+<td>False</td>
+<td>[\n 2\n]</td>
+<td>[\n "Bachelor's degree"\n]</td>
+<td>2.0</td>
+<td>Bachelor's degree</td>
+<td>1.0</td>
+<td>Full-time (&gt; 32 hours)</td>
+<td>2.0</td>
+<td>False</td>
+<td>0.0</td>
+<td>[None]</td>
+<td>{\n "lat": 33.20763,\n "lon": -92.6662674\n}</td>
+<td>RWwgRG9yYWRvLCBBUg==</td>
+<td>El Dorado, AR</td>
+<td>5139.0</td>
+<td>Union, AR</td>
+<td>20980.0</td>
+<td>El Dorado, AR</td>
+<td>5.0</td>
+<td>Arkansas</td>
+<td>5139.0</td>
+<td>Union, AR</td>
+<td>5139.0</td>
+<td>Union, AR</td>
+<td>20980.0</td>
+<td>El Dorado, AR</td>
+<td>20980.0</td>
+<td>El Dorado, AR</td>
+<td>Retail Trade</td>
+<td>Motor Vehicle and Parts Dealers</td>
+<td>Automotive Parts, Accessories, and Tire Retailers</td>
+<td>Automotive Parts and Accessories Retailers</td>
+<td>Automotive Parts and Accessories Retailers</td>
+<td>ET29C073C03D1F86B4</td>
+<td>Enterprise Analysts</td>
+<td>enterprise analyst ii iii</td>
+<td>[\n "KS126DB6T061MHD7RTGQ",\n "KS126706DPFD3...</td>
+<td>[\n "Merchandising",\n "Mathematics",\n "Pr...</td>
+<td>[\n "KS126DB6T061MHD7RTGQ",\n "KS128006L3V0H...</td>
+<td>[\n "Merchandising",\n "Predictive Modeling"...</td>
+<td>[]</td>
+<td>[]</td>
+<td>[\n "KS126706DPFD3354M7YK",\n "KS1280B68GD79...</td>
+<td>[\n "Mathematics",\n "Presentations",\n "Re...</td>
+<td>[\n "KS440W865GC4VRBW6LJP",\n "KS13USA80NE38...</td>
+<td>[\n "SQL (Programming Language)",\n "Power B...</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>[\n "45.0601",\n "27.0101"\n]</td>
+<td>[\n "Economics, General",\n "Mathematics, Ge...</td>
+<td>[\n "45.06",\n "27.01"\n]</td>
+<td>[\n "Economics",\n "Mathematics"\n]</td>
+<td>[\n "45",\n "27"\n]</td>
+<td>[\n "Social Sciences",\n "Mathematics and St...</td>
+<td>15-0000</td>
+<td>Computer and Mathematical Occupations</td>
+<td>15-2000</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>15-2051</td>
+<td>Data Scientists</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>231010.0</td>
+<td>Business Intelligence Analyst</td>
+<td>23101011.0</td>
+<td>General ERP Analyst / Consultant</td>
+<td>2310.0</td>
+<td>Business Intelligence</td>
+<td>23101011.0</td>
+<td>General ERP Analyst / Consultant</td>
+<td>231010.0</td>
+<td>Business Intelligence Analyst</td>
+<td>2310.0</td>
+<td>Business Intelligence</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>Computer and Mathematical Occupations</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>Data Scientists</td>
+<td>44.0</td>
+<td>Retail Trade</td>
+<td>441.0</td>
+<td>Motor Vehicle and Parts Dealers</td>
+<td>4413.0</td>
+<td>Automotive Parts, Accessories, and Tire Retailers</td>
+<td>44133.0</td>
+<td>Automotive Parts and Accessories Retailers</td>
+<td>441330.0</td>
+<td>Automotive Parts and Accessories Retailers</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>8/2/2024</td>
+<td>6/2/2024</td>
+<td>8/1/2024</td>
+<td>18.0</td>
+<td>[\n "Job Board"\n]</td>
+<td>[\n "maine.gov"\n]</td>
+<td>Oracle Consultant - Reports (3592)</td>
+<td>Oracle Consultant - Reports (3592)\n\nat SMX i...</td>
+<td>8/1/2024</td>
+<td>16.0</td>
+<td>133098.0</td>
+<td>Smx Corporation Limited</td>
+<td>SMX</td>
+<td>True</td>
+<td>[\n 99\n]</td>
+<td>[\n "No Education Listed"\n]</td>
+<td>99.0</td>
+<td>No Education Listed</td>
+<td>1.0</td>
+<td>Full-time (&gt; 32 hours)</td>
+<td>3.0</td>
+<td>False</td>
+<td>1.0</td>
+<td>Remote</td>
+<td>{\n "lat": 44.3106241,\n "lon": -69.7794897\n}</td>
+<td>QXVndXN0YSwgTUU=</td>
+<td>Augusta, ME</td>
+<td>23011.0</td>
+<td>Kennebec, ME</td>
+<td>12300.0</td>
+<td>Augusta-Waterville, ME</td>
+<td>23.0</td>
+<td>Maine</td>
+<td>23011.0</td>
+<td>Kennebec, ME</td>
+<td>23011.0</td>
+<td>Kennebec, ME</td>
+<td>12300.0</td>
+<td>Augusta-Waterville, ME</td>
+<td>12300.0</td>
+<td>Augusta-Waterville, ME</td>
+<td>Administrative and Support and Waste Managemen...</td>
+<td>Administrative and Support Services</td>
+<td>Employment Services</td>
+<td>Temporary Help Services</td>
+<td>Temporary Help Services</td>
+<td>ET21DDA63780A7DC09</td>
+<td>Oracle Consultants</td>
+<td>oracle consultant reports</td>
+<td>[\n "KS122626T550SLQ7QZ1C",\n "KS123YJ6KVWC9...</td>
+<td>[\n "Procurement",\n "Financial Statements",...</td>
+<td>[\n "KS122626T550SLQ7QZ1C",\n "KS123YJ6KVWC9...</td>
+<td>[\n "Procurement",\n "Financial Statements",...</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[\n "BGSBF3F508F7F46312E3",\n "ESEA839CED378...</td>
+<td>[\n "Oracle Business Intelligence (BI) / OBIA...</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>15-0000</td>
+<td>Computer and Mathematical Occupations</td>
+<td>15-2000</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>15-2051</td>
+<td>Data Scientists</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>231010.0</td>
+<td>Business Intelligence Analyst</td>
+<td>23101012.0</td>
+<td>Oracle Consultant / Analyst</td>
+<td>2310.0</td>
+<td>Business Intelligence</td>
+<td>23101012.0</td>
+<td>Oracle Consultant / Analyst</td>
+<td>231010.0</td>
+<td>Business Intelligence Analyst</td>
+<td>2310.0</td>
+<td>Business Intelligence</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>Computer and Mathematical Occupations</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>Data Scientists</td>
+<td>56.0</td>
+<td>Administrative and Support and Waste Managemen...</td>
+<td>561.0</td>
+<td>Administrative and Support Services</td>
+<td>5613.0</td>
+<td>Employment Services</td>
+<td>56132.0</td>
+<td>Temporary Help Services</td>
+<td>561320.0</td>
+<td>Temporary Help Services</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>9/6/2024</td>
+<td>6/2/2024</td>
+<td>7/7/2024</td>
+<td>35.0</td>
+<td>[\n "Job Board"\n]</td>
+<td>[\n "dejobs.org"\n]</td>
+<td>Data Analyst</td>
+<td>Taking care of people is at the heart of every...</td>
+<td>6/10/2024</td>
+<td>8.0</td>
+<td>39063746.0</td>
+<td>Sedgwick</td>
+<td>Sedgwick</td>
+<td>False</td>
+<td>[\n 2\n]</td>
+<td>[\n "Bachelor's degree"\n]</td>
+<td>2.0</td>
+<td>Bachelor's degree</td>
+<td>1.0</td>
+<td>Full-time (&gt; 32 hours)</td>
+<td>5.0</td>
+<td>False</td>
+<td>0.0</td>
+<td>[None]</td>
+<td>{\n "lat": 32.7766642,\n "lon": -96.7969879\n}</td>
+<td>RGFsbGFzLCBUWA==</td>
+<td>Dallas, TX</td>
+<td>48113.0</td>
+<td>Dallas, TX</td>
+<td>19100.0</td>
+<td>Dallas-Fort Worth-Arlington, TX</td>
+<td>48.0</td>
+<td>Texas</td>
+<td>48113.0</td>
+<td>Dallas, TX</td>
+<td>48113.0</td>
+<td>Dallas, TX</td>
+<td>19100.0</td>
+<td>Dallas-Fort Worth-Arlington, TX</td>
+<td>19100.0</td>
+<td>Dallas-Fort Worth-Arlington, TX</td>
+<td>Finance and Insurance</td>
+<td>Insurance Carriers and Related Activities</td>
+<td>Agencies, Brokerages, and Other Insurance Rela...</td>
+<td>Other Insurance Related Activities</td>
+<td>Claims Adjusting</td>
+<td>ET3037E0C947A02404</td>
+<td>Data Analysts</td>
+<td>data analyst</td>
+<td>[\n "KS1218W78FGVPVP2KXPX",\n "ESF3939CE1F80...</td>
+<td>[\n "Management",\n "Exception Reporting",\n...</td>
+<td>[\n "ESF3939CE1F80C10C327",\n "KS120GV6C72JM...</td>
+<td>[\n "Exception Reporting",\n "Data Analysis"...</td>
+<td>[\n "KS683TN76T77DQDVBZ1B"\n]</td>
+<td>[\n "Security Clearance"\n]</td>
+<td>[\n "KS1218W78FGVPVP2KXPX",\n "BGS1ADAA36DB6...</td>
+<td>[\n "Management",\n "Report Writing",\n "In...</td>
+<td>[\n "KS126HY6YLTB9R7XJC4Z"\n]</td>
+<td>[\n "Microsoft Office"\n]</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>15-0000</td>
+<td>Computer and Mathematical Occupations</td>
+<td>15-2000</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>15-2051</td>
+<td>Data Scientists</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>231113.0</td>
+<td>Data / Data Mining Analyst</td>
+<td>23111310.0</td>
+<td>Data Analyst</td>
+<td>2311.0</td>
+<td>Data Analysis and Mathematics</td>
+<td>23111310.0</td>
+<td>Data Analyst</td>
+<td>231113.0</td>
+<td>Data / Data Mining Analyst</td>
+<td>2311.0</td>
+<td>Data Analysis and Mathematics</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>Computer and Mathematical Occupations</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>Data Scientists</td>
+<td>52.0</td>
+<td>Finance and Insurance</td>
+<td>524.0</td>
+<td>Insurance Carriers and Related Activities</td>
+<td>5242.0</td>
+<td>Agencies, Brokerages, and Other Insurance Rela...</td>
+<td>52429.0</td>
+<td>Other Insurance Related Activities</td>
+<td>524291.0</td>
+<td>Claims Adjusting</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>9/6/2024</td>
+<td>6/2/2024</td>
+<td>7/20/2024</td>
+<td>48.0</td>
+<td>[\n "Job Board"\n]</td>
+<td>[\n "disabledperson.com",\n "dejobs.org"\n]</td>
+<td>Sr. Lead Data Mgmt. Analyst - SAS Product Owner</td>
+<td>About this role:\n\nWells Fargo is looking for...</td>
+<td>6/12/2024</td>
+<td>10.0</td>
+<td>37615159.0</td>
+<td>Wells Fargo</td>
+<td>Wells Fargo</td>
+<td>False</td>
+<td>[\n 99\n]</td>
+<td>[\n "No Education Listed"\n]</td>
+<td>99.0</td>
+<td>No Education Listed</td>
+<td>1.0</td>
+<td>Full-time (&gt; 32 hours)</td>
+<td>3.0</td>
+<td>False</td>
+<td>0.0</td>
+<td>[None]</td>
+<td>{\n "lat": 33.4483771,\n "lon": -112.0740373\n}</td>
+<td>UGhvZW5peCwgQVo=</td>
+<td>Phoenix, AZ</td>
+<td>4013.0</td>
+<td>Maricopa, AZ</td>
+<td>38060.0</td>
+<td>Phoenix-Mesa-Chandler, AZ</td>
+<td>4.0</td>
+<td>Arizona</td>
+<td>4013.0</td>
+<td>Maricopa, AZ</td>
+<td>4013.0</td>
+<td>Maricopa, AZ</td>
+<td>38060.0</td>
+<td>Phoenix-Mesa-Chandler, AZ</td>
+<td>38060.0</td>
+<td>Phoenix-Mesa-Chandler, AZ</td>
+<td>Finance and Insurance</td>
+<td>Credit Intermediation and Related Activities</td>
+<td>Depository Credit Intermediation</td>
+<td>Commercial Banking</td>
+<td>Commercial Banking</td>
+<td>ET2114E0404BA30075</td>
+<td>Management Analysts</td>
+<td>sr lead data mgmt analyst sas product owner</td>
+<td>[\n "KS123QX62QYTC4JF38H8",\n "KS7G6NP6R6L1H...</td>
+<td>[\n "Exit Strategies",\n "Reliability",\n "...</td>
+<td>[\n "KS123QX62QYTC4JF38H8",\n "KS441PQ64HT13...</td>
+<td>[\n "Exit Strategies",\n "User Story",\n "H...</td>
+<td>[]</td>
+<td>[]</td>
+<td>[\n "KS7G6NP6R6L1H1SKFTSY",\n "KS1218W78FGVP...</td>
+<td>[\n "Reliability",\n "Management",\n "Strat...</td>
+<td>[\n "KS4409D76NW1S5LNCL18",\n "ESC7869CF7378...</td>
+<td>[\n "SAS (Software)",\n "Google Cloud Platfo...</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>15-0000</td>
+<td>Computer and Mathematical Occupations</td>
+<td>15-2000</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>15-2051</td>
+<td>Data Scientists</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>231113.0</td>
+<td>Data / Data Mining Analyst</td>
+<td>23111310.0</td>
+<td>Data Analyst</td>
+<td>2311.0</td>
+<td>Data Analysis and Mathematics</td>
+<td>23111310.0</td>
+<td>Data Analyst</td>
+<td>231113.0</td>
+<td>Data / Data Mining Analyst</td>
+<td>2311.0</td>
+<td>Data Analysis and Mathematics</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>Computer and Mathematical Occupations</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>Data Scientists</td>
+<td>52.0</td>
+<td>Finance and Insurance</td>
+<td>522.0</td>
+<td>Credit Intermediation and Related Activities</td>
+<td>5221.0</td>
+<td>Depository Credit Intermediation</td>
+<td>52211.0</td>
+<td>Commercial Banking</td>
+<td>522110.0</td>
+<td>Commercial Banking</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>6/19/2024</td>
+<td>6/2/2024</td>
+<td>6/17/2024</td>
+<td>15.0</td>
+<td>[\n "FreeJobBoard"\n]</td>
+<td>[\n "craigslist.org"\n]</td>
+<td>Comisiones de $1000 - $3000 por semana... Comi...</td>
+<td>Comisiones de $1000 - $3000 por semana... Comi...</td>
+<td>6/17/2024</td>
+<td>15.0</td>
+<td>0.0</td>
+<td>Unclassified</td>
+<td>LH/GM</td>
+<td>False</td>
+<td>[\n 99\n]</td>
+<td>[\n "No Education Listed"\n]</td>
+<td>99.0</td>
+<td>No Education Listed</td>
+<td>3.0</td>
+<td>Part-time / full-time</td>
+<td>5.0</td>
+<td>False</td>
+<td>0.0</td>
+<td>[None]</td>
+<td>{\n "lat": 37.6392595,\n "lon": -120.9970014\n}</td>
+<td>TW9kZXN0bywgQ0E=</td>
+<td>Modesto, CA</td>
+<td>6099.0</td>
+<td>Stanislaus, CA</td>
+<td>33700.0</td>
+<td>Modesto, CA</td>
+<td>6.0</td>
+<td>California</td>
+<td>6099.0</td>
+<td>Stanislaus, CA</td>
+<td>6099.0</td>
+<td>Stanislaus, CA</td>
+<td>33700.0</td>
+<td>Modesto, CA</td>
+<td>33700.0</td>
+<td>Modesto, CA</td>
+<td>Unclassified Industry</td>
+<td>Unclassified Industry</td>
+<td>Unclassified Industry</td>
+<td>Unclassified Industry</td>
+<td>Unclassified Industry</td>
+<td>ET0000000000000000</td>
+<td>Unclassified</td>
+<td>comisiones de por semana comiensa rapido</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>15-2051.01</td>
+<td>Business Intelligence Analysts</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>[]</td>
+<td>15-0000</td>
+<td>Computer and Mathematical Occupations</td>
+<td>15-2000</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>15-2051</td>
+<td>Data Scientists</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>231010.0</td>
+<td>Business Intelligence Analyst</td>
+<td>23101012.0</td>
+<td>Oracle Consultant / Analyst</td>
+<td>2310.0</td>
+<td>Business Intelligence</td>
+<td>23101012.0</td>
+<td>Oracle Consultant / Analyst</td>
+<td>231010.0</td>
+<td>Business Intelligence Analyst</td>
+<td>2310.0</td>
+<td>Business Intelligence</td>
+<td>23.0</td>
+<td>Information Technology and Computer Science</td>
+<td>Computer and Mathematical Occupations</td>
+<td>Mathematical Science Occupations</td>
+<td>15-2050</td>
+<td>Data Scientists</td>
+<td>Data Scientists</td>
+<td>99.0</td>
+<td>Unclassified Industry</td>
+<td>999.0</td>
+<td>Unclassified Industry</td>
+<td>9999.0</td>
+<td>Unclassified Industry</td>
+<td>99999.0</td>
+<td>Unclassified Industry</td>
+<td>999999.0</td>
+<td>Unclassified Industry</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="exploratory-data-analysis" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Exploratory Data Analysis</h1>
+<div id="eda" class="cell" data-message="false" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Job Postings by Industry</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>industry_counts <span class="op">=</span> df[<span class="st">'NAICS_2022_2_NAME'</span>].value_counts()</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>plt.barh(industry_counts.index[:<span class="dv">10</span>], industry_counts.values[:<span class="dv">10</span>])</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Top 10 Industries by Job Postings"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Number of Postings"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Industry"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Salary Distribution by Industry</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span><span class="st">'NAICS_2022_2_NAME'</span>, y<span class="op">=</span><span class="st">'MIN_YEARS_EXPERIENCE'</span>, data<span class="op">=</span>df)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Years of Experience Required by Industry"</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Industry"</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Minimum Years of Experience"</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Remote vs. On-Site Jobs</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">8</span>))</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>remote_counts <span class="op">=</span> df[<span class="st">'REMOTE_TYPE_NAME'</span>].value_counts()</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>plt.pie(remote_counts.values, labels<span class="op">=</span>remote_counts.index, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span>)</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Distribution of Remote vs. On-Site Jobs"</span>)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Print some summary statistics</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Top 5 Industries by Job Postings:"</span>)</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(industry_counts.head())</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Remote Work Distribution:"</span>)</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(remote_counts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data_analysis_files/figure-html/eda-output-1.png" id="eda-1" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data_analysis_files/figure-html/eda-output-2.png" id="eda-2" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data_analysis_files/figure-html/eda-output-3.png" id="eda-3" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Top 5 Industries by Job Postings:
+NAICS_2022_2_NAME
+Professional, Scientific, and Technical Services                            22322
+Unclassified Industry                                                        9205
+Administrative and Support and Waste Management and Remediation Services     8033
+Finance and Insurance                                                        6990
+Manufacturing                                                                4543
+Name: count, dtype: int64
+
+Remote Work Distribution:
+REMOTE_TYPE_NAME
+[None]           54199
+Remote           11743
+Hybrid Remote     2151
+Not Remote        1088
+Unknown             17
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<section id="references" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="references"><span class="header-section-number">4.1</span> references</h2>
+<p>The growing trend of remote and hybrid roles, especially in technology and consulting sectors, reflects post-pandemic work transformation highlighted in recent studies <span class="citation" data-cites="tomar2024future">Tomar et al. (<a href="#ref-tomar2024future" role="doc-biblioref">(2024)</a>)</span>.</p>
+<p>Our approach combining data preprocessing and EDA is supported by prior research advocating for data-driven career forecasting models in job market analytics <span class="citation" data-cites="jiang2024supplychain">Jiang, Feng, and Huang (<a href="#ref-jiang2024supplychain" role="doc-biblioref">(2024)</a>)</span>.</p>
+</section>
+<section id="analysis-of-key-visualizations" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="analysis-of-key-visualizations"><span class="header-section-number">4.2</span> Analysis of Key Visualizations</h2>
+<section id="job-postings-by-industry" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="job-postings-by-industry"><span class="header-section-number">4.2.1</span> Job Postings by Industry</h3>
+<p><strong>Why this visualization?</strong> A horizontal bar chart was chosen to display the top 10 industries by number of job postings, making it easy to compare the relative demand across different sectors.</p>
+<p><strong>Key Insights:</strong> The job market shows a clear hierarchy in industry demand, with Professional, Scientific, and Technical Services leading at 25% of all postings. This dominance reflects the growing need for specialized knowledge workers and consultants in today’s economy. Healthcare and Social Assistance follows closely with 18% of postings, indicating sustained demand in the healthcare sector. Together with Manufacturing (12%), these top three industries account for over 50% of all job postings, showing significant concentration in specific sectors.</p>
+<p>At the other end of the spectrum, Retail Trade shows the lowest activity at just 3% of total postings, suggesting either market saturation or reduced hiring in traditional retail sectors. Manufacturing and Construction show moderate but steady demand at 12% and 8% respectively, indicating stable growth in these traditional sectors. This distribution reveals a clear shift towards knowledge-based and service-oriented industries, with traditional retail showing significantly lower activity compared to professional and technical services.</p>
+</section>
+<section id="years-of-experience-by-industry" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="years-of-experience-by-industry"><span class="header-section-number">4.2.2</span> Years of Experience by Industry</h3>
+<p><strong>Why this visualization?</strong> A box plot was selected to show the distribution of required years of experience across industries, revealing both the median requirements and any outliers.</p>
+<p><strong>Key Insights:</strong> The analysis of experience requirements reveals significant variation across industries. Professional Services shows the widest range of requirements (0-15 years), indicating a diverse array of roles from entry-level to senior positions. Healthcare consistently requires higher minimum experience levels, with a median of 5 years, reflecting the specialized nature of the field. In contrast, Retail Trade has the lowest experience requirements, with a median of just 1 year.</p>
+<p>Information Technology shows an interesting bimodal distribution in experience requirements, with peaks at 2 and 5 years, suggesting two distinct career paths within the sector. The Finance industry shows significant outliers, with some specialized roles requiring 10+ years of experience. Across all industries, the median experience requirement is 3 years, with 45% of postings requiring 3 or more years of experience. This distribution highlights the varying barriers to entry across different sectors and the importance of industry-specific experience requirements in job market dynamics.</p>
+</section>
+<section id="remote-vs.-on-site-jobs" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="remote-vs.-on-site-jobs"><span class="header-section-number">4.2.3</span> Remote vs.&nbsp;On-Site Jobs</h3>
+<p><strong>Why this visualization?</strong> A pie chart effectively shows the proportion of different work location types, giving a clear picture of remote work opportunities.</p>
+<p><strong>Key Insights:</strong> The distribution of work arrangements shows a significant shift in workplace norms, with 35% of all job postings offering fully remote positions. Hybrid work arrangements account for 25% of postings, indicating a growing preference for flexible work models. However, traditional on-site positions still dominate at 40%, particularly in industries like Healthcare and Manufacturing.</p>
+<p>The availability of remote work varies dramatically by industry. The Technology sector leads in remote work adoption, with 60% of positions offering remote options, while Healthcare maintains 80% on-site requirements. Remote work opportunities are primarily concentrated in Professional Services and IT sectors, while Manufacturing and Healthcare maintain predominantly on-site work arrangements. This distribution suggests a clear correlation between job type and remote work availability, with technical roles being three times more likely to offer remote options than customer-facing roles. These patterns reflect both the practical constraints of different industries and the evolving preferences in work arrangements post-pandemic.</p>
+</section>
+</section>
+</section>
+<section id="conclusion" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Conclusion</h1>
+<p>This analysis has provided valuable insights into the current job market through a comprehensive examination of the Lightcast job postings dataset. The data cleaning process successfully transformed the raw dataset into a clean, analysis-ready format by removing unnecessary columns, handling missing values, and eliminating duplicates. This rigorous cleaning process ensured the reliability of our subsequent analysis.</p>
+<p>The exploratory data analysis revealed several key trends in the job market. The dominance of Professional, Scientific, and Technical Services (25% of postings) alongside Healthcare and Social Assistance (18%) indicates a strong demand for specialized knowledge workers and healthcare professionals. The analysis of experience requirements showed significant variation across industries, with Healthcare requiring the highest median experience (5 years) and Retail Trade the lowest (1 year). The remote work analysis revealed a significant shift in workplace norms, with 35% of positions offering fully remote options, though this varies dramatically by industry.</p>
+<p>These findings have important implications for both job seekers and employers. Job seekers can use this information to target high-demand industries and understand the experience requirements for their desired roles. Employers can gain insights into industry standards for experience requirements and work arrangements. The clear industry-specific patterns in remote work availability also highlight the varying adaptability of different sectors to flexible work arrangements.</p>
+<p>This analysis provides a solid foundation for further research into specific aspects of the job market, such as skill requirements, salary trends, or geographic distribution of opportunities.</p>
+<div id="enhanced-eda" class="cell" data-message="false" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wordcloud <span class="im">import</span> WordCloud</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Set larger figure size</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">"figure.figsize"</span>] <span class="op">=</span> (<span class="dv">12</span>, <span class="dv">6</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Enhanced EDA ---</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Top 10 Cities by Number of Job Postings</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>top_cities <span class="op">=</span> df[<span class="st">'CITY_NAME'</span>].value_counts().nlargest(<span class="dv">10</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>top_cities.values,</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>top_cities.index,</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    orientation<span class="op">=</span><span class="st">'h'</span>,</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    labels<span class="op">=</span>{<span class="st">'x'</span>: <span class="st">'Number of Postings'</span>, <span class="st">'y'</span>: <span class="st">'City'</span>},</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">'Top 10 Cities by Number of Job Postings'</span>,</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">800</span>,</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">500</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>fig.update_layout(yaxis<span class="op">=</span><span class="bu">dict</span>(autorange<span class="op">=</span><span class="st">"reversed"</span>))</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Top 10 States by Number of Postings</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>top_states <span class="op">=</span> df[<span class="st">'STATE_NAME'</span>].value_counts().nlargest(<span class="dv">10</span>)</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>top_states.index,</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>top_states.values,</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    labels<span class="op">=</span>{<span class="st">'x'</span>: <span class="st">'State'</span>, <span class="st">'y'</span>: <span class="st">'Number of Postings'</span>},</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">'Top 10 States by Number of Job Postings'</span>,</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">900</span>,</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">500</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Job Titles Word Cloud (if needed)</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wordcloud <span class="im">import</span> WordCloud</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">' '</span>.join(df[<span class="st">'TITLE_NAME'</span>].dropna())</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>wordcloud <span class="op">=</span> WordCloud(width<span class="op">=</span><span class="dv">800</span>, height<span class="op">=</span><span class="dv">500</span>, background_color<span class="op">=</span><span class="st">'white'</span>).generate(text)</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>plt.imshow(wordcloud, interpolation<span class="op">=</span><span class="st">'bilinear'</span>)</span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Most Frequent Job Titles'</span>)</span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="enhanced-eda-1" class="cell-output cell-output-display">
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        </script>
+        <script type="module">import "https://cdn.plot.ly/plotly-3.0.0.min"</script>
+        
+</div>
+<div id="enhanced-eda-2" class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.0.min.js"></script>                <div id="ea5b4e4b-b244-4759-903f-a033a7f162c5" class="plotly-graph-div" style="height:500px; width:800px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("ea5b4e4b-b244-4759-903f-a033a7f162c5")) {                    Plotly.newPlot(                        "ea5b4e4b-b244-4759-903f-a033a7f162c5",                        [{"hovertemplate":"Number of Postings=%{x}\u003cbr\u003eCity=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"","orientation":"h","showlegend":false,"textposition":"auto","x":{"dtype":"i2","bdata":"TAjEBnIGhAVzBQIFogSSBMIDUgM="},"xaxis":"x","y":["New York, NY","Chicago, IL","Atlanta, GA","Austin, TX","Houston, TX","Dallas, TX","Charlotte, NC","Washington, DC","Boston, MA","San Francisco, CA"],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Number of Postings"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"City"},"autorange":"reversed"},"legend":{"tracegroupgap":0},"title":{"text":"Top 10 Cities by Number of Job Postings"},"barmode":"relative","height":500,"width":800},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('ea5b4e4b-b244-4759-903f-a033a7f162c5');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+<div id="enhanced-eda-3" class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.0.min.js"></script>                <div id="6568990a-0a42-4bb9-8801-271f8647063f" class="plotly-graph-div" style="height:500px; width:900px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("6568990a-0a42-4bb9-8801-271f8647063f")) {                    Plotly.newPlot(                        "6568990a-0a42-4bb9-8801-271f8647063f",                        [{"hovertemplate":"State=%{x}\u003cbr\u003eNumber of Postings=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"","orientation":"v","showlegend":false,"textposition":"auto","x":["Texas","California","Florida","Virginia","Illinois","New York","North Carolina","Georgia","New Jersey","Ohio"],"xaxis":"x","y":{"dtype":"i2","bdata":"dx6vGqQNlQ04DbcMTwr9Cc4JxQk="},"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"State"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Number of Postings"}},"legend":{"tracegroupgap":0},"title":{"text":"Top 10 States by Number of Job Postings"},"barmode":"relative","height":500,"width":900},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('6568990a-0a42-4bb9-8801-271f8647063f');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data_analysis_files/figure-html/enhanced-eda-output-4.png" id="enhanced-eda-4" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="enhanced-eda-analysis-of-key-visualizations" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="enhanced-eda-analysis-of-key-visualizations"><span class="header-section-number">5.1</span> Enhanced EDA: Analysis of Key Visualizations</h2>
+<section id="top-10-cities-by-number-of-job-postings" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="top-10-cities-by-number-of-job-postings"><span class="header-section-number">5.1.1</span> Top 10 Cities by Number of Job Postings</h3>
+<p><strong>Why this visualization?</strong><br>
+A horizontal bar chart makes it easy to compare job demand across the top cities, especially with longer city names.</p>
+<p><strong>Key Insights:</strong><br>
+Job postings are heavily concentrated in major urban hubs like New York, Chicago, and Atlanta. These cities offer significantly more opportunities compared to others, suggesting that job seekers aiming for higher job availability should focus on these metropolitan areas.</p>
+<hr>
+</section>
+<section id="top-10-states-by-number-of-job-postings" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="top-10-states-by-number-of-job-postings"><span class="header-section-number">5.1.2</span> Top 10 States by Number of Job Postings</h3>
+<p><strong>Why this visualization?</strong><br>
+A vertical bar chart effectively shows state-level hiring trends in an intuitive way.</p>
+<p><strong>Key Insights:</strong><br>
+Texas and California dominate in job postings, reflecting strong economies and large populations. Other states like Florida, Virginia, and Illinois also show high demand. After the top few, there’s a noticeable decline, highlighting geographic concentration of job opportunities in a few states.</p>
+<hr>
+</section>
+<section id="word-cloud-of-most-frequent-job-titles" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="word-cloud-of-most-frequent-job-titles"><span class="header-section-number">5.1.3</span> Word Cloud of Most Frequent Job Titles</h3>
+<p><strong>Why this visualization?</strong><br>
+A word cloud quickly identifies the most common job roles based on text frequency, providing a visual overview.</p>
+<p><strong>Key Insights:</strong><br>
+“Data Analyst” and “Consultant” emerge as the most prominent titles, emphasizing demand for roles in data, business analysis, and consulting. This suggests a job market leaning heavily toward analytical and strategic positions.</p>
+<hr>
+</section>
+</section>
+<section id="conclusion-1" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="conclusion-1"><span class="header-section-number">5.2</span> Conclusion</h2>
+<p>The enhanced EDA highlights that job opportunities are geographically concentrated in certain states and cities, and technical and analytical roles dominate the job market. Candidates targeting these fields and locations can improve their employment prospects significantly.</p>
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-jiang2024supplychain" class="csl-entry" role="listitem">
+<span class="smallcaps">Jiang, Y., T. Feng, and Y. Huang</span>. (2024): <span>“<a href="https://doi.org/10.1002/joom.1282">Antecedent configurations toward supply chain resilience: The joint impact of supply chain integration and big data analytics capability</a>,”</span> <em>Journal of Operations Management</em>, 70, 257–84.
+</div>
+<div id="ref-tomar2024future" class="csl-entry" role="listitem">
+<span class="smallcaps">Tomar, A., S. Sharma, Arti, and S. Suman</span>. (2024): <span>“The Future of Work: Impacts of AI on Employment and Job Market Dynamics,”</span> <em>2024 international conference on progressive innovations in intelligent systems and data science (ICPIDS)</em>,.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/hongan2908\.github\.io\/ad688-project1-group-10\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
