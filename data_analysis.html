@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Advait Pillai, Ritusri Mohan">
 
-<title>Data Analysis – Job Market Analysis 2024</title>
+<title>data_analysis – Job Market Analysis 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,26 +54,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -190,7 +170,7 @@ div.csl-indent {
 <span class="menu-text">Citations</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./final_report.html"> 
+    <a class="nav-link" href="./final_report.docx"> 
 <span class="menu-text">Final Report</span></a>
   </li>  
 </ul>
@@ -209,80 +189,74 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#data-overview" id="toc-data-overview" class="nav-link" data-scroll-target="#data-overview"><span class="header-section-number">2</span> Data Overview</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#data-overview" id="toc-data-overview" class="nav-link" data-scroll-target="#data-overview">Data Overview</a>
   <ul class="collapse">
-  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description"><span class="header-section-number">2.1</span> Dataset Description</a></li>
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description">Dataset Description</a></li>
   </ul></li>
-  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning"><span class="header-section-number">3</span> Data Cleaning</a></li>
-  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis"><span class="header-section-number">4</span> Exploratory Data Analysis</a>
+  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning">Data Cleaning</a></li>
+  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory Data Analysis</a>
   <ul class="collapse">
-  <li><a href="#analysis-of-key-visualizations" id="toc-analysis-of-key-visualizations" class="nav-link" data-scroll-target="#analysis-of-key-visualizations"><span class="header-section-number">4.1</span> Analysis of Key Visualizations</a>
+  <li><a href="#analysis-of-key-visualizations" id="toc-analysis-of-key-visualizations" class="nav-link" data-scroll-target="#analysis-of-key-visualizations">Analysis of Key Visualizations</a>
   <ul class="collapse">
-  <li><a href="#job-postings-by-industry" id="toc-job-postings-by-industry" class="nav-link" data-scroll-target="#job-postings-by-industry"><span class="header-section-number">4.1.1</span> Job Postings by Industry</a></li>
-  <li><a href="#years-of-experience-by-industry" id="toc-years-of-experience-by-industry" class="nav-link" data-scroll-target="#years-of-experience-by-industry"><span class="header-section-number">4.1.2</span> Years of Experience by Industry</a></li>
-  <li><a href="#remote-vs.-on-site-jobs" id="toc-remote-vs.-on-site-jobs" class="nav-link" data-scroll-target="#remote-vs.-on-site-jobs"><span class="header-section-number">4.1.3</span> Remote vs.&nbsp;On-Site Jobs</a></li>
+  <li><a href="#job-postings-by-industry" id="toc-job-postings-by-industry" class="nav-link" data-scroll-target="#job-postings-by-industry">Job Postings by Industry</a></li>
+  <li><a href="#years-of-experience-by-industry" id="toc-years-of-experience-by-industry" class="nav-link" data-scroll-target="#years-of-experience-by-industry">Years of Experience by Industry</a></li>
+  <li><a href="#remote-vs.-on-site-jobs" id="toc-remote-vs.-on-site-jobs" class="nav-link" data-scroll-target="#remote-vs.-on-site-jobs">Remote vs.&nbsp;On-Site Jobs</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">5</span> Conclusion</a>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a>
   <ul class="collapse">
-  <li><a href="#enhanced-eda-analysis-of-key-visualizations" id="toc-enhanced-eda-analysis-of-key-visualizations" class="nav-link" data-scroll-target="#enhanced-eda-analysis-of-key-visualizations"><span class="header-section-number">5.1</span> Enhanced EDA: Analysis of Key Visualizations</a>
+  <li><a href="#enhanced-eda-analysis-of-key-visualizations" id="toc-enhanced-eda-analysis-of-key-visualizations" class="nav-link" data-scroll-target="#enhanced-eda-analysis-of-key-visualizations">Enhanced EDA: Analysis of Key Visualizations</a>
   <ul class="collapse">
-  <li><a href="#top-10-cities-by-number-of-job-postings" id="toc-top-10-cities-by-number-of-job-postings" class="nav-link" data-scroll-target="#top-10-cities-by-number-of-job-postings"><span class="header-section-number">5.1.1</span> Top 10 Cities by Number of Job Postings</a></li>
-  <li><a href="#top-10-states-by-number-of-job-postings" id="toc-top-10-states-by-number-of-job-postings" class="nav-link" data-scroll-target="#top-10-states-by-number-of-job-postings"><span class="header-section-number">5.1.2</span> Top 10 States by Number of Job Postings</a></li>
-  <li><a href="#word-cloud-of-most-frequent-job-titles" id="toc-word-cloud-of-most-frequent-job-titles" class="nav-link" data-scroll-target="#word-cloud-of-most-frequent-job-titles"><span class="header-section-number">5.1.3</span> Word Cloud of Most Frequent Job Titles</a></li>
+  <li><a href="#top-10-cities-by-number-of-job-postings" id="toc-top-10-cities-by-number-of-job-postings" class="nav-link" data-scroll-target="#top-10-cities-by-number-of-job-postings">Top 10 Cities by Number of Job Postings</a></li>
+  <li><a href="#top-10-states-by-number-of-job-postings" id="toc-top-10-states-by-number-of-job-postings" class="nav-link" data-scroll-target="#top-10-states-by-number-of-job-postings">Top 10 States by Number of Job Postings</a></li>
+  <li><a href="#word-cloud-of-most-frequent-job-titles" id="toc-word-cloud-of-most-frequent-job-titles" class="nav-link" data-scroll-target="#word-cloud-of-most-frequent-job-titles">Word Cloud of Most Frequent Job Titles</a></li>
   </ul></li>
-  <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1"><span class="header-section-number">5.2</span> Conclusion</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5.3</span> references</a></li>
+  <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">references</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Data Analysis</h1>
-<p class="subtitle lead">Comprehensive Data Cleaning &amp; Exploratory Analysis of Job Market Trends</p>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Advait Pillai, Ritusri Mohan </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Boston University
-          </p>
-      </div>
-  </div>
-
-<div class="quarto-title-meta">
-
-      
-  
-    
-  </div>
-  
 
 
-</header>
+<!--
 
 
-<section id="introduction" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+---
+title: "Data Analysis"
+subtitle: "Comprehensive Data Cleaning & Exploratory Analysis of Job Market Trends"
+author:
+  - name: Advait Pillai, Ritusri Mohan
+    affiliations:
+      - id: bu
+        name: Boston University
+        city: Boston
+        state: MA
+format: 
+  html:
+    toc: true
+    number-sections: true
+    df-print: paged
+bibliography: references.bib
+csl: csl/econometrica.csl
+---
+
+
+-->
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
 <p>This document presents a comprehensive analysis of job market trends using the Lightcast job postings dataset. The analysis will cover data cleaning, exploratory data analysis, and insights into current employment trends.</p>
 </section>
-<section id="data-overview" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Data Overview</h1>
+<section id="data-overview" class="level1">
+<h1>Data Overview</h1>
 <p>The dataset used for this analysis is the Lightcast job postings dataset, which contains detailed information about job listings across various industries and locations.</p>
-<section id="dataset-description" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="dataset-description"><span class="header-section-number">2.1</span> Dataset Description</h2>
+<section id="dataset-description" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-description">Dataset Description</h2>
 <ul>
 <li><strong>Source</strong>: Lightcast (formerly Burning Glass)</li>
 <li><strong>Size</strong>: 717MB</li>
@@ -291,8 +265,8 @@ div.csl-indent {
 </ul>
 </section>
 </section>
-<section id="data-cleaning" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Data Cleaning</h1>
+<section id="data-cleaning" class="level1">
+<h1>Data Cleaning</h1>
 <div id="data-cleaning" class="cell" data-message="false" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
@@ -1093,8 +1067,8 @@ First few rows of cleaned dataset:</code></pre>
 </div>
 </div>
 </section>
-<section id="exploratory-data-analysis" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Exploratory Data Analysis</h1>
+<section id="exploratory-data-analysis" class="level1">
+<h1>Exploratory Data Analysis</h1>
 <div id="eda" class="cell" data-message="false" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
@@ -1175,12 +1149,12 @@ Unknown             17
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<section id="analysis-of-key-visualizations" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="analysis-of-key-visualizations"><span class="header-section-number">4.1</span> Analysis of Key Visualizations</h2>
-<section id="job-postings-by-industry" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="job-postings-by-industry"><span class="header-section-number">4.1.1</span> Job Postings by Industry</h3>
+<section id="analysis-of-key-visualizations" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-of-key-visualizations">Analysis of Key Visualizations</h2>
+<section id="job-postings-by-industry" class="level3">
+<h3 class="anchored" data-anchor-id="job-postings-by-industry">Job Postings by Industry</h3>
 <p><strong>Why this visualization?</strong> A horizontal bar chart was chosen to display the top 10 industries by number of job postings, making it easy to compare the relative demand across different sectors.</p>
-<div id="30612210" class="cell" data-execution_count="3">
+<div id="3c643a57" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
@@ -1203,10 +1177,10 @@ Name: count, dtype: int64</code></pre>
 <p><strong>Key Insights:</strong> The job market shows a clear hierarchy in industry demand, with Professional, Scientific, and Technical Services leading at 25% of all postings. This dominance reflects the growing need for specialized knowledge workers and consultants in today’s economy. Healthcare and Social Assistance follows closely with 18% of postings, indicating sustained demand in the healthcare sector. Together with Manufacturing (12%), these top three industries account for over 50% of all job postings, showing significant concentration in specific sectors.</p>
 <p>At the other end of the spectrum, Retail Trade shows the lowest activity at just 3% of total postings, suggesting either market saturation or reduced hiring in traditional retail sectors. Manufacturing and Construction show moderate but steady demand at 12% and 8% respectively, indicating stable growth in these traditional sectors. This distribution reveals a clear shift towards knowledge-based and service-oriented industries, with traditional retail showing significantly lower activity compared to professional and technical services.</p>
 </section>
-<section id="years-of-experience-by-industry" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="years-of-experience-by-industry"><span class="header-section-number">4.1.2</span> Years of Experience by Industry</h3>
+<section id="years-of-experience-by-industry" class="level3">
+<h3 class="anchored" data-anchor-id="years-of-experience-by-industry">Years of Experience by Industry</h3>
 <p><strong>Why this visualization?</strong> A box plot was selected to show the distribution of required years of experience across industries, revealing both the median requirements and any outliers.</p>
-<div id="429a0ce4" class="cell" data-execution_count="4">
+<div id="7975626a" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
@@ -1229,10 +1203,10 @@ Name: count, dtype: int64</code></pre>
 <p><strong>Key Insights:</strong> The analysis of experience requirements reveals significant variation across industries. Professional Services shows the widest range of requirements (0-15 years), indicating a diverse array of roles from entry-level to senior positions. Healthcare consistently requires higher minimum experience levels, with a median of 5 years, reflecting the specialized nature of the field. In contrast, Retail Trade has the lowest experience requirements, with a median of just 1 year.</p>
 <p>Information Technology shows an interesting bimodal distribution in experience requirements, with peaks at 2 and 5 years, suggesting two distinct career paths within the sector. The Finance industry shows significant outliers, with some specialized roles requiring 10+ years of experience. Across all industries, the median experience requirement is 3 years, with 45% of postings requiring 3 or more years of experience. This distribution highlights the varying barriers to entry across different sectors and the importance of industry-specific experience requirements in job market dynamics.</p>
 </section>
-<section id="remote-vs.-on-site-jobs" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="remote-vs.-on-site-jobs"><span class="header-section-number">4.1.3</span> Remote vs.&nbsp;On-Site Jobs</h3>
+<section id="remote-vs.-on-site-jobs" class="level3">
+<h3 class="anchored" data-anchor-id="remote-vs.-on-site-jobs">Remote vs.&nbsp;On-Site Jobs</h3>
 <p><strong>Why this visualization?</strong> A pie chart effectively shows the proportion of different work location types, giving a clear picture of remote work opportunities.</p>
-<div id="30978fc1" class="cell" data-execution_count="5">
+<div id="26e82c41" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">8</span>))</span>
@@ -1282,19 +1256,19 @@ Name: count, dtype: int64</code></pre>
 </section>
 </section>
 </section>
-<section id="conclusion" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Conclusion</h1>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
 <p>This analysis has provided valuable insights into the current job market through a comprehensive examination of the Lightcast job postings dataset. The data cleaning process successfully transformed the raw dataset into a clean, analysis-ready format by removing unnecessary columns, handling missing values, and eliminating duplicates. This rigorous cleaning process ensured the reliability of our subsequent analysis.</p>
 <p>The exploratory data analysis revealed several key trends in the job market. The dominance of Professional, Scientific, and Technical Services (25% of postings) alongside Healthcare and Social Assistance (18%) indicates a strong demand for specialized knowledge workers and healthcare professionals. The analysis of experience requirements showed significant variation across industries, with Healthcare requiring the highest median experience (5 years) and Retail Trade the lowest (1 year). The remote work analysis revealed a significant shift in workplace norms, with 35% of positions offering fully remote options, though this varies dramatically by industry.</p>
 <p>These findings have important implications for both job seekers and employers. Job seekers can use this information to target high-demand industries and understand the experience requirements for their desired roles. Employers can gain insights into industry standards for experience requirements and work arrangements. The clear industry-specific patterns in remote work availability also highlight the varying adaptability of different sectors to flexible work arrangements.</p>
 <p>This analysis provides a solid foundation for further research into specific aspects of the job market, such as skill requirements, salary trends, or geographic distribution of opportunities.</p>
-<section id="enhanced-eda-analysis-of-key-visualizations" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="enhanced-eda-analysis-of-key-visualizations"><span class="header-section-number">5.1</span> Enhanced EDA: Analysis of Key Visualizations</h2>
-<section id="top-10-cities-by-number-of-job-postings" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="top-10-cities-by-number-of-job-postings"><span class="header-section-number">5.1.1</span> Top 10 Cities by Number of Job Postings</h3>
+<section id="enhanced-eda-analysis-of-key-visualizations" class="level2">
+<h2 class="anchored" data-anchor-id="enhanced-eda-analysis-of-key-visualizations">Enhanced EDA: Analysis of Key Visualizations</h2>
+<section id="top-10-cities-by-number-of-job-postings" class="level3">
+<h3 class="anchored" data-anchor-id="top-10-cities-by-number-of-job-postings">Top 10 Cities by Number of Job Postings</h3>
 <p><strong>Why this visualization?</strong><br>
 A horizontal bar chart makes it easy to compare job demand across the top cities, especially with longer city names.</p>
-<div id="cf32dbf5" class="cell" data-execution_count="6">
+<div id="fe342e97" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -1328,9 +1302,9 @@ A horizontal bar chart makes it easy to compare job demand across the top cities
 </div>
 <div class="cell-output cell-output-display">
 <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.0.min.js"></script>                <div id="fa05f4bb-dc73-4720-92be-bc0ed7d42053" class="plotly-graph-div" style="height:500px; width:800px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("fa05f4bb-dc73-4720-92be-bc0ed7d42053")) {                    Plotly.newPlot(                        "fa05f4bb-dc73-4720-92be-bc0ed7d42053",                        [{"hovertemplate":"Number of Postings=%{x}\u003cbr\u003eCity=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"","orientation":"h","showlegend":false,"textposition":"auto","x":{"dtype":"i2","bdata":"TAjEBnIGhAVzBQIFogSSBMIDUgM="},"xaxis":"x","y":["New York, NY","Chicago, IL","Atlanta, GA","Austin, TX","Houston, TX","Dallas, TX","Charlotte, NC","Washington, DC","Boston, MA","San Francisco, CA"],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Number of Postings"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"City"},"autorange":"reversed"},"legend":{"tracegroupgap":0},"title":{"text":"Top 10 Cities by Number of Job Postings"},"barmode":"relative","height":500,"width":800},                        {"responsive": true}                    ).then(function(){
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.0.min.js"></script>                <div id="d341caff-1f56-4257-bc2b-6d35815bdb81" class="plotly-graph-div" style="height:500px; width:800px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("d341caff-1f56-4257-bc2b-6d35815bdb81")) {                    Plotly.newPlot(                        "d341caff-1f56-4257-bc2b-6d35815bdb81",                        [{"hovertemplate":"Number of Postings=%{x}\u003cbr\u003eCity=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"","orientation":"h","showlegend":false,"textposition":"auto","x":{"dtype":"i2","bdata":"TAjEBnIGhAVzBQIFogSSBMIDUgM="},"xaxis":"x","y":["New York, NY","Chicago, IL","Atlanta, GA","Austin, TX","Houston, TX","Dallas, TX","Charlotte, NC","Washington, DC","Boston, MA","San Francisco, CA"],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Number of Postings"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"City"},"autorange":"reversed"},"legend":{"tracegroupgap":0},"title":{"text":"Top 10 Cities by Number of Job Postings"},"barmode":"relative","height":500,"width":800},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('fa05f4bb-dc73-4720-92be-bc0ed7d42053');
+var gd = document.getElementById('d341caff-1f56-4257-bc2b-6d35815bdb81');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -1359,11 +1333,11 @@ if (outputEl) {{
 Job postings are heavily concentrated in major urban hubs like New York, Chicago, and Atlanta. These cities offer significantly more opportunities compared to others, suggesting that job seekers aiming for higher job availability should focus on these metropolitan areas.</p>
 <hr>
 </section>
-<section id="top-10-states-by-number-of-job-postings" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="top-10-states-by-number-of-job-postings"><span class="header-section-number">5.1.2</span> Top 10 States by Number of Job Postings</h3>
+<section id="top-10-states-by-number-of-job-postings" class="level3">
+<h3 class="anchored" data-anchor-id="top-10-states-by-number-of-job-postings">Top 10 States by Number of Job Postings</h3>
 <p><strong>Why this visualization?</strong><br>
 A vertical bar chart effectively shows state-level hiring trends in an intuitive way.</p>
-<div id="0e7584e4" class="cell" data-execution_count="7">
+<div id="f570f9fb" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>top_states <span class="op">=</span> df[<span class="st">'STATE_NAME'</span>].value_counts().nlargest(<span class="dv">10</span>)</span>
@@ -1379,9 +1353,9 @@ A vertical bar chart effectively shows state-level hiring trends in an intuitive
 </details>
 <div class="cell-output cell-output-display">
 <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.0.min.js"></script>                <div id="931493ef-a24b-4cfb-8a41-f34f97d25599" class="plotly-graph-div" style="height:500px; width:900px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("931493ef-a24b-4cfb-8a41-f34f97d25599")) {                    Plotly.newPlot(                        "931493ef-a24b-4cfb-8a41-f34f97d25599",                        [{"hovertemplate":"State=%{x}\u003cbr\u003eNumber of Postings=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"","orientation":"v","showlegend":false,"textposition":"auto","x":["Texas","California","Florida","Virginia","Illinois","New York","North Carolina","Georgia","New Jersey","Ohio"],"xaxis":"x","y":{"dtype":"i2","bdata":"dx6vGqQNlQ04DbcMTwr9Cc4JxQk="},"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"State"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Number of Postings"}},"legend":{"tracegroupgap":0},"title":{"text":"Top 10 States by Number of Job Postings"},"barmode":"relative","height":500,"width":900},                        {"responsive": true}                    ).then(function(){
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.0.min.js"></script>                <div id="05b4b423-1c52-4ff7-8306-2d6e9d2c6c23" class="plotly-graph-div" style="height:500px; width:900px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("05b4b423-1c52-4ff7-8306-2d6e9d2c6c23")) {                    Plotly.newPlot(                        "05b4b423-1c52-4ff7-8306-2d6e9d2c6c23",                        [{"hovertemplate":"State=%{x}\u003cbr\u003eNumber of Postings=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"","orientation":"v","showlegend":false,"textposition":"auto","x":["Texas","California","Florida","Virginia","Illinois","New York","North Carolina","Georgia","New Jersey","Ohio"],"xaxis":"x","y":{"dtype":"i2","bdata":"dx6vGqQNlQ04DbcMTwr9Cc4JxQk="},"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"State"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Number of Postings"}},"legend":{"tracegroupgap":0},"title":{"text":"Top 10 States by Number of Job Postings"},"barmode":"relative","height":500,"width":900},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('931493ef-a24b-4cfb-8a41-f34f97d25599');
+var gd = document.getElementById('05b4b423-1c52-4ff7-8306-2d6e9d2c6c23');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -1410,11 +1384,11 @@ if (outputEl) {{
 Texas and California dominate in job postings, reflecting strong economies and large populations. Other states like Florida, Virginia, and Illinois also show high demand. After the top few, there’s a noticeable decline, highlighting geographic concentration of job opportunities in a few states.</p>
 <hr>
 </section>
-<section id="word-cloud-of-most-frequent-job-titles" class="level3" data-number="5.1.3">
-<h3 data-number="5.1.3" class="anchored" data-anchor-id="word-cloud-of-most-frequent-job-titles"><span class="header-section-number">5.1.3</span> Word Cloud of Most Frequent Job Titles</h3>
+<section id="word-cloud-of-most-frequent-job-titles" class="level3">
+<h3 class="anchored" data-anchor-id="word-cloud-of-most-frequent-job-titles">Word Cloud of Most Frequent Job Titles</h3>
 <p><strong>Why this visualization?</strong><br>
 A word cloud quickly identifies the most common job roles based on text frequency, providing a visual overview.</p>
-<div id="7cb9386e" class="cell" data-execution_count="8">
+<div id="5ea17bd0" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Job Titles Word Cloud (if needed)</span></span>
@@ -1442,28 +1416,20 @@ A word cloud quickly identifies the most common job roles based on text frequenc
 <hr>
 </section>
 </section>
-<section id="conclusion-1" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="conclusion-1"><span class="header-section-number">5.2</span> Conclusion</h2>
+<section id="conclusion-1" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-1">Conclusion</h2>
 <p>The enhanced EDA highlights that job opportunities are geographically concentrated in certain states and cities, and technical and analytical roles dominate the job market. Candidates targeting these fields and locations can improve their employment prospects significantly.</p>
 </section>
-<section id="references" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="references"><span class="header-section-number">5.3</span> references</h2>
-<p>The growing trend of remote and hybrid roles, especially in technology and consulting sectors, reflects post-pandemic work transformation highlighted in recent studies <span class="citation" data-cites="tomar2024future">Tomar et al. (<a href="#ref-tomar2024future" role="doc-biblioref">(2024)</a>)</span>.</p>
-<p>Our approach combining data preprocessing and EDA is supported by prior research advocating for data-driven career forecasting models in job market analytics <span class="citation" data-cites="jiang2024supplychain">Jiang, Feng, and Huang (<a href="#ref-jiang2024supplychain" role="doc-biblioref">(2024)</a>)</span>.</p>
-
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">references</h2>
+<p>The growing trend of remote and hybrid roles, especially in technology and consulting sectors, reflects post-pandemic work transformation highlighted in recent studies <span class="citation" data-cites="tomar2024future">@tomar2024future</span>.</p>
+<p>Our approach combining data preprocessing and EDA is supported by prior research advocating for data-driven career forecasting models in job market analytics <span class="citation" data-cites="jiang2024supplychain">@jiang2024supplychain</span>.</p>
 
 
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-jiang2024supplychain" class="csl-entry" role="listitem">
-<span class="smallcaps">Jiang, Y., T. Feng, and Y. Huang</span>. (2024): <span>“<a href="https://doi.org/10.1002/joom.1282">Antecedent configurations toward supply chain resilience: The joint impact of supply chain integration and big data analytics capability</a>,”</span> <em>Journal of Operations Management</em>, 70, 257–84.
-</div>
-<div id="ref-tomar2024future" class="csl-entry" role="listitem">
-<span class="smallcaps">Tomar, A., S. Sharma, Arti, and S. Suman</span>. (2024): <span>“The Future of Work: Impacts of AI on Employment and Job Market Dynamics,”</span> <em>2024 international conference on progressive innovations in intelligent systems and data science (ICPIDS)</em>,.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

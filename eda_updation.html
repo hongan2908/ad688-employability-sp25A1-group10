@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Group 10">
 
-<title>Exploratory Data Analysis – Job Market Analysis 2024</title>
+<title>eda_updation – Job Market Analysis 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -171,7 +170,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Citations</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./final_report.html"> 
+    <a class="nav-link" href="./final_report.docx"> 
 <span class="menu-text">Final Report</span></a>
   </li>  
 </ul>
@@ -190,60 +189,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#dataset-overview" id="toc-dataset-overview" class="nav-link" data-scroll-target="#dataset-overview"><span class="header-section-number">2</span> Dataset Overview</a></li>
-  <li><a href="#handling-missing-data" id="toc-handling-missing-data" class="nav-link" data-scroll-target="#handling-missing-data"><span class="header-section-number">3</span> Handling Missing Data</a></li>
-  <li><a href="#salary-distribution" id="toc-salary-distribution" class="nav-link" data-scroll-target="#salary-distribution"><span class="header-section-number">4</span> Salary Distribution</a></li>
-  <li><a href="#top-10-job-titles" id="toc-top-10-job-titles" class="nav-link" data-scroll-target="#top-10-job-titles"><span class="header-section-number">5</span> Top 10 Job Titles</a></li>
-  <li><a href="#top-10-industries" id="toc-top-10-industries" class="nav-link" data-scroll-target="#top-10-industries"><span class="header-section-number">6</span> Top 10 Industries</a></li>
-  <li><a href="#job-postings-by-state" id="toc-job-postings-by-state" class="nav-link" data-scroll-target="#job-postings-by-state"><span class="header-section-number">7</span> Job Postings by State</a></li>
-  <li><a href="#posting-trends-over-time" id="toc-posting-trends-over-time" class="nav-link" data-scroll-target="#posting-trends-over-time"><span class="header-section-number">8</span> Posting Trends Over Time</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#dataset-overview" id="toc-dataset-overview" class="nav-link" data-scroll-target="#dataset-overview">Dataset Overview</a></li>
+  <li><a href="#handling-missing-data" id="toc-handling-missing-data" class="nav-link" data-scroll-target="#handling-missing-data">Handling Missing Data</a></li>
+  <li><a href="#salary-distribution" id="toc-salary-distribution" class="nav-link" data-scroll-target="#salary-distribution">Salary Distribution</a></li>
+  <li><a href="#top-10-job-titles" id="toc-top-10-job-titles" class="nav-link" data-scroll-target="#top-10-job-titles">Top 10 Job Titles</a></li>
+  <li><a href="#top-10-industries" id="toc-top-10-industries" class="nav-link" data-scroll-target="#top-10-industries">Top 10 Industries</a></li>
+  <li><a href="#job-postings-by-state" id="toc-job-postings-by-state" class="nav-link" data-scroll-target="#job-postings-by-state">Job Postings by State</a></li>
+  <li><a href="#posting-trends-over-time" id="toc-posting-trends-over-time" class="nav-link" data-scroll-target="#posting-trends-over-time">Posting Trends Over Time</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Exploratory Data Analysis</h1>
-<p class="subtitle lead">Uncovering Patterns in the Job Market Dataset</p>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Group 10 </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Boston University
-          </p>
-      </div>
-  </div>
-
-<div class="quarto-title-meta">
-
-      
-  
-    
-  </div>
-  
 
 
-</header>
+<!--
 
 
-<section id="introduction" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+---
+title: "Exploratory Data Analysis"
+subtitle: "Uncovering Patterns in the Job Market Dataset"
+author:
+  - name: Group 10
+    affiliations:
+      - id: bu
+        name: Boston University
+        city: Boston
+        state: MA
+format: 
+  html:
+    toc: true
+    number-sections: true
+    df-print: paged
+---
+
+
+-->
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
 <p>This EDA explores key characteristics of the job postings dataset, including salary distribution, industry representation, geographic trends, and temporal patterns. The analysis provides insights that guide downstream tasks such as skill gap analysis, clustering, and prediction.</p>
 </section>
-<section id="dataset-overview" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Dataset Overview</h1>
-<div id="1ab6b63f" class="cell" data-execution_count="1">
+<section id="dataset-overview" class="level1">
+<h1>Dataset Overview</h1>
+<div id="2d815511" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -253,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\honga\AppData\Local\Temp\ipykernel_19552\1554311625.py:3: DtypeWarning:
+<pre><code>C:\Users\honga\AppData\Local\Temp\ipykernel_18024\1554311625.py:3: DtypeWarning:
 
 Columns (19,30) have mixed types. Specify dtype option on import or set low_memory=False.
 </code></pre>
@@ -425,9 +416,9 @@ memory usage: 72.5+ MB</code></pre>
 </div>
 </div>
 </section>
-<section id="handling-missing-data" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Handling Missing Data</h1>
-<div id="5cf8a66c" class="cell" data-execution_count="2">
+<section id="handling-missing-data" class="level1">
+<h1>Handling Missing Data</h1>
+<div id="aef2c930" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.isnull().mean().sort_values(ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -447,9 +438,9 @@ dtype: float64</code></pre>
 </div>
 </div>
 </section>
-<section id="salary-distribution" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Salary Distribution</h1>
-<div id="6637083f" class="cell" data-execution_count="3">
+<section id="salary-distribution" class="level1">
+<h1>Salary Distribution</h1>
+<div id="d8d54973" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -475,9 +466,9 @@ dtype: float64</code></pre>
 </div>
 </div>
 </section>
-<section id="top-10-job-titles" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Top 10 Job Titles</h1>
-<div id="3c69e8c9" class="cell" data-execution_count="4">
+<section id="top-10-job-titles" class="level1">
+<h1>Top 10 Job Titles</h1>
+<div id="6ded07fa" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'TITLE_NAME'</span>].value_counts().head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -498,9 +489,9 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </section>
-<section id="top-10-industries" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Top 10 Industries</h1>
-<div id="aa31138e" class="cell" data-execution_count="5">
+<section id="top-10-industries" class="level1">
+<h1>Top 10 Industries</h1>
+<div id="9a3e88c9" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'NAICS_2022_2_NAME'</span>].value_counts().head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -521,9 +512,9 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </section>
-<section id="job-postings-by-state" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Job Postings by State</h1>
-<div id="d09d0e5e" class="cell" data-execution_count="6">
+<section id="job-postings-by-state" class="level1">
+<h1>Job Postings by State</h1>
+<div id="8d5a4cee" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>state_counts <span class="op">=</span> df[<span class="st">'STATE_NAME'</span>].value_counts().head(<span class="dv">15</span>)</span>
@@ -544,9 +535,9 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </section>
-<section id="posting-trends-over-time" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Posting Trends Over Time</h1>
-<div id="af6992e7" class="cell" data-execution_count="7">
+<section id="posting-trends-over-time" class="level1">
+<h1>Posting Trends Over Time</h1>
+<div id="b73d518a" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'POSTED'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'POSTED'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
@@ -566,7 +557,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="967842a0" class="cell" data-execution_count="8">
+<div id="4512cbec" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.columns.tolist())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

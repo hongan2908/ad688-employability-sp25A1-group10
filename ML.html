@@ -168,7 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Citations</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./final_report.html"> 
+    <a class="nav-link" href="./final_report.docx"> 
 <span class="menu-text">Final Report</span></a>
   </li>  
 </ul>
@@ -308,7 +308,7 @@ dtype: int64</code></pre>
 </div>
 <section id="sample-of-preprocessed-education_levels" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="sample-of-preprocessed-education_levels"><span class="header-section-number">2.1</span> Sample of preprocessed EDUCATION_LEVELS</h2>
-<div id="50cb1ab7" class="cell" data-execution_count="2">
+<div id="b5fb62b1" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define function to parse MIN_EDULEVELS strings</span></span>
@@ -392,7 +392,7 @@ Sample of preprocessed MIN_EDULEVELS: [2.0, 99.0, 2.0, 99.0, 99.0]</code></pre>
 <h1 data-number="3"><span class="header-section-number">3</span> Model Training</h1>
 <p>With the data preprocessed, I trained a Random Forest Regressor, a robust model that handles numerical features well and is less prone to overfitting. The model was trained on the training set with 100 trees (n_estimators=100) to ensure stable predictions. Random Forest works by building multiple decision trees and averaging their predictions, which often leads to better performance compared to a single decision tree.</p>
 <p>Here is the code for training the Random Forest Regressor:</p>
-<div id="2b59ef14" class="cell" data-execution_count="3">
+<div id="3b120054" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
@@ -413,7 +413,7 @@ Sample of preprocessed MIN_EDULEVELS: [2.0, 99.0, 2.0, 99.0, 99.0]</code></pre>
 <p>After training the model, I used it to predict the DURATION for the test set. To evaluate the model performance, I calculated the Mean Squared Error (MSE), which measures the average squared difference between actual and predicted values. A lower MSE indicates better predictive accuracy.</p>
 <p>I also created a scatter plot to visualize the model performance, comparing the actual DURATION values to the predicted ones. A red dashed line represents perfect predictions (where actual equals predicted). Points closer to this line indicate better predictions.</p>
 <p>Here is the code for evaluation and visualization:</p>
-<div id="8f67452d" class="cell" data-execution_count="4">
+<div id="83b57a40" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>

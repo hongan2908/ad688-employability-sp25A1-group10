@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Shreya Mani">
 
-<title>NLP Methods – Job Market Analysis 2024</title>
+<title>nlp_method – Job Market Analysis 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -168,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Citations</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./final_report.html"> 
+    <a class="nav-link" href="./final_report.docx"> 
 <span class="menu-text">Final Report</span></a>
   </li>  
 </ul>
@@ -187,54 +186,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#data-preprocessing" id="toc-data-preprocessing" class="nav-link" data-scroll-target="#data-preprocessing"><span class="header-section-number">2</span> Data Preprocessing</a></li>
-  <li><a href="#skill-analysis-and-visualization" id="toc-skill-analysis-and-visualization" class="nav-link" data-scroll-target="#skill-analysis-and-visualization"><span class="header-section-number">3</span> Skill Analysis and Visualization</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#data-preprocessing" id="toc-data-preprocessing" class="nav-link" data-scroll-target="#data-preprocessing">Data Preprocessing</a></li>
+  <li><a href="#skill-analysis-and-visualization" id="toc-skill-analysis-and-visualization" class="nav-link" data-scroll-target="#skill-analysis-and-visualization">Skill Analysis and Visualization</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">NLP Methods</h1>
-<p class="subtitle lead">NLP Analysis: Extracting Required Skills from Job Postings</p>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Shreya Mani </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Boston University
-          </p>
-      </div>
-  </div>
-
-<div class="quarto-title-meta">
-
-      
-  
-    
-  </div>
-  
 
 
-</header>
+<!--
 
 
-<section id="introduction" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+---
+title: "NLP Methods"
+subtitle: "NLP Analysis: Extracting Required Skills from Job Postings"
+author:
+  - name: Shreya Mani
+    affiliations:
+      - id: bu
+        name: Boston University
+        city: Boston
+        state: MA
+format: 
+  html:
+        toc: true
+        number-sections: true
+        df-print: paged
+---
+
+
+-->
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
 <p>In this project, we used Natural Language Processing (NLP) to extract required skills from job postings based on their description text in the BODY column. The dataset contains job postings with unstructured text descriptions, which often mention skills needed for the role (e.g., “analyze data” or “develop software”). Our goal was to identify and analyze the most common skills mentioned in these postings, providing insights into the skills most in demand. This analysis can help job seekers understand the key skills to develop and assist employers in identifying trends in skill requirements.</p>
 </section>
-<section id="data-preprocessing" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Data Preprocessing</h1>
+<section id="data-preprocessing" class="level1">
+<h1>Data Preprocessing</h1>
 <p>We started by loading the dataset and focusing on the BODY column, which contains the job description text. The BODY text is unstructured and requires preprocessing for NLP analysis. We performed the following steps:</p>
 <p>Tokenization and Cleaning: Converted the text to lowercase, removed punctuation, and tokenized the text into words.</p>
 <p>Stop Word Removal: Removed common stop words (e.g., “the”, “is”) that don’t add meaningful information. We used a predefined list of common stop words to avoid external dependencies.</p>
@@ -333,11 +324,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="skill-analysis-and-visualization" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Skill Analysis and Visualization</h1>
+<section id="skill-analysis-and-visualization" class="level1">
+<h1>Skill Analysis and Visualization</h1>
 <p>After extracting skills from the job descriptions, we analyzed their frequency to identify the most common skills mentioned. We visualized the results using a bar plot, showing the count of each skill across all job postings. This helps highlight the skills that are most in demand based on the dataset.</p>
 <p>Here’s the code we used for analyzing and visualizing the skills:</p>
-<div id="aa5f8a95" class="cell" data-execution_count="2">
+<div id="404de338" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the most common skills</span></span>
