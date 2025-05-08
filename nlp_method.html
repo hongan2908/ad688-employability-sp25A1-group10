@@ -132,6 +132,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./ai_vs_tradsalary_analysis.html"> 
+<span class="menu-text">AI vs.&nbsp;Traditional Salary Analysis</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./salaries-differ-across-ai-vs-non-ai-careers.html"> 
 <span class="menu-text">Salaries Differ Across AI vs.&nbsp;Non-AI Careers</span></a>
   </li>  
@@ -148,7 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Skill Gap Analysis</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./ml_method.qmd"> 
+    <a class="nav-link" href="./ml_methods.html"> 
 <span class="menu-text">ML Methods</span></a>
   </li>  
   <li class="nav-item">
@@ -333,6 +337,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-number="3"><span class="header-section-number">3</span> Skill Analysis and Visualization</h1>
 <p>After extracting skills from the job descriptions, we analyzed their frequency to identify the most common skills mentioned. We visualized the results using a bar plot, showing the count of each skill across all job postings. This helps highlight the skills that are most in demand based on the dataset.</p>
 <p>Here’s the code we used for analyzing and visualizing the skills:</p>
+<div id="aa5f8a95" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the most common skills</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>skills, counts <span class="op">=</span> <span class="bu">zip</span>(<span class="op">*</span>skill_counts.items()) <span class="cf">if</span> skill_counts <span class="cf">else</span> ([], [])</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> counts:  <span class="co"># Ensure there are skills to plot</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    plt.bar(skills, counts, color<span class="op">=</span><span class="st">'skyblue'</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">'Skills'</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">'Most Common Skills in Job Postings'</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    plt.savefig(<span class="st">'skills_frequency.png'</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"No skills were found in the job descriptions."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="nlp_method_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>

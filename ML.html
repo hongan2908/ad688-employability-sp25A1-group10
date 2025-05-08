@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Shreya Mani">
 
-<title>ml_methods – Job Market Analysis 2024</title>
+<title>ML Methods – Job Market Analysis 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -151,7 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Skill Gap Analysis</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./ml_methods.html" aria-current="page"> 
+    <a class="nav-link" href="./ml_methods.html"> 
 <span class="menu-text">ML Methods</span></a>
   </li>  
   <li class="nav-item">
@@ -186,52 +187,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#data-preprocessing" id="toc-data-preprocessing" class="nav-link" data-scroll-target="#data-preprocessing">Data Preprocessing</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#data-preprocessing" id="toc-data-preprocessing" class="nav-link" data-scroll-target="#data-preprocessing"><span class="header-section-number">2</span> Data Preprocessing</a>
   <ul class="collapse">
-  <li><a href="#sample-of-preprocessed-education_levels" id="toc-sample-of-preprocessed-education_levels" class="nav-link" data-scroll-target="#sample-of-preprocessed-education_levels">Sample of preprocessed EDUCATION_LEVELS</a></li>
+  <li><a href="#sample-of-preprocessed-education_levels" id="toc-sample-of-preprocessed-education_levels" class="nav-link" data-scroll-target="#sample-of-preprocessed-education_levels"><span class="header-section-number">2.1</span> Sample of preprocessed EDUCATION_LEVELS</a></li>
   </ul></li>
-  <li><a href="#model-training" id="toc-model-training" class="nav-link" data-scroll-target="#model-training">Model Training</a></li>
-  <li><a href="#model-evaluation-and-visualization" id="toc-model-evaluation-and-visualization" class="nav-link" data-scroll-target="#model-evaluation-and-visualization">Model Evaluation and Visualization</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#model-training" id="toc-model-training" class="nav-link" data-scroll-target="#model-training"><span class="header-section-number">3</span> Model Training</a></li>
+  <li><a href="#model-evaluation-and-visualization" id="toc-model-evaluation-and-visualization" class="nav-link" data-scroll-target="#model-evaluation-and-visualization"><span class="header-section-number">4</span> Model Evaluation and Visualization</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">5</span> Results</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">6</span> Conclusion</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">ML Methods</h1>
+<p class="subtitle lead">Predicting Job Posting Duration Using Random Forest Regressor</p>
+</div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Shreya Mani </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Boston University
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
 
 
-<!--
+</header>
 
 
----
-title: "ML Methods"
-subtitle: "ML Analysis: Extracting Required Skills from Job Postings"
-author:
-  - name: Shreya Mani
-    affiliations:
-      - id: bu
-        name: Boston University
-        city: Boston
-        state: MA
-format:
-  html:
-    toc: true
-    number-sections: true
-    df-print: paged
----
-
-
--->
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
 <p>In this machine learning project, I aimed to predict how long job postings remain active (i.e., their DURATION) using a Random Forest Regressor. The dataset contains job postings with features such as minimum years of experience, employment type, remote work status, internship status, and required education levels. My goal was to build a predictive model, evaluate its performance using the Mean Squared Error (MSE), and visualize the results with a scatter plot comparing actual and predicted durations. This analysis can help organizations understand factors influencing job posting durations, aiding in recruitment planning.</p>
 </section>
-<section id="data-preprocessing" class="level1">
-<h1>Data Preprocessing</h1>
+<section id="data-preprocessing" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Data Preprocessing</h1>
 <p>I started by loading the dataset and selecting a subset of features relevant to predicting DURATION. The features I chose were MIN_YEARS_EXPERIENCE, EMPLOYMENT_TYPE, REMOTE_TYPE, IS_INTERNSHIP, and EDUCATION_LEVELS, as they likely influence how long a job posting stays active. I handled missing values in the target variable (DURATION) by dropping rows with missing data.</p>
 <p>A challenge arose with the EDUCATION_LEVELS column, which contained string representations of lists . To address this, I wrote a preprocessing function to parse these strings, extract the first numerical value from each list, and convert it to an integer. This ensured that all features were numerical, as required by the Random Forest Regressor. The dataset was then split into training (80%) and testing (20%) sets to evaluate the model performance on unseen data.</p>
 <p>Here the Python code I used for data preprocessing:</p>
@@ -297,9 +306,9 @@ MIN_EDULEVELS              44
 dtype: int64</code></pre>
 </div>
 </div>
-<section id="sample-of-preprocessed-education_levels" class="level2">
-<h2 class="anchored" data-anchor-id="sample-of-preprocessed-education_levels">Sample of preprocessed EDUCATION_LEVELS</h2>
-<div id="eaebf52c" class="cell" data-execution_count="2">
+<section id="sample-of-preprocessed-education_levels" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sample-of-preprocessed-education_levels"><span class="header-section-number">2.1</span> Sample of preprocessed EDUCATION_LEVELS</h2>
+<div id="50cb1ab7" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define function to parse MIN_EDULEVELS strings</span></span>
@@ -311,7 +320,7 @@ dtype: int64</code></pre>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>            edu_list <span class="op">=</span> ast.literal_eval(edu.replace(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>, <span class="st">''</span>))</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="bu">int</span>(edu_list[<span class="dv">0</span>]) <span class="cf">if</span> <span class="bu">isinstance</span>(edu_list[<span class="dv">0</span>], (<span class="bu">int</span>, <span class="bu">float</span>)) <span class="cf">else</span> np.nan</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> (<span class="pp">ValueError</span>, <span class="pp">SyntaxError</span>, <span class="pp">IndexError</span>) <span class="im">as</span> e:</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Parsing failed for : </span><span class="sc">{</span>edu<span class="sc">}</span><span class="ss">, Error: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Parsing failed for: </span><span class="sc">{</span>edu<span class="sc">}</span><span class="ss">, Error: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> np.nan</span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.nan</span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
@@ -379,11 +388,11 @@ Sample of preprocessed MIN_EDULEVELS: [2.0, 99.0, 2.0, 99.0, 99.0]</code></pre>
 </div>
 </section>
 </section>
-<section id="model-training" class="level1">
-<h1>Model Training</h1>
+<section id="model-training" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Model Training</h1>
 <p>With the data preprocessed, I trained a Random Forest Regressor, a robust model that handles numerical features well and is less prone to overfitting. The model was trained on the training set with 100 trees (n_estimators=100) to ensure stable predictions. Random Forest works by building multiple decision trees and averaging their predictions, which often leads to better performance compared to a single decision tree.</p>
 <p>Here is the code for training the Random Forest Regressor:</p>
-<div id="31275fdf" class="cell" data-execution_count="3">
+<div id="2b59ef14" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
@@ -399,12 +408,12 @@ Sample of preprocessed MIN_EDULEVELS: [2.0, 99.0, 2.0, 99.0, 99.0]</code></pre>
 </div>
 </div>
 </section>
-<section id="model-evaluation-and-visualization" class="level1">
-<h1>Model Evaluation and Visualization</h1>
+<section id="model-evaluation-and-visualization" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Model Evaluation and Visualization</h1>
 <p>After training the model, I used it to predict the DURATION for the test set. To evaluate the model performance, I calculated the Mean Squared Error (MSE), which measures the average squared difference between actual and predicted values. A lower MSE indicates better predictive accuracy.</p>
 <p>I also created a scatter plot to visualize the model performance, comparing the actual DURATION values to the predicted ones. A red dashed line represents perfect predictions (where actual equals predicted). Points closer to this line indicate better predictions.</p>
 <p>Here is the code for evaluation and visualization:</p>
-<div id="6e32ed20" class="cell" data-execution_count="4">
+<div id="8f67452d" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
@@ -463,18 +472,18 @@ Feature Importance:
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="ml_methods_files/figure-html/cell-5-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="ML_files/figure-html/cell-5-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="results" class="level1">
-<h1>Results</h1>
+<section id="results" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Results</h1>
 <p>The Mean Squared Error (MSE) provides a quantitative measure of the model performance. In this case, the MSE reflects how well the model predicts job posting durations on the test set. The scatter plot (actual_vs_predicted_duration.png) visually demonstrates the model accuracy. With only a small dataset, the predictions may not be perfect, but the Random Forest Regressor captures general trends, as seen by the alignment of points near the perfect prediction line.</p>
 </section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
+<section id="conclusion" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Conclusion</h1>
 <p>Using a Random Forest Regressor, I built a model to predict the duration of job postings based on features like experience, employment type, and education level. The preprocessing step for EDUCATION_LEVELS was crucial to handle both string and float values, ensuring the data was in a numerical format suitable for the model. However, the model performance was poor, with an MSE of 1296.00 and a significant overprediction (42.0 days predicted vs.&nbsp;6.0 days actual), as shown in the scatter plot. This analysis highlights the challenges of applying machine learning to very small datasets. Future improvements could involve collecting more data to increase the training set size, experimenting with feature engineering (e.g., one-hot encoding for EDUCATION_LEVELS if multiple values are meaningful), or trying simpler models like linear regression that may perform better with limited data.</p>
 
 
